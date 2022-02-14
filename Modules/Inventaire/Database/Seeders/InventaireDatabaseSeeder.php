@@ -2,6 +2,7 @@
 
 namespace Modules\Inventaire\Database\Seeders;
 
+use Database\Seeders\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +17,7 @@ class InventaireDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+         $this->call([SeedFakeRolesTableSeeder::class,
+        User::class]);
     }
 }
