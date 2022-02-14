@@ -16,6 +16,6 @@ class InventaireDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(["StatutSeederTableSeeder", "TypeSeederTableSeeder", "UtilitySeederTableSeeder"]);
+        $this->call([StatutSeederTableSeeder::class, TypeSeederTableSeeder::class, UtilitySeederTableSeeder::class]);
     }
 }
