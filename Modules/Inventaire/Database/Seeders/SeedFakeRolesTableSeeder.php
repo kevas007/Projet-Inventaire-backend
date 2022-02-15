@@ -20,6 +20,7 @@ class SeedFakeRolesTableSeeder extends Seeder
         DB::table('roles')->insert(
             [
                 [
+<<<<<<< HEAD
                     'name' => 'superadmin',
                 ],
                 [
@@ -30,6 +31,12 @@ class SeedFakeRolesTableSeeder extends Seeder
                 ],
                 [
                     "name" => "user",
+=======
+                    "nom" => "admin",
+                ],
+                [
+                    "nom" => "user",
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                 ],
             ]
         );

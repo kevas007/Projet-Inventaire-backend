@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "e445eeab096b71ab3afc8a48eb4edabb",
     "packages": [
         {
@@ -30,6 +31,33 @@
                 "phpunit/phpunit": "^7 | ^8 | ^9",
                 "spatie/phpunit-snapshot-assertions": "^4.2.9",
                 "squizlabs/php_codesniffer": "^3.4"
+=======
+    "content-hash": "27c74d10cd228783f84829722afea023",
+    "packages": [
+        {
+            "name": "bacon/bacon-qr-code",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bacon/BaconQrCode.git",
+                "reference": "eaac909da3ccc32b748a65b127acd8918f58d9b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/eaac909da3ccc32b748a65b127acd8918f58d9b0",
+                "reference": "eaac909da3ccc32b748a65b127acd8918f58d9b0",
+                "shasum": ""
+            },
+            "require": {
+                "dasprid/enum": "^1.0",
+                "ext-iconv": "*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phly/keep-a-changelog": "^1.4",
+                "phpunit/phpunit": "^6.4",
+                "squizlabs/php_codesniffer": "^3.1"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "suggest": {
                 "ext-imagick": "to generate QR code images"
@@ -48,7 +76,11 @@
                 {
                     "name": "Ben Scholzen 'DASPRiD'",
                     "email": "mail@dasprids.de",
+<<<<<<< HEAD
                     "homepage": "https://dasprids.de/",
+=======
+                    "homepage": "http://www.dasprids.de",
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                     "role": "Developer"
                 }
             ],
@@ -56,9 +88,15 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
             },
             "time": "2022-02-04T20:16:05+00:00"
+=======
+                "source": "https://github.com/Bacon/BaconQrCode/tree/feature/rewrite"
+            },
+            "time": "2018-04-25T17:53:56+00:00"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         },
         {
             "name": "dasprid/enum",
@@ -1101,6 +1139,7 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
+<<<<<<< HEAD
             "version": "4.2.0",
             "source": {
                 "type": "git",
@@ -1117,6 +1156,24 @@
                 "bacon/bacon-qr-code": "^2.0",
                 "ext-gd": "*",
                 "php": ">=7.2|^8.0"
+=======
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
+                "reference": "151dd397426d9a6c0507c96e61ddd2ca1290ce1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/151dd397426d9a6c0507c96e61ddd2ca1290ce1e",
+                "reference": "151dd397426d9a6c0507c96e61ddd2ca1290ce1e",
+                "shasum": ""
+            },
+            "require": {
+                "bacon/bacon-qr-code": "2.0.0",
+                "ext-gd": "*",
+                "php": ">=7.2"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "require-dev": {
                 "mockery/mockery": "~1",
@@ -1130,10 +1187,17 @@
             "extra": {
                 "laravel": {
                     "providers": [
+<<<<<<< HEAD
                         "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
                     ],
                     "aliases": {
                         "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
+=======
+                        "SimpleSoftwareIO\\QrCode\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "QrCode": "SimpleSoftwareIO\\QrCode\\Facade"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                     }
                 }
             },
@@ -1153,7 +1217,11 @@
                 }
             ],
             "description": "Simple QrCode is a QR code generator made for Laravel.",
+<<<<<<< HEAD
             "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
+=======
+            "homepage": "http://www.simplesoftware.io",
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             "keywords": [
                 "Simple",
                 "generator",
@@ -1163,9 +1231,15 @@
             ],
             "support": {
                 "issues": "https://github.com/SimpleSoftwareIO/simple-qrcode/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/4.2.0"
             },
             "time": "2021-02-08T20:43:55+00:00"
+=======
+                "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/master"
+            },
+            "time": "2020-06-02T20:41:21+00:00"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         },
         {
             "name": "symfony/console",
@@ -2752,7 +2826,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-gd": "*"
+    },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

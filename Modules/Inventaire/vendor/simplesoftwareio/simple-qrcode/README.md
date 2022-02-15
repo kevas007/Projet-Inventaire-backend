@@ -7,6 +7,7 @@ Simple QrCode
 [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 
+<<<<<<< HEAD
 ## [Deutsch](https://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](https://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](https://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](https://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](https://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](https://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](https://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](https://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](https://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](https://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn)
 
 Language files are currently out of date.  We need volunteers to upgrade them to v4!  Please submit a PR request!
@@ -16,18 +17,34 @@ Language files are currently out of date.  We need volunteers to upgrade them to
 [![keep.sh](https://user-images.githubusercontent.com/624784/95805291-1121e980-0cd3-11eb-9048-0264bd9f2fd7.gif)](https://keep.sh)
 
 Easy fast file sharing from the command line with a single curl command! `curl --upload-file your-local-file.txt https://keep.sh`
+=======
+## [Español](https://www.simplesoftware.io/docs/simple-qrcode/es) | [Français](https://www.simplesoftware.io/docs/simple-qrcode/fr) | [Italiano](https://www.simplesoftware.io/docs/simple-qrcode/it) | [Português](https://www.simplesoftware.io/docs/simple-qrcode/pt-br) | [Русский](https://www.simplesoftware.io/docs/simple-qrcode/ru) | [日本人](https://www.simplesoftware.io/docs/simple-qrcode/ja) | [한국어](https://www.simplesoftware.io/docs/simple-qrcode/kr) | [हिंदी](https://www.simplesoftware.io/docs/simple-qrcode/hi) | [汉语](https://www.simplesoftware.io/docs/simple-qrcode/zh)
+
+Language files are currently out of date.  We need volunteers to upgrade them to v3!  Please submit a PR request!
+
+### Try our dead simple, free file transfer service [keep.sh](https://keep.sh)
+
+![keep.sh](https://user-images.githubusercontent.com/624784/59808382-06676800-92ca-11e9-87b7-70020b6aef5f.gif)
+
+Upload files with a single curl command from your terminal! `curl --upload-file your-local-file.txt https://keep.sh`
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 ## Introduction
 Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
 
 ## Official Documentation
 
+<<<<<<< HEAD
 Documentation for Simple QrCode can be found on our [website.](http://www.simplesoftware.io/#/docs/simple-qrcode)
+=======
+Documentation for Simple QrCode can be found on our [website.](https://www.simplesoftware.io/simple-qrcode)
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 ## Examples
 
 ![Example 1](docs/imgs/example-1.png) ![Example 2](docs/imgs/example-2.png)
 
+<<<<<<< HEAD
 ## Use Cases
 <p align="center">
   <a href="https://www.rsvpify.com">
@@ -38,6 +55,8 @@ Documentation for Simple QrCode can be found on our [website.](http://www.simple
   <a href="https://rsvpify.com/sell-tickets">Platform to sell tickets online</a>
 </p>
 
+=======
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 ## Contributing
 
 Please submit all issues and pull requests to the [simplesoftwareio/simple-qrcode](https://github.com/simplesoftwareio/simple-qrcode) repository on the develop branch!

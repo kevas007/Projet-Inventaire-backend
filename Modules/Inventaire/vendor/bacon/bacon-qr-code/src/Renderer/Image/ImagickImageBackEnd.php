@@ -227,7 +227,14 @@ final class ImagickImageBackEnd implements ImageBackEndInterface
 
     private function createGradientFill(Gradient $gradient, float $x, float $y, float $width, float $height) : string
     {
+<<<<<<< HEAD
         list($width, $height) = $this->matrices[$this->matrixIndex]->apply($width, $height);
+=======
+        list($width, $height) = $this->matrices[$this->matrixIndex]->apply($x + $width, $y + $height);
+        list($x, $y) = $this->matrices[$this->matrixIndex]->apply($x, $y);
+        $width -= $x;
+        $height -= $y;
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
         $startColor = $this->getColorPixel($gradient->getStartColor())->getColorAsString();
         $endColor = $this->getColorPixel($gradient->getEndColor())->getColorAsString();
@@ -287,8 +294,13 @@ final class ImagickImageBackEnd implements ImageBackEndInterface
         }
 
         $id = sprintf('g%d', ++$this->gradientCount);
+<<<<<<< HEAD
         $this->draw->pushPattern($id, 0, 0, $width, $height);
         $this->draw->composite(Imagick::COMPOSITE_COPY, 0, 0, $width, $height, $gradientImage);
+=======
+        $this->draw->pushPattern($id, 0, 0, $x + $width, $y + $height);
+        $this->draw->composite(Imagick::COMPOSITE_COPY, $x, $y, $width, $height, $gradientImage);
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         $this->draw->popPattern();
         return $id;
     }

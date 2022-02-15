@@ -4,7 +4,10 @@ declare(strict_types = 1);
 namespace BaconQrCode;
 
 use BaconQrCode\Common\ErrorCorrectionLevel;
+<<<<<<< HEAD
 use BaconQrCode\Common\Version;
+=======
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 use BaconQrCode\Encoder\Encoder;
 use BaconQrCode\Exception\InvalidArgumentException;
 use BaconQrCode\Renderer\RendererInterface;
@@ -40,8 +43,12 @@ final class Writer
     public function writeString(
         string $content,
         string $encoding = Encoder::DEFAULT_BYTE_MODE_ECODING,
+<<<<<<< HEAD
         ?ErrorCorrectionLevel $ecLevel = null,
         ?Version $forcedVersion = null
+=======
+        ?ErrorCorrectionLevel $ecLevel = null
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     ) : string {
         if (strlen($content) === 0) {
             throw new InvalidArgumentException('Found empty contents');
@@ -51,7 +58,11 @@ final class Writer
             $ecLevel = ErrorCorrectionLevel::L();
         }
 
+<<<<<<< HEAD
         return $this->renderer->render(Encoder::encode($content, $ecLevel, $encoding, $forcedVersion));
+=======
+        return $this->renderer->render(Encoder::encode($content, $ecLevel, $encoding));
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     }
 
     /**
@@ -63,9 +74,15 @@ final class Writer
         string $content,
         string $filename,
         string $encoding = Encoder::DEFAULT_BYTE_MODE_ECODING,
+<<<<<<< HEAD
         ?ErrorCorrectionLevel $ecLevel = null,
         ?Version $forcedVersion = null
     ) : void {
         file_put_contents($filename, $this->writeString($content, $encoding, $ecLevel, $forcedVersion));
+=======
+        ?ErrorCorrectionLevel $ecLevel = null
+    ) : void {
+        file_put_contents($filename, $this->writeString($content, $encoding, $ecLevel));
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     }
 }

@@ -204,7 +204,11 @@ final class MaskUtil
                 break;
 
             case 4:
+<<<<<<< HEAD
                 $intermediate = (BitUtils::unsignedRightShift($y, 1) + (int) ($x / 3)) & 0x1;
+=======
+                $intermediate = (BitUtils::unsignedRightShift($y, 1) + ($x / 3)) & 0x1;
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                 break;
 
             case 5:

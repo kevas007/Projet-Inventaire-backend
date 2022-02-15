@@ -23,7 +23,7 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('inventaire::create');
+        return view('inventaire::materiels.create');
     }
 
     /**
@@ -33,7 +33,11 @@ class MaterielController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom'=>'required|min:1',
+            'numero_serie'=>'required|min:1',
+            'token'=>'required|min:1',
+        ]);
     }
 
     /**

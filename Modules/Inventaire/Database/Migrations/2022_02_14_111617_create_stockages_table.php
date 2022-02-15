@@ -15,7 +15,7 @@ class CreateStockagesTable extends Migration
     {
         Schema::create('stockages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nom');
             $table->timestamps();
         });
     }

@@ -21,19 +21,19 @@ class SeedFakeUtilitiesTableSeeder extends Seeder
         DB::table('utilities')->insert(
             [
                 [
-                    "name" => "Coding"
+                    "nom" => "Coding"
                 ],
                 [
-                    "name" => "Marketing"
+                    "nom" => "Marketing"
                 ],
                 [
-                    "name" => "Prêt PC"
+                    "nom" => "Prêt PC"
                 ],
                 [
-                    "name" => "Donation"
+                    "nom" => "Donation"
                 ],
                 [
-                    "name" => "Autre"
+                    "nom" => "Autre"
                 ],
             ]
         );

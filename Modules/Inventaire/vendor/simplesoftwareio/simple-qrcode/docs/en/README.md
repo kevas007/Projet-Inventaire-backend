@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode) [![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode) [![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
 
 #### [Deutsch](http://www.simplesoftware.io/#/docs/simple-qrcode/de) | [Español](http://www.simplesoftware.io/#/docs/simple-qrcode/es) | [Français](http://www.simplesoftware.io/#/docs/simple-qrcode/fr) | [Italiano](http://www.simplesoftware.io/#/docs/simple-qrcode/it) | [Português](http://www.simplesoftware.io/#/docs/simple-qrcode/pt-br) | [Русский](http://www.simplesoftware.io/#/docs/simple-qrcode/ru) | [日本語](http://www.simplesoftware.io/#/docs/simple-qrcode/ja) | [한국어](http://www.simplesoftware.io/#/docs/simple-qrcode/kr) | [हिंदी](http://www.simplesoftware.io/#/docs/simple-qrcode/hi) | [简体中文](http://www.simplesoftware.io/#/docs/simple-qrcode/zh-cn)
@@ -18,15 +19,49 @@ Upload files with a single curl command from your terminal! `curl --upload-file 
   <a href="https://rsvpify.com/sell-tickets">Platform to sell tickets online</a>
 </p>
 
+=======
+Simple QrCode
+========================
+
+[![Build Status](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode.svg?branch=master)](https://travis-ci.org/SimpleSoftwareIO/simple-qrcode)
+[![Latest Stable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/stable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Latest Unstable Version](https://poser.pugx.org/simplesoftwareio/simple-qrcode/v/unstable.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![License](https://poser.pugx.org/simplesoftwareio/simple-qrcode/license.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+[![Total Downloads](https://poser.pugx.org/simplesoftwareio/simple-qrcode/downloads.svg)](https://packagist.org/packages/simplesoftwareio/simple-qrcode)
+
+#### [Español](https://www.simplesoftware.io/docs/simple-qrcode/es) | [Français](https://www.simplesoftware.io/docs/simple-qrcode/fr) | [Italiano](https://www.simplesoftware.io/docs/simple-qrcode/it) | [Português](https://www.simplesoftware.io/docs/simple-qrcode/pt-br) | [Русский](https://www.simplesoftware.io/docs/simple-qrcode/ru) | [日本人](https://www.simplesoftware.io/docs/simple-qrcode/ja) | [한국어](https://www.simplesoftware.io/docs/simple-qrcode/kr) | [हिंदी](https://www.simplesoftware.io/docs/simple-qrcode/hi) | [汉语](https://www.simplesoftware.io/docs/simple-qrcode/zh)
+
+
+- [Introduction](#docs-introduction)
+- [Upgrade Guide](#docs-upgrade)
+- [Configuration](#docs-configuration)
+- [Simple Ideas](#docs-ideas)
+- [Usage](#docs-usage)
+- [Helpers](#docs-helpers)
+- [Common QrCode Usage](#docs-common-usage)
+- [Usage Outside of Laravel](#docs-outside-laravel)
+
+## Try our dead simple, free file transfer service [keep.sh](https://keep.sh)
+
+![keep.sh](https://user-images.githubusercontent.com/624784/59808382-06676800-92ca-11e9-87b7-70020b6aef5f.gif)
+
+Upload files with a single curl command from your terminal! `curl --upload-file file.txt https://keep.sh`
+
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 <a id="docs-introduction"></a>
 ## Introduction
 Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
 
+<<<<<<< HEAD
 ![Example 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-1.png?raw=true) ![Example 2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/example-2.png?raw=true)
+=======
+![Example 1](../imgs/example-1.png) ![Example 2](../imgs/example-2.png)
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 <a id="docs-upgrade"></a>
 ## Upgrade Guide
 
+<<<<<<< HEAD
 Upgrade from v2 or v3 by changing your `composer.json` file to `~4`
 
 You **must** install the `imagick` PHP extension if you plan on using the `png` image format.
@@ -43,14 +78,26 @@ All references to the `QrCode` facade need to be changed to:
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 ```
 
+=======
+Upgrade from v2 by changing your `composer.json` file to `~3`
+
+You **must** install the `imagick` PHP extension if you plan on using the `png` image format.
+
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 <a id="docs-configuration"></a>
 ## Configuration
 
 #### Composer
 
+<<<<<<< HEAD
 Run `composer require simplesoftwareio/simple-qrcode "~4"` to add the package. 
 
 Laravel will automatically pick up and install the package.
+=======
+Run `composer require simplesoftwareio/simple-qrcode "~3"` to add the package. 
+
+Laravel will automiatcally pick up and install the package.
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 <a id="docs-ideas"></a>
 ## Simple Ideas
@@ -76,6 +123,7 @@ You may embed a qrcode inside of an e-mail to allow your users to quickly scan. 
 
 #### Basic Usage
 
+<<<<<<< HEAD
 ```
 // All examples below assume you are pulling in the QrCode facade with the following line of code. The Facade is auto-loaded for Laravel users.
 
@@ -86,11 +134,19 @@ Using the QrCode Generator is very easy.  The most basic syntax is:
 
 	use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
+=======
+Using the QrCode Generator is very easy.  The most basic syntax is:
+
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 	QrCode::generate('Make me into a QrCode!');
 
 This will make a QrCode that says "Make me into a QrCode!"
 
+<<<<<<< HEAD
 ![Example QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/make-me-into-a-qrcode.png?raw=true)
+=======
+![Example QrCode](../imgs/make-me-into-a-qrcode.png)
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### Generate `(string $data, string $filename = null)`
 
@@ -108,7 +164,11 @@ The `generate` method has a second parameter that will accept a filename and pat
 
 #### Format `(string $format)`
 
+<<<<<<< HEAD
 Three formats are currently supported; `png,` `eps,` and `svg`.  To change the format use the following code:
+=======
+Three formats are currently supported; `png,` `eps,` and `svg.`  To change the format use the following code:
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 	QrCode::format('png');  //Will return a png image
 	QrCode::format('eps');  //Will return a eps image
@@ -122,7 +182,11 @@ You can change the size of a QrCode by using the `size` method. Simply specify t
 
 	QrCode::size(100);
 
+<<<<<<< HEAD
 ![200 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) ![250 Pixels](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/250-pixels.png?raw=true) 
+=======
+![200 Pixels](../imgs/200-pixels.png) ![250 Pixels](../imgs/250-pixels.png) 
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -133,7 +197,11 @@ All colors must be expressed in RGBA (Red Green Blue Alpha).  You can change the
 	QrCode::color(255, 0, 0); // Red QrCode
 	QrCode::color(255, 0, 0, 25); //Red QrCode with 25% transparency 
 
+<<<<<<< HEAD
 ![Red QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-qrcode.png?raw=true) ![Red Transparent QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent.png?raw=true)
+=======
+![Red QrCode](../imgs/red-qrcode.png) ![Red Transparent QrCode](../imgs/red-25-transparent.png)
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### Background Color `(int $red, int $green, int $blue, int $alpha = null)`
 
@@ -142,7 +210,11 @@ You can change the background color of a QrCode by calling the `backgroundColor`
 	QrCode::backgroundColor(255, 0, 0); // Red background QrCode
 	QrCode::backgroundColor(255, 0, 0, 25); //Red background QrCode with 25% transparency 
 
+<<<<<<< HEAD
 ![Red Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-background.png?raw=true) ![Red Transparent Background QrCode](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/red-25-transparent-background.png?raw=true)
+=======
+![Red Background QrCode](../imgs/red-background.png) ![Red Transparent Background QrCode](../imgs/red-25-transparent-background.png)
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### Gradient `$startRed, $startGreen, $startBlue, $endRed, $endGreen, $endBlue, string $type)`
 
@@ -152,16 +224,25 @@ The following gradient types are supported:
 
 | Type | Example |
 | --- | --- |
+<<<<<<< HEAD
 | `vertical` | ![Veritcal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/vertical.png?raw=true) |
 | `horizontal` | ![Horizontal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/horizontal.png?raw=true) |
 | `diagonal` | ![Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/diagonal.png?raw=true) |
 | `inverse_diagonal` | ![Invrse Diagonal](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/inverse_diagonal.png?raw=true) |
 | `radial` | ![Radial](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/radial.png?raw=true) |
+=======
+| `vertical` | ![Veritcal](../imgs/vertical.png) |
+| `horizontal` | ![Horizontal](../imgs/horizontal.png) |
+| `diagonal` | ![Diagonal](../imgs/diagonal.png) |
+| `inverse_diagonal` | ![Invrse Diagonal](../imgs/inverse_diagonal.png) |
+| `radial` | ![Radial](../imgs/radial.png) |
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### EyeColor `(int $eyeNumber, int $innerRed, int $innerGreen, int $innerBlue, int $outterRed = 0, int $outterGreen = 0, int $outterBlue = 0)`
 
 You may change the eye colors by using the `eyeColor` method.
 
+<<<<<<< HEAD
 	QrCode::eyeColor(0, 255, 255, 255, 0, 0, 0); // Changes the eye color of eye `0`
 
 | Eye Number | Example |
@@ -169,10 +250,18 @@ You may change the eye colors by using the `eyeColor` method.
 | `0` | ![Eye 0](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-0.png?raw=true) |
 | `1` | ![Eye 1](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-1.png?raw=true)|
 | `2` | ![Eye  2](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/eye-2.png?raw=true) |
+=======
+| Eye Number | Example |
+| --- | --- |
+| `0` | ![Eye 0](../imgs/eye-0.png) |
+| `1` | ![Eye 1](../imgs/eye-1.png)|
+| `2` | ![Eye  2](../imgs/eye-2.png) |
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 
 #### Style `(string $style, float $size = 0.5)`
 
+<<<<<<< HEAD
 The style can be easily swapped out with `square`, `dot,` or `round`.  This will change the blocks within the QrCode.  The second parameter will affect the size of the dots or roundness.
 
 	QrCode::style('dot'); // Uses the `dot` style.
@@ -193,6 +282,24 @@ The eye within the QrCode supports two different styles, `square` and `circle`.
 | --- | --- |
 | `square` | ![Square](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/200-pixels.png?raw=true) |
 | `circle` | ![Circle](https://raw.githubusercontent.com/SimpleSoftwareIO/simple-qrcode/master/docs/imgs/circle-eye.png?raw=true)|
+=======
+The style can be easily swapped out with `square.` `dot,` or `round.`  This will change the blocks within the QrCode.  The second parameter will affect the size of the dots or roundness.
+
+| Style | Example |
+| --- | --- |
+| `sqaure` | ![Sqaure](../imgs/200-pixels.png) |
+| `dot` | ![Dot](../imgs/dot.png)|
+| `round` | ![Round](../imgs/round.png) |
+
+#### Eye Style `(string $style)`
+
+The eye within the QrCode supports two different styles, `sqaure` and `circle.`
+
+| Style | Example |
+| --- | --- |
+| `sqaure` | ![Sqaure](../imgs/200-pixels.png) |
+| `circle` | ![Circle](../imgs/circle-eye.png)|
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 #### Margin `(int $margin)`
 
@@ -219,9 +326,13 @@ The following are supported options for the `errorCorrection` method:
 
 #### Encoding `(string $encoding)`
 
+<<<<<<< HEAD
 Change the character encoding that is used to build a QrCode.  By default `ISO-8859-1` is selected as the encoder.  Read more about [character encoding](http://en.wikipedia.org/wiki/Character_encoding).
 
 You can change this to any of the following:
+=======
+Change the character encoding that is used to build a QrCode.  By default `ISO-8859-1` is selected as the encoder.  Read more about [character encoding](http://en.wikipedia.org/wiki/Character_encoding) You can change this to any of the following:
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 	QrCode::encoding('UTF-8')->generate('Make me a QrCode with special symbols ♠♥!!');
 
@@ -366,7 +477,11 @@ This helper makes SMS messages that can be prefilled with the send to address an
 
 #### WiFi
 
+<<<<<<< HEAD
 This helpers makes scannable QrCodes that can connect a phone to a WiFi network:
+=======
+This helpers makes scannable QrCodes that can connect a phone to a WiFI network:
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
 	QrCode::wiFi([
 		'encryption' => 'WPA/WEP',
@@ -386,7 +501,11 @@ This helpers makes scannable QrCodes that can connect a phone to a WiFi network:
 		'hidden' => 'true'
 	]);
 	
+<<<<<<< HEAD
 	//Connects to a secured WiFi network.
+=======
+	//Connects to an secured, WiFi network.
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 	QrCode::wiFi([
 		'ssid' => 'Network Name',
 		'encryption' => 'WPA',

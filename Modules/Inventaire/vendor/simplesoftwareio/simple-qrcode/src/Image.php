@@ -50,6 +50,7 @@ class Image
     {
         return $this->image;
     }
+<<<<<<< HEAD
 
     /**
      * Sets the image string.
@@ -60,4 +61,6 @@ class Image
     {
         $this->image = $image;
     }
+=======
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 }

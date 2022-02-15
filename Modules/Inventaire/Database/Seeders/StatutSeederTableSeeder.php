@@ -18,11 +18,11 @@ class StatutSeederTableSeeder extends Seeder
         Model::unguard();
 
         DB::table('statuts')->insert([
-            ['name'=>"Prêté"],
-            ['name'=>"Libre"],
-            ['name'=>"Libre jusqu'à "],
-            ['name'=>"Perdu"],
-            ['name'=>"Volé"],
+            ['nom'=>"Prêté"],
+            ['nom'=>"Libre"],
+            ['nom'=>"Libre jusqu'à "],
+            ['nom'=>"Perdu"],
+            ['nom'=>"Volé"],
         ]);
         // $this->call("OthersTableSeeder");
     }

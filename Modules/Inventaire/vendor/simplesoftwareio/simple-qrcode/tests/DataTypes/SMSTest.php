@@ -23,7 +23,11 @@ class SMSTest extends TestCase
     {
         $this->sms->create([null, 'foo']);
 
+<<<<<<< HEAD
         $properFormat = 'sms:&body=foo';
+=======
+        $properFormat = 'sms::foo';
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
         $this->assertEquals($properFormat, strval($this->sms));
     }
@@ -32,7 +36,11 @@ class SMSTest extends TestCase
     {
         $this->sms->create(['555-555-5555', 'foo']);
 
+<<<<<<< HEAD
         $properFormat = 'sms:555-555-5555&body=foo';
+=======
+        $properFormat = 'sms:555-555-5555:foo';
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
         $this->assertEquals($properFormat, strval($this->sms));
     }

@@ -21,19 +21,19 @@ class SeedFakeStockagesTableSeeder extends Seeder
         DB::table('stockages')->insert(
             [
                 [
-                    "name" => "HDD"
+                    "nom" => "HDD"
                 ],
                 [
-                    "name" => "SSD"
+                    "nom" => "SSD"
                 ],
                 [
-                    "name" => "Carte SD"
+                    "nom" => "Carte SD"
                 ],
                 [
-                    "name" => "Carte micro sd"
+                    "nom" => "Carte micro sd"
                 ],
                 [
-                    "name" => "Autre"
+                    "nom" => "Autre"
                 ],
             ]
         );

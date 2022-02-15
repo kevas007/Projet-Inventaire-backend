@@ -15,7 +15,7 @@ class CreateStatutContratsTable extends Migration
     {
         Schema::create('statut_contrats', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nom');
             $table->timestamps();
         });
     }

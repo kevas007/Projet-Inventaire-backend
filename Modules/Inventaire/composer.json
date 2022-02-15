@@ -22,7 +22,12 @@
     },
     "require": {
         "laravel/ui": "^3.4",
+<<<<<<< HEAD
         "simplesoftwareio/simple-qrcode": "^4.2"
+=======
+        "simplesoftwareio/simple-qrcode": "~3",
+        "ext-gd": "*"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     },
     "require-dev": {
         "laravel/breeze": "^1.8"
