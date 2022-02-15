@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'df86fac4d73cd9276399071a60814150b109874e',
+    'reference' => 'aa8447ee19d7289f9d933084a3f43b24678b3303',
     'name' => 'nwidart/inventaire',
   ),
   'versions' => 
@@ -119,6 +119,15 @@
       ),
       'reference' => '49b1cfd3a32f04255eed68fc1c304659de50e374',
     ),
+    'laravel/breeze' => 
+    array (
+      'pretty_version' => 'v1.8.0',
+      'version' => '1.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9680289ab0a9dd7708622dd4626326b07aaeb524',
+    ),
     'laravel/ui' => 
     array (
       'pretty_version' => 'v3.4.3',
@@ -144,7 +153,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'df86fac4d73cd9276399071a60814150b109874e',
+      'reference' => 'aa8447ee19d7289f9d933084a3f43b24678b3303',
     ),
     'psr/container' => 
     array (

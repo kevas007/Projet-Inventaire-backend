@@ -7,7 +7,7 @@
         <title>Module Inventaire</title>
 
        {{-- Laravel Mix - CSS File --}}
-       <link rel="stylesheet" href="{{ mix('css/inventaire.css') }}">
+       {{-- <link rel="stylesheet" href="{{ mix('css/inventaire.css') }}"> --}}
 
     </head>
     <body>

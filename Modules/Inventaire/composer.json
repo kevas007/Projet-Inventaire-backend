@@ -22,5 +22,8 @@
     },
     "require": {
         "laravel/ui": "^3.4"
+    },
+    "require-dev": {
+        "laravel/breeze": "^1.8"
     }
 }

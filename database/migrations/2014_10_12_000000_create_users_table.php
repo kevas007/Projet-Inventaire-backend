@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->integer('lead_id')->nullable();
+            $table->boolean('lead_id')->nullable();
             $table->string('img')->default('default_avatar.png');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
