@@ -11,11 +11,14 @@
 |
 */
 
+use Modules\Inventaire\Http\Controllers\MaterielController;
+
 Route::prefix('inventaire')->group(function() {
     Route::get('/', 'InventaireController@index');
     Route::get('/dashboard',function(){
         return view('inventaire::dashboard');
     })->middleware('auth');
+    Route::get('/generate-qrcode', [MaterielController::class, 'validate']);
 });
 
 

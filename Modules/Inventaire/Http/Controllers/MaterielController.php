@@ -76,4 +76,8 @@ class MaterielController extends Controller
     {
         //
     }
+    public function validate()
+    {
+        return view('inventaire::codeQr');
+    }
 }
