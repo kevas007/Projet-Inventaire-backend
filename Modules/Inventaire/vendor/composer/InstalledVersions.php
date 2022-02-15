@@ -30,11 +30,29 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'aa8447ee19d7289f9d933084a3f43b24678b3303',
+    'reference' => 'f976d02981e7fb550c26e83b7aa25710c45612c5',
     'name' => 'nwidart/inventaire',
   ),
   'versions' => 
   array (
+    'bacon/bacon-qr-code' => 
+    array (
+      'pretty_version' => '2.0.6',
+      'version' => '2.0.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0069435e2a01a57193b25790f105a5d3168653c1',
+    ),
+    'dasprid/enum' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5abf82f213618696dda8e3bf6f64dd042d8542b2',
+    ),
     'doctrine/inflector' => 
     array (
       'pretty_version' => '2.0.4',
@@ -177,7 +195,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'aa8447ee19d7289f9d933084a3f43b24678b3303',
+      'reference' => 'f976d02981e7fb550c26e83b7aa25710c45612c5',
     ),
     'psr/container' => 
     array (
@@ -210,6 +228,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+    ),
+    'simplesoftwareio/simple-qrcode' => 
+    array (
+      'pretty_version' => '4.2.0',
+      'version' => '4.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '916db7948ca6772d54bb617259c768c9cdc8d537',
     ),
     'symfony/console' => 
     array (

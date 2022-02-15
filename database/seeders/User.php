@@ -17,14 +17,14 @@ class User extends Seeder
         DB::table('users')->insert(
             [
                 [
-                    'firstname'=>Str::random(10),
-                    'lastname'=>Str::random(10),
+                    'firstname'=>'admin',
+                    'lastname'=>'Cathy',
                     'lead_id'=>true,
                     'img'=>'default_avatar.png',
                     'email'=>Str::random(10).'@gmail.com',
                     'password'=>bcrypt('password'),
                     'start_date_contract'=>'2021-10-01',
-                    'role_id'=>1,
+                    'role_id'=>3,
                     'created_at'=>now(),
                     'updated_at'=>now(),
                 ],
