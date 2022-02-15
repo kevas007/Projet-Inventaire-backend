@@ -17,5 +17,10 @@ class InventaireDatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call("OthersTableSeeder");
+        $this->call([
+            SeedFakePlacesTableSeeder::class,
+            SeedFakeStockagesTableSeeder::class,
+            SeedFakeUtilitiesTableSeeder::class,
+        ]);
     }
 }
