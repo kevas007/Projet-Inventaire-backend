@@ -25,6 +25,5 @@ class InventaireDatabaseSeeder extends Seeder
         ]);
         $this->call([SeedFakeRolesTableSeeder::class,
         User::class, StatutSeederTableSeeder::class, TypeSeederTableSeeder::class, UtilitySeederTableSeeder::class,SeedStatutContratsTableSeeder::class]);
-
     }
 }
