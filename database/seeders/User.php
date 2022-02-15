@@ -3,8 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+<<<<<<< HEAD
+
+=======
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+>>>>>>> main
 class User extends Seeder
 {
     /**
@@ -14,6 +18,9 @@ class User extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
+        //
+=======
         DB::table('users')->insert(
             [
                 [
@@ -42,5 +49,6 @@ class User extends Seeder
                 ]
             ]
         );
+>>>>>>> main
     }
 }
