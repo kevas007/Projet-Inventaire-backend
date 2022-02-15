@@ -32,9 +32,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Inventaire'
 });
@@ -153,12 +150,6 @@ var staticRenderFns = [
       _c("h1", [_vm._v("Inventaire")]),
       _vm._v(" "),
       _c("h2", [_vm._v("Liste des produits")]),
-      _vm._v(" "),
-      _c("p", [
-        _c("button", { staticClass: "btn btn-primary" }, [
-          _vm._v("Ajouter un produit"),
-        ]),
-      ]),
     ])
   },
 ]
