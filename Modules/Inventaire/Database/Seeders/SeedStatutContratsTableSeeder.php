@@ -21,16 +21,16 @@ class SeedStatutContratsTableSeeder extends Seeder
         DB::table('statut_contrats')->insert(
             [
                 [
-                    "name" => "Créer",
+                    "nom" => "Créer",
                 ],
                 [
-                    "name" => "Signer",
+                    "nom" => "Signer",
                 ],
                 [
-                    "name" => "Fini",
+                    "nom" => "Fini",
                 ],
                 [
-                    "name" => "Problème",
+                    "nom" => "Problème",
                 ],
             ]);
     }

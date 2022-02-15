@@ -20,10 +20,10 @@ class SeedFakeRolesTableSeeder extends Seeder
         DB::table('roles')->insert(
             [
                 [
-                    "name" => "admin",
+                    "nom" => "admin",
                 ],
                 [
-                    "name" => "user",
+                    "nom" => "user",
                 ],
             ]
         );

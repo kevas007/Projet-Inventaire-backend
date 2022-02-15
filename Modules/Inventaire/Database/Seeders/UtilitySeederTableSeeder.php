@@ -17,11 +17,11 @@ class UtilitySeederTableSeeder extends Seeder
     {
         Model::unguard();
         DB::table('utilities')->insert([
-            ['name' => "Coding"],
-            ['name' => "Marketing"],
-            ['name' => "Prêt PC"],
-            ['name' => "Donations"],
-            ['name' => "Autre"],
+            ['nom' => "Coding"],
+            ['nom' => "Marketing"],
+            ['nom' => "Prêt PC"],
+            ['nom' => "Donations"],
+            ['nom' => "Autre"],
 
         ]);
         // $this->call("OthersTableSeeder");

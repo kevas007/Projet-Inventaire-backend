@@ -19,7 +19,6 @@ class CreateEmprunteursTable extends Migration
             $table->string('prenom');
             $table->string('formation');
             $table->string('adresse');
-
             $table->datetime('dateNaissance');
             $table->timestamps();
         });
