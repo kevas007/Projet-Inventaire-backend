@@ -46,6 +46,7 @@ class ComposerStaticInit3650be2e68f5de1ccaaf8a602493b4df
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
+            'SimpleSoftwareIO\\QrCode\\' => 24,
         ),
         'P' => 
         array (
@@ -80,10 +81,15 @@ class ComposerStaticInit3650be2e68f5de1ccaaf8a602493b4df
         array (
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Lexer\\' => 22,
+            'DASPRiD\\Enum\\' => 13,
         ),
         'C' => 
         array (
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'BaconQrCode\\' => 12,
         ),
     );
 
@@ -160,6 +166,10 @@ class ComposerStaticInit3650be2e68f5de1ccaaf8a602493b4df
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'SimpleSoftwareIO\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -226,9 +236,17 @@ class ComposerStaticInit3650be2e68f5de1ccaaf8a602493b4df
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
+        'DASPRiD\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dasprid/enum/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'BaconQrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
         ),
     );
 
