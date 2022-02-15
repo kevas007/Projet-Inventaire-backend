@@ -7,13 +7,15 @@
         <title>Module Inventaire</title>
 
        {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/inventaire.css') }}"> --}}
+       <link rel="stylesheet" href="{{ mix('css/inventaire.css') }}">
 
     </head>
     <body>
-        @yield('content')
+        <div id="app">
 
+            @yield('content')
+        </div>
         {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/inventaire.js') }}"></script> --}}
+        <script src="{{ mix('js/inventaire.js') }}"></script>
     </body>
 </html>
