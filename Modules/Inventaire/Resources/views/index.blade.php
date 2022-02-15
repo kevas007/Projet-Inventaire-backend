@@ -6,4 +6,6 @@
     <p>
         This view is loaded from module: {!! config('inventaire.name') !!}
     </p>
-@endsection
+
+    <inventaire></inventaire>
+    @endsection
