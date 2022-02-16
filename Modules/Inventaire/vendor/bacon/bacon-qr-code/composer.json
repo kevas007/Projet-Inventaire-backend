@@ -1,0 +1,54 @@
+{
+    "name": "bacon/bacon-qr-code",
+    "description": "BaconQrCode is a QR code generator for PHP.",
+    "license" : "BSD-2-Clause",
+    "homepage": "https://github.com/Bacon/BaconQrCode",
+    "require": {
+<<<<<<< HEAD
+        "php": "^7.1 || ^8.0",
+        "ext-iconv": "*",
+        "dasprid/enum": "^1.0.3"
+=======
+        "php": "^7.1",
+        "ext-iconv": "*",
+        "dasprid/enum": "^1.0"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
+    },
+    "suggest": {
+        "ext-imagick": "to generate QR code images"
+    },
+    "authors": [
+        {
+            "name": "Ben Scholzen 'DASPRiD'",
+            "email": "mail@dasprids.de",
+<<<<<<< HEAD
+            "homepage": "https://dasprids.de/",
+=======
+            "homepage": "http://www.dasprids.de",
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BaconQrCode\\": "src/"
+        }
+    },
+    "require-dev": {
+<<<<<<< HEAD
+        "phpunit/phpunit": "^7 | ^8 | ^9",
+        "spatie/phpunit-snapshot-assertions": "^4.2.9",
+        "squizlabs/php_codesniffer": "^3.4",
+        "phly/keep-a-changelog": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "ocramius/package-versions": true
+        }
+=======
+        "phpunit/phpunit": "^6.4",
+        "squizlabs/php_codesniffer": "^3.1",
+        "phly/keep-a-changelog": "^1.4"
+>>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
+    }
+}

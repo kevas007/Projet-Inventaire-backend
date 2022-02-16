@@ -21,16 +21,16 @@ class SeedFakePlacesTableSeeder extends Seeder
         DB::table('places')->insert(
             [
                 [
-                    "name" => "Molengeek"
+                    "nom" => "Molengeek"
                 ],
                 [
-                    "name" => "Charlewood"
+                    "nom" => "Charlewood"
                 ],
                 [
-                    "name" => "Laeken"
+                    "nom" => "Laeken"
                 ],
                 [
-                    "name" => "Borgerhub"
+                    "nom" => "Borgerhub"
                 ],
             ]
         );

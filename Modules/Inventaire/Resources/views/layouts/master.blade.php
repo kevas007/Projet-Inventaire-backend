@@ -11,9 +11,11 @@
 
     </head>
     <body>
-        @yield('content')
+        <div id="app">
 
+            @yield('content')
+        </div>
         {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/inventaire.js') }}"></script> --}}
+        <script src="{{ mix('js/inventaire.js') }}"></script>
     </body>
 </html>

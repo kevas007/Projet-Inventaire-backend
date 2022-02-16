@@ -16,8 +16,8 @@ class CreateInfosTable extends Migration
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
             $table->string('processeur');
-            $table->string('RAM');
-            $table->string('tailleStockage');
+            $table->string('ram');
+            $table->string('taille_stockage');
             $table->string('marque');
             $table->text('description');
             $table->string('degats');

@@ -16,7 +16,7 @@ class CreateContratsTable extends Migration
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
             $table->foreignId('emprunteur_id')->nullable()->constrained();
-            $table->foreignId('team_id')->nullable()->constrained("places");
+            $table->foreignId('team_id')->nullable()->constrained("users");
             $table->foreignId('preteur_id')->constrained('users');
             $table->foreignId('statut_contrat_id')->constrained();
             $table->foreignId('materiel_id')->constrained();

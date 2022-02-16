@@ -17,12 +17,12 @@ class TypeSeederTableSeeder extends Seeder
     {
         Model::unguard();
         DB::table('types')->insert([
-            ['name' => "Ordinateur Fixe"],
-            ['name' => "Ordinateur Portable"],
-            ['name' => "GSM"],
-            ['name' => "Tablette"],
-            ['name' => "Camera"],
-            ['name' => "Autre"],
+            ['nom' => "Ordinateur Fixe"],
+            ['nom' => "Ordinateur Portable"],
+            ['nom' => "GSM"],
+            ['nom' => "Tablette"],
+            ['nom' => "Camera"],
+            ['nom' => "Autre"],
 
         ]);
         // $this->call("OthersTableSeeder");
