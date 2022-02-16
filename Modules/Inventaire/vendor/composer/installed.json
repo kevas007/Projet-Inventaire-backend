@@ -2,7 +2,6 @@
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
-<<<<<<< HEAD
             "version": "2.0.6",
             "version_normalized": "2.0.6.0",
             "source": {
@@ -26,39 +25,11 @@
                 "phpunit/phpunit": "^7 | ^8 | ^9",
                 "spatie/phpunit-snapshot-assertions": "^4.2.9",
                 "squizlabs/php_codesniffer": "^3.4"
-=======
-            "version": "2.0.0",
-            "version_normalized": "2.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Bacon/BaconQrCode.git",
-                "reference": "eaac909da3ccc32b748a65b127acd8918f58d9b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/eaac909da3ccc32b748a65b127acd8918f58d9b0",
-                "reference": "eaac909da3ccc32b748a65b127acd8918f58d9b0",
-                "shasum": ""
-            },
-            "require": {
-                "dasprid/enum": "^1.0",
-                "ext-iconv": "*",
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "phly/keep-a-changelog": "^1.4",
-                "phpunit/phpunit": "^6.4",
-                "squizlabs/php_codesniffer": "^3.1"
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "suggest": {
                 "ext-imagick": "to generate QR code images"
             },
-<<<<<<< HEAD
             "time": "2022-02-04T20:16:05+00:00",
-=======
-            "time": "2018-04-25T17:53:56+00:00",
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -74,11 +45,7 @@
                 {
                     "name": "Ben Scholzen 'DASPRiD'",
                     "email": "mail@dasprids.de",
-<<<<<<< HEAD
                     "homepage": "https://dasprids.de/",
-=======
-                    "homepage": "http://www.dasprids.de",
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                     "role": "Developer"
                 }
             ],
@@ -86,11 +53,7 @@
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "support": {
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
-=======
-                "source": "https://github.com/Bacon/BaconQrCode/tree/feature/rewrite"
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "install-path": "../bacon/bacon-qr-code"
         },
@@ -390,17 +353,17 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
-                "reference": "3933ab6b032167c0f7a598388e211c0810acf5d3"
+                "reference": "5cf7ed1c0a1b8049576b29f5cab5c822149aaa91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/collections/zipball/3933ab6b032167c0f7a598388e211c0810acf5d3",
-                "reference": "3933ab6b032167c0f7a598388e211c0810acf5d3",
+                "url": "https://api.github.com/repos/illuminate/collections/zipball/5cf7ed1c0a1b8049576b29f5cab5c822149aaa91",
+                "reference": "5cf7ed1c0a1b8049576b29f5cab5c822149aaa91",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +374,7 @@
             "suggest": {
                 "symfony/var-dumper": "Required to use the dump method (^5.4)."
             },
-            "time": "2022-01-24T16:41:15+00:00",
+            "time": "2022-02-15T14:40:58+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -447,8 +410,8 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -510,8 +473,8 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -564,8 +527,8 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -615,8 +578,8 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -680,8 +643,8 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -729,8 +692,8 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -800,8 +763,8 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -855,8 +818,8 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.83.0",
-            "version_normalized": "8.83.0.0",
+            "version": "v8.83.1",
+            "version_normalized": "8.83.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
@@ -918,17 +881,17 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v1.8.0",
-            "version_normalized": "1.8.0.0",
+            "version": "v1.8.1",
+            "version_normalized": "1.8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "9680289ab0a9dd7708622dd4626326b07aaeb524"
+                "reference": "bdd6b8ac4ef7237770b4cb8b741a14e471e890a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/9680289ab0a9dd7708622dd4626326b07aaeb524",
-                "reference": "9680289ab0a9dd7708622dd4626326b07aaeb524",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/bdd6b8ac4ef7237770b4cb8b741a14e471e890a3",
+                "reference": "bdd6b8ac4ef7237770b4cb8b741a14e471e890a3",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +900,7 @@
                 "illuminate/validation": "^8.42|^9.0",
                 "php": "^7.3|^8.0"
             },
-            "time": "2022-02-09T00:14:35+00:00",
+            "time": "2022-02-15T17:05:22+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -978,17 +941,17 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.3",
-            "version_normalized": "3.4.3.0",
+            "version": "v3.4.4",
+            "version_normalized": "3.4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "64a0f43492c00780b2261c56cd7007a4f370d95b"
+                "reference": "1596de849ecafc0bcc891389da939012b67f9d5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/64a0f43492c00780b2261c56cd7007a4f370d95b",
-                "reference": "64a0f43492c00780b2261c56cd7007a4f370d95b",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/1596de849ecafc0bcc891389da939012b67f9d5c",
+                "reference": "1596de849ecafc0bcc891389da939012b67f9d5c",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +964,7 @@
             "require-dev": {
                 "orchestra/testbench": "^6.23|^7.0"
             },
-            "time": "2022-02-08T14:19:32+00:00",
+            "time": "2022-02-10T22:38:33+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1036,7 +999,7 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.3"
+                "source": "https://github.com/laravel/ui/tree/v3.4.4"
             },
             "install-path": "../laravel/ui"
         },
@@ -1141,23 +1104,23 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.2",
-            "version_normalized": "1.1.2.0",
+            "version": "1.1.1",
+            "version_normalized": "1.1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/8622567409010282b7aeebe4bb841fe98b58dcaf",
+                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4.0"
+                "php": ">=7.2.0"
             },
-            "time": "2021-11-05T16:50:12+00:00",
+            "time": "2021-03-05T17:36:06+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1186,7 +1149,7 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.2"
+                "source": "https://github.com/php-fig/container/tree/1.1.1"
             },
             "install-path": "../psr/container"
         },
@@ -1246,7 +1209,6 @@
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
-<<<<<<< HEAD
             "version": "4.2.0",
             "version_normalized": "4.2.0.0",
             "source": {
@@ -1264,25 +1226,6 @@
                 "bacon/bacon-qr-code": "^2.0",
                 "ext-gd": "*",
                 "php": ">=7.2|^8.0"
-=======
-            "version": "3.0.0",
-            "version_normalized": "3.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-                "reference": "151dd397426d9a6c0507c96e61ddd2ca1290ce1e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/151dd397426d9a6c0507c96e61ddd2ca1290ce1e",
-                "reference": "151dd397426d9a6c0507c96e61ddd2ca1290ce1e",
-                "shasum": ""
-            },
-            "require": {
-                "bacon/bacon-qr-code": "2.0.0",
-                "ext-gd": "*",
-                "php": ">=7.2"
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "require-dev": {
                 "mockery/mockery": "~1",
@@ -1292,26 +1235,15 @@
                 "ext-imagick": "Allows the generation of PNG QrCodes.",
                 "illuminate/support": "Allows for use within Laravel."
             },
-<<<<<<< HEAD
             "time": "2021-02-08T20:43:55+00:00",
-=======
-            "time": "2020-06-02T20:41:21+00:00",
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-<<<<<<< HEAD
                         "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
                     ],
                     "aliases": {
                         "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
-=======
-                        "SimpleSoftwareIO\\QrCode\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "QrCode": "SimpleSoftwareIO\\QrCode\\Facade"
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
                     }
                 }
             },
@@ -1332,11 +1264,7 @@
                 }
             ],
             "description": "Simple QrCode is a QR code generator made for Laravel.",
-<<<<<<< HEAD
             "homepage": "https://www.simplesoftware.io/#/docs/simple-qrcode",
-=======
-            "homepage": "http://www.simplesoftware.io",
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             "keywords": [
                 "Simple",
                 "generator",
@@ -1346,11 +1274,7 @@
             ],
             "support": {
                 "issues": "https://github.com/SimpleSoftwareIO/simple-qrcode/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/4.2.0"
-=======
-                "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/master"
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             },
             "install-path": "../simplesoftwareio/simple-qrcode"
         },

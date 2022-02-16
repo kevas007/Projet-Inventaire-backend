@@ -47,12 +47,8 @@ final class Encoder
     public static function encode(
         string $content,
         ErrorCorrectionLevel $ecLevel,
-<<<<<<< HEAD
         string $encoding = self::DEFAULT_BYTE_MODE_ECODING,
         ?Version $forcedVersion = null
-=======
-        string $encoding = self::DEFAULT_BYTE_MODE_ECODING
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     ) : QrCode {
         // Pick an encoding mode appropriate for the content. Note that this
         // will not attempt to use multiple modes / segments even if that were
@@ -95,7 +91,6 @@ final class Encoder
             + $dataBits->getSize();
         $version = self::chooseVersion($bitsNeeded, $ecLevel);
 
-<<<<<<< HEAD
         if (null !== $forcedVersion) {
             // Forced version check
             if ($version->getVersionNumber() <= $forcedVersion->getVersionNumber()) {
@@ -111,8 +106,6 @@ final class Encoder
             }
         }
 
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         $headerAndDataBits = new BitArray();
         $headerAndDataBits->appendBitArray($headerBits);
 

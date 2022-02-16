@@ -69,15 +69,12 @@ class GeneratorTest extends TestCase
         $this->assertEquals(50, $generator->getFill()->getForegroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getForegroundColor()->toRgb()->getGreen());
         $this->assertEquals(100, $generator->getFill()->getForegroundColor()->toRgb()->getBlue());
-<<<<<<< HEAD
 
         $generator = (new Generator)->color(50, 75, 100, 0);
         $this->assertEquals(0, $generator->getFill()->getForegroundColor()->getAlpha());
         $this->assertEquals(50, $generator->getFill()->getForegroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getForegroundColor()->toRgb()->getGreen());
         $this->assertEquals(100, $generator->getFill()->getForegroundColor()->toRgb()->getBlue());
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     }
 
     public function test_background_color_is_set()
@@ -208,13 +205,10 @@ class GeneratorTest extends TestCase
         $this->expectException(BadMethodCallException::class);
         (new Generator)->notReal('fooBar');
     }
-<<<<<<< HEAD
 
     public function test_generator_can_return_illuminate_support_htmlstring()
     {
         $this->getMockBuilder(\Illuminate\Support\HtmlString::class)->getMock();
         $this->assertInstanceOf(\Illuminate\Support\HtmlString::class, (new Generator)->generate('fooBar'));
     }
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 }
