@@ -28,17 +28,12 @@ class ImageMergeTest extends TestCase
     protected $testImage;
 
     /**
-<<<<<<< HEAD
      * The location of the test image that is having an image merged over top of it.
-=======
-     * The location of the test image to use.
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
      *
      * @var string
      */
     protected $testImagePath;
 
-<<<<<<< HEAD
     /**
      * The location of the test image that is being merged.
      * @var mixed
@@ -52,14 +47,6 @@ class ImageMergeTest extends TestCase
         $this->testImage = new ImageMerge(
             new Image($this->testImagePath),
             new Image($this->mergeImagePath)
-=======
-    public function setUp(): void
-    {
-        $this->testImagePath = file_get_contents(dirname(__FILE__).'/Images/simplesoftware-icon-grey-blue.png');
-        $this->testImage = new ImageMerge(
-            new Image($this->testImagePath),
-            new Image($this->testImagePath)
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         );
 
         $this->testImageSaveLocation = dirname(__FILE__).'/testImage.png';
@@ -74,21 +61,14 @@ class ImageMergeTest extends TestCase
 
     public function test_it_merges_two_images_together_and_centers_it()
     {
-<<<<<<< HEAD
         //We know the source image is 512x512 and the merge image is 200x300
         $source = imagecreatefromstring($this->testImagePath);
         $merge = imagecreatefromstring($this->mergeImagePath);
-=======
-        //We know the test image is 512x512
-        $source = imagecreatefromstring($this->testImagePath);
-        $merge = imagecreatefromstring($this->testImagePath);
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 
         //Create a PNG and place the image in the middle using 20% of the area.
         imagecopyresampled(
             $source,
             $merge,
-<<<<<<< HEAD
             205,
             222,
             0,
@@ -97,16 +77,6 @@ class ImageMergeTest extends TestCase
             67,
             536,
             354
-=======
-            204,
-            204,
-            0,
-            0,
-            102,
-            102,
-            512,
-            512
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         );
         imagepng($source, $this->compareTestSaveLocation);
 
