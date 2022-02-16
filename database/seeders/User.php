@@ -21,7 +21,7 @@ class User extends Seeder
                     'lastname'=>'Cathy',
                     'lead_id'=>true,
                     'img'=>'default_avatar.png',
-                    'email'=>Str::random(10).'@gmail.com',
+                    'email'=>'cathy@cathy.com',
                     'password'=>bcrypt('password'),
                     'start_date_contract'=>'2021-10-01',
                     'role_id'=>3,
