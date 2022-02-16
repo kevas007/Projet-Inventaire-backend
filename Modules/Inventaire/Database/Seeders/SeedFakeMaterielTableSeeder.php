@@ -4,9 +4,9 @@ namespace Modules\Inventaire\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
+use Modules\Inventaire\Entities\Materiel;
 
-class UtilitySeederTableSeeder extends Seeder
+class SeedFakeMaterielTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,14 +16,7 @@ class UtilitySeederTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        DB::table('utilities')->insert([
-            ['nom' => "Coding"],
-            ['nom' => "Marketing"],
-            ['nom' => "Prêt PC"],
-            ['nom' => "Donations"],
-            ['nom' => "Autre"],
-
-        ]);
+        Materiel::factory(10)->create();
         // $this->call("OthersTableSeeder");
     }
 }

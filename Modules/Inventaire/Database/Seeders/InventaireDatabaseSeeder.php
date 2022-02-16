@@ -20,18 +20,19 @@ class InventaireDatabaseSeeder extends Seeder
 
         // $this->call("OthersTableSeeder");
         $this->call([
+            SeedFakeRolesTableSeeder::class,
+            User::class,
             SeedFakePlacesTableSeeder::class,
             SeedFakeStockagesTableSeeder::class,
             SeedFakeUtilitiesTableSeeder::class,
-        ]);
-        $this->call([
-            SeedFakeRolesTableSeeder::class,
-            User::class,
             StatutSeederTableSeeder::class,
             TypeSeederTableSeeder::class,
-            UtilitySeederTableSeeder::class,
-            SeedStatutContratsTableSeeder::class
+            SeedFakeMaterielTableSeeder::class,
+            SeedStatutContratsTableSeeder::class,
+            SeedFakeEmprunteurTableSeeder::class,
+            SeedFakeContratTableSeeder::class,
         ]);
-        Materiel::factory(10)->create();
+
+
     }
 }
