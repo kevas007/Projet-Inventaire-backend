@@ -2,11 +2,8 @@
 
 namespace SimpleSoftwareIO\QrCode;
 
-<<<<<<< HEAD
 use InvalidArgumentException;
 
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
 class ImageMerge
 {
     /**
@@ -52,7 +49,6 @@ class ImageMerge
     protected $mergeImageWidth;
 
     /**
-<<<<<<< HEAD
      * Holds the radio of the merging image.
      *
      * @var float
@@ -60,8 +56,6 @@ class ImageMerge
     protected $mergeRatio;
 
     /**
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
      * The height of the merge image after it is merged.
      *
      * @var int
@@ -113,7 +107,6 @@ class ImageMerge
     {
         $this->setProperties($percentage);
 
-<<<<<<< HEAD
         $img = imagecreatetruecolor($this->sourceImage->getWidth(), $this->sourceImage->getHeight());
         imagealphablending($img, true);
         $transparent = imagecolorallocatealpha($img, 0, 0, 0, 127);
@@ -132,10 +125,6 @@ class ImageMerge
 
         imagecopyresampled(
             $img,
-=======
-        imagecopyresampled(
-            $this->sourceImage->getImageResource(),
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
             $this->mergeImage->getImageResource(),
             $this->centerX,
             $this->centerY,
@@ -147,11 +136,8 @@ class ImageMerge
             $this->mergeImageHeight
         );
 
-<<<<<<< HEAD
         $this->sourceImage->setImageResource($img);
 
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         return $this->createImage();
     }
 
@@ -172,20 +158,13 @@ class ImageMerge
      * Sets the objects properties.
      *
      * @param $percentage float The percentage that the merge image should take up.
-<<<<<<< HEAD
      *
      * @return void
-=======
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
      */
     protected function setProperties($percentage)
     {
         if ($percentage > 1) {
-<<<<<<< HEAD
             throw new InvalidArgumentException('$percentage must be less than 1');
-=======
-            throw new \InvalidArgumentException('$percentage must be less than 1');
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
         }
 
         $this->sourceImageHeight = $this->sourceImage->getHeight();
@@ -200,7 +179,6 @@ class ImageMerge
 
     /**
      * Calculates the center of the source Image using the Merge image.
-<<<<<<< HEAD
      *
      * @return void
      */
@@ -208,20 +186,12 @@ class ImageMerge
     {
         $this->centerX = intval(($this->sourceImageWidth / 2) - ($this->postMergeImageWidth / 2));
         $this->centerY = intval(($this->sourceImageHeight / 2) - ($this->postMergeImageHeight / 2));
-=======
-     */
-    private function calculateCenter()
-    {
-        $this->centerY = ($this->sourceImageHeight / 2) - ($this->postMergeImageHeight / 2);
-        $this->centerX = ($this->sourceImageWidth / 2) - ($this->postMergeImageHeight / 2);
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     }
 
     /**
      * Calculates the width of the merge image being placed on the source image.
      *
      * @param float $percentage
-<<<<<<< HEAD
      *
      * @return void
      */
@@ -230,12 +200,5 @@ class ImageMerge
         $this->mergeRatio = round($this->mergeImageWidth / $this->mergeImageHeight, 2);
         $this->postMergeImageWidth = intval($this->sourceImageWidth * $percentage);
         $this->postMergeImageHeight = intval($this->postMergeImageWidth / $this->mergeRatio);
-=======
-     */
-    private function calculateOverlap($percentage)
-    {
-        $this->postMergeImageHeight = $this->sourceImageHeight * $percentage;
-        $this->postMergeImageWidth = $this->sourceImageWidth * $percentage;
->>>>>>> 68a7c2c4578d811d8f27963b1054127d05e69c3b
     }
 }
