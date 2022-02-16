@@ -29,7 +29,6 @@ class InventaireDatabaseSeeder extends Seeder
             User::class,
             StatutSeederTableSeeder::class,
             TypeSeederTableSeeder::class,
-            UtilitySeederTableSeeder::class,
             SeedStatutContratsTableSeeder::class
         ]);
         Materiel::factory(10)->create();
