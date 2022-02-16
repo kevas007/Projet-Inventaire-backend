@@ -14,7 +14,7 @@
             </v-navigation-drawer>
 
             <v-main>
-                <!--  -->
+ 
             </v-main>
         </v-app>
     </div>
