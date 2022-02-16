@@ -37,7 +37,7 @@ class MaterielFactory extends Factory
         $place = Place::all()->random();
 
         return [
-            'name' => $this->faker->name,
+            'nom' => $this->faker->name,
             'numeroSerie' => $this->faker->unique()->randomNumber(9),
             'token' => $this->faker->unique()->randomNumber(8),
             'utility_id' =>  $utility->id,

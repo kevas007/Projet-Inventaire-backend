@@ -16,7 +16,7 @@ class CreateMaterielsTable extends Migration
         Schema::create('materiels', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('numero_serie');
+            $table->string('numeroSerie');
             $table->string('token')->unique();
             $table->foreignId('utility_id')->constrained();
             $table->foreignId('statut_id')->constrained();
