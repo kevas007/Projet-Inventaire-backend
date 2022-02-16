@@ -10,9 +10,10 @@ class Materiel extends Model
     use HasFactory;
 
     protected $fillable = [];
-    
+
     protected static function newFactory()
     {
         return \Modules\Inventaire\Database\factories\MaterielFactory::new();
     }
 }
+

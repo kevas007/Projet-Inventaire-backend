@@ -5,6 +5,7 @@ namespace Modules\Inventaire\Database\Seeders;
 use Database\Seeders\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Inventaire\Entities\Materiel;
 
 class InventaireDatabaseSeeder extends Seeder
 {
@@ -31,5 +32,6 @@ class InventaireDatabaseSeeder extends Seeder
             UtilitySeederTableSeeder::class,
             SeedStatutContratsTableSeeder::class
         ]);
+        Materiel::factory(10)->create();
     }
 }
