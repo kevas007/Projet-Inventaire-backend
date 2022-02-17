@@ -15,5 +15,20 @@ class Materiel extends Model
     {
         return \Modules\Inventaire\Database\factories\MaterielFactory::new();
     }
+    public function statut(){
+        return $this->belongsTo(Statut::class);
+    }
+    public function utility(){
+        return $this->belongsTo(Utility::class);
+    }
+     
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
+
+    public function place(){
+        return $this->belongsTo(Place::class);
+    }
+
 }
 

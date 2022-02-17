@@ -5,6 +5,7 @@ namespace Modules\Inventaire\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
 
 class MaterielController extends Controller
@@ -15,7 +16,10 @@ class MaterielController extends Controller
      */
     public function index()
     {
-        return view('inventaire::index');
+        $materiels = Materiel::with("statut")->get() ;
+
+
+        return view('inventaire::partials.materiel.index', compact('materiels'));
     }
 
     /**
@@ -55,6 +59,16 @@ class MaterielController extends Controller
         $materiel->place_id = $request->place_id;
         $materiel->duree = $request->duree;
         $materiel->save();
+        $info = new Info();
+        $info->processeur = $request->processeur;
+        $info->ram = $request->ram;
+        $info->taille_stockage = $request->taille_stockage;
+        $info->marque = $request->marque;
+        $info->description = $request->description;
+        $info->degats = $request->degats;
+        $info->stockage_id = $request->stockage_id;
+        $info->materiel_id = $materiel->id;
+        $info->save();
 
         return redirect()->back()->with(['msg' => "Materiel enregisté avec succès"]);
     }
@@ -66,7 +80,8 @@ class MaterielController extends Controller
      */
     public function show($id)
     {
-        return view('inventaire::show');
+        $materiel = Materiel::with("statut","utility","type","place")->where("id",$id )->first();
+        return view('inventaire::partials.materiel.show', compact('materiel'));
     }
 
     /**
