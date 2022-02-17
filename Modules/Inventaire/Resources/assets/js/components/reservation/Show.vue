@@ -9,6 +9,7 @@
             <v-select
               :items="utilities"
               item-text="nom"
+              name="utility_id"
               item-value="id"
               label="Utilisation"
               single-line
@@ -17,15 +18,13 @@
           <v-col cols="12" md="12">
             <v-date-picker
               v-model="date"
-              :allowed-dates="
-                (val) => {
-                  disablePastDates(val);
-                }
-              "
+              :allowed-dates="disablePastDates"
               class="mt-4"
             ></v-date-picker>
+            <input type="hidden" readonly name="date" :value="date">
           </v-col>
         </v-row>
+        <v-btn type="submit" color="green">Réserver</v-btn>
       </v-container>
     </v-form>
   </v-container>

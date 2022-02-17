@@ -38,7 +38,7 @@ class MaterielFactory extends Factory
 
         return [
             'nom' => $this->faker->name,
-            'numeroSerie' => $this->faker->unique()->randomNumber(9),
+            'numero_serie' => $this->faker->unique()->randomNumber(9),
             'token' => $this->faker->unique()->randomNumber(8),
             'utility_id' =>  $utility->id,
             'statut_id' => $statut->id,

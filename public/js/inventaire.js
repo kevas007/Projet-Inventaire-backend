@@ -282,7 +282,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Show",
   props: {
@@ -7038,6 +7037,7 @@ var render = function () {
                         attrs: {
                           items: _vm.utilities,
                           "item-text": "nom",
+                          name: "utility_id",
                           "item-value": "id",
                           label: "Utilisation",
                           "single-line": "",
@@ -7053,11 +7053,7 @@ var render = function () {
                     [
                       _c("v-date-picker", {
                         staticClass: "mt-4",
-                        attrs: {
-                          "allowed-dates": function (val) {
-                            _vm.disablePastDates(val)
-                          },
-                        },
+                        attrs: { "allowed-dates": _vm.disablePastDates },
                         model: {
                           value: _vm.date,
                           callback: function ($$v) {
@@ -7066,12 +7062,21 @@ var render = function () {
                           expression: "date",
                         },
                       }),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "hidden", readonly: "", name: "date" },
+                        domProps: { value: _vm.date },
+                      }),
                     ],
                     1
                   ),
                 ],
                 1
               ),
+              _vm._v(" "),
+              _c("v-btn", { attrs: { type: "submit", color: "green" } }, [
+                _vm._v("Réserver"),
+              ]),
             ],
             1
           ),
