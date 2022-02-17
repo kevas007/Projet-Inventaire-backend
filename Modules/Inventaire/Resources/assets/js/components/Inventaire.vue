@@ -1,6 +1,6 @@
 <template>
 
-        <v-navigation-drawer v-model="drawer" app class="pt-4" color="grey lighten-3" mini-variant>
+        <v-navigation-drawer permanent v-model="drawer" app class="pt-4" color="grey lighten-3" mini-variant>
             <v-avatar
                 v-for="n in 6"
                 :key="n"
@@ -13,6 +13,11 @@
 
 <script>
 export default {
-    //
+    name:'Inventaire',
+    data(){
+        return {
+            drawer: false
+        }
+    }
 }
 </script>

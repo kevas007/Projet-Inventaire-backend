@@ -97,7 +97,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'Inventaire',
+  data: function data() {
+    return {
+      drawer: false
+    };
+  }
 });
 
 /***/ }),
@@ -250,11 +256,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Show",
   props: {
     utilities: Array,
     materiel: Object
+  },
+  data: function data() {
+    return {
+      date: null,
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+    };
+  },
+  methods: {
+    disablePastDates: function disablePastDates(val) {
+      return val >= new Date().toISOString().substr(0, 10);
+    }
   }
 });
 
@@ -6724,7 +6768,12 @@ var render = function () {
     "v-navigation-drawer",
     {
       staticClass: "pt-4",
-      attrs: { app: "", color: "grey lighten-3", "mini-variant": "" },
+      attrs: {
+        permanent: "",
+        app: "",
+        color: "grey lighten-3",
+        "mini-variant": "",
+      },
       model: {
         value: _vm.drawer,
         callback: function ($$v) {
@@ -6956,7 +7005,82 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    " + _vm._s(_vm.materiel) + "\n")])
+  return _c(
+    "v-container",
+    [
+      _c("h2"),
+      _vm._v(" "),
+      _c(
+        "v-form",
+        {
+          attrs: {
+            action: "/inventaire/reserver/" + _vm.materiel.id,
+            method: "POST",
+          },
+        },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf },
+          }),
+          _vm._v(" "),
+          _c(
+            "v-container",
+            [
+              _c(
+                "v-row",
+                [
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", md: "12" } },
+                    [
+                      _c("v-select", {
+                        attrs: {
+                          items: _vm.utilities,
+                          "item-text": "nom",
+                          "item-value": "id",
+                          label: "Utilisation",
+                          "single-line": "",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", md: "12" } },
+                    [
+                      _c("v-date-picker", {
+                        staticClass: "mt-4",
+                        attrs: {
+                          "allowed-dates": function (val) {
+                            _vm.disablePastDates(val)
+                          },
+                        },
+                        model: {
+                          value: _vm.date,
+                          callback: function ($$v) {
+                            _vm.date = $$v
+                          },
+                          expression: "date",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

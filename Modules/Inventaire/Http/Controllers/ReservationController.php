@@ -21,5 +21,12 @@ class ReservationController extends Controller
             'utility_id'=>['required', 'exists:utilities,id'],
             'date'=>['required', 'date'],
         ]);
+
+        $materiel = Materiel::find($id);
+        $materiel->utility_id = $request->utility_id;
+        $materiel->date = $request->date;
+        $materiel->save();
+
+        return redirect()->back();
     }
 }
