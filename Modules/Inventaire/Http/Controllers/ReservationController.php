@@ -15,4 +15,13 @@ class ReservationController extends Controller
         $utitlies = Utility::all();
         return view('inventaire::reservation.show', compact('utitlies', 'materiel'));
     }
+
+    public function store(Request $request, $id){
+        $request->validate([
+            'utility_id'=>['required', 'exists:utilities,id'],
+            'date'=>['required', 'date'],
+        ]);
+
+        $
+    }
 }
