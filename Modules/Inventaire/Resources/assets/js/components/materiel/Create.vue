@@ -27,7 +27,7 @@
                 :rules="processeurRules"
                 label="Processeur"
                 name="processeur"
-                 
+
                 required
             ></v-text-field>
             <v-text-field name="ram"  :counter="50" v-model="ram" :rules="ramRules" label="Ram" required></v-text-field>
@@ -52,7 +52,7 @@
                 v-model="description"
                 :rules="descriptionRules"
                 label="Description"
-                  name="description"
+                name="description"
                 required
             ></v-text-field>
             <v-text-field
