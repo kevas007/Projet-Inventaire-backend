@@ -18,10 +18,12 @@
           <v-col cols="12" md="12">
             <v-date-picker
               v-model="date"
+              range
               :allowed-dates="disablePastDates"
               class="mt-4"
             ></v-date-picker>
-            <input type="hidden" readonly name="date" :value="date">
+            <input type="hidden" readonly name="start_date" :value="startDate">
+            <input type="hidden" readonly name="end_date" :value="endDate">
           </v-col>
         </v-row>
         <v-btn type="submit" color="green">Réserver</v-btn>
@@ -49,6 +51,21 @@ export default {
       return val >= new Date().toISOString().substr(0, 10);
     },
   },
+  computed:{
+      startDate(){
+          console.log(this.date);
+          if(this.date){
+              return this.date[0];
+          }
+          return '';
+      },
+      endDate(){
+          if(this.date){
+              return this.date[1];
+          }
+          return '';
+      }
+  }
 };
 </script>
 <style>

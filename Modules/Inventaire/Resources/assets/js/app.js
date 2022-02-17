@@ -11,6 +11,7 @@ Vue.component('full-calendar', fullCalendar);
 Vue.component('inventaire-component', require('./components/Inventaire.vue').default);
 //Materiel
 Vue.component('index-component', require('./components/materiel/Index.vue').default);
+Vue.component('reservation-create', require('./components/reservation/Create.vue').default);
 Vue.component('reservation-show', require('./components/reservation/Show.vue').default);
 Vue.component('create-component', require('./components/materiel/Create.vue').default);
 Vue.component('show-component', require('./components/materiel/Show.vue').default);

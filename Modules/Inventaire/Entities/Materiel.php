@@ -15,20 +15,27 @@ class Materiel extends Model
     {
         return \Modules\Inventaire\Database\factories\MaterielFactory::new();
     }
-    public function statut(){
+    public function statut()
+    {
         return $this->belongsTo(Statut::class);
     }
-    public function utility(){
+    public function utility()
+    {
         return $this->belongsTo(Utility::class);
     }
-     
-    public function type(){
+
+    public function type()
+    {
         return $this->belongsTo(Type::class);
     }
 
-    public function place(){
+    public function place()
+    {
         return $this->belongsTo(Place::class);
     }
 
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }
-

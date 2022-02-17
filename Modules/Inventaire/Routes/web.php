@@ -33,7 +33,7 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/materiel/{id}/edit', [MaterielController::class, 'update'])->middleware('auth');
 
     // Reservation de matériel
-    Route::get('/reserver/{id}', [ReservationController::class, 'show']);
+    Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
 });
 
