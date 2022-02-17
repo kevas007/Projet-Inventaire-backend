@@ -17,9 +17,18 @@ class ReservationController extends Controller
     }
 
     public function store(Request $request, $id){
+
         $request->validate([
             'utility_id'=>['required', 'exists:utilities,id'],
-            'date'=>['required', 'date'],
+            'date'=>['required'],
         ]);
+
+        $materiel = Materiel::find($id);
+        $materiel->utility_id = $request->utility_id;
+        $materiel->duree = $request->date;
+        $materiel->statut_id = 3;
+        $materiel->save();
+        
+        return redirect()->back();
     }
 }
