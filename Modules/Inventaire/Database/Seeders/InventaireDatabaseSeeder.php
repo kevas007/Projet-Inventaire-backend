@@ -31,6 +31,7 @@ class InventaireDatabaseSeeder extends Seeder
             SeedStatutContratsTableSeeder::class,
             SeedFakeEmprunteurTableSeeder::class,
             SeedFakeContratTableSeeder::class,
+            SeedFakeInfoTableSeeder::class,
         ]);
 
 
