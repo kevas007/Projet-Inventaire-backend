@@ -16,9 +16,10 @@ use Modules\Inventaire\Http\Controllers\MaterielController;
 Route::prefix('inventaire')->group(function() {
     Route::get('/', 'InventaireController@index');
     Route::get('/dashboard',function(){
-        return view('inventaire::partials.materiel.materiel');
+        return view('inventaire::dashboard');
     })->middleware('auth');
-    Route::get('/generate-qrcode', [MaterielController::class, 'validate']);
+    Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
+
     Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
 });
