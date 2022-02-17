@@ -1,67 +1,50 @@
-  <template>
-        <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-            <template slot="progress">
-                <v-progress-linear color="deep-purple" height="10" indeterminate></v-progress-linear>
+<template>
+    <v-container>
+        <h1>Liste des matériels</h1>
+        <v-simple-table>
+            <template v-slot:default>
+                <thead>
+                    <tr>
+                        <th class="text-left">Nom</th>
+                        <th class="text-left">Numéro de série</th>
+                        <th class="text-left">Statut</th>
+                        <th class="text-left"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in materiels" :key="item.id">
+                        <td>{{ item.nom }}</td>
+                        <td>{{ item.numeroSerie }}</td>
+                        <td>{{ item.statut.nom }}</td>
+                        <td>
+                            <v-btn :href="'/inventaire/materiel/' + item.id" color="primary">
+                                <v-icon>mdi-eye</v-icon>
+                                <!-- <v-icon>Plus</v-icon> -->
+                            </v-btn>
+                        </td>
+                    </tr>
+                </tbody>
             </template>
+        </v-simple-table>
+    </v-container>
+</template>
 
-            <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
-
-            <v-card-title>Cafe Badilico</v-card-title>
-
-            <v-card-text>
-                <v-row align="center" class="mx-0">
-                    <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
-
-                    <div class="grey--text ms-4">
-                        4.5 (413)
-                    </div>
-                </v-row>
-
-                <div class="my-4 text-subtitle-1">
-                    $ • Italian, Cafe
-                </div>
-
-                <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-            </v-card-text>
-
-            <v-divider class="mx-4"></v-divider>
-
-            <v-card-title>Tonight's availability</v-card-title>
-
-            <v-card-text>
-                <v-chip-group v-model="selection" active-class="deep-purple accent-4 white--text" column>
-                    <v-chip>5:30PM</v-chip>
-
-                    <v-chip>7:30PM</v-chip>
-
-                    <v-chip>8:00PM</v-chip>
-
-                    <v-chip>9:00PM</v-chip>
-                </v-chip-group>
-            </v-card-text>
-
-            <v-card-actions>
-                <v-btn color="deep-purple lighten-2" text @click="reserve">
-                    Reserve
-                </v-btn>
-            </v-card-actions>
-        </v-card>
-    </template>
-
-
-    <script>
-        export default {
-            data: () => ({
-                loading: false,
-                selection: 1,
-            }),
-
-            methods: {
-                reserve() {
-                    this.loading = true
-
-                    setTimeout(() => (this.loading = false), 2000)
-                },
-            },
+<script>
+export default {
+    props: {
+        materiels: {
+            type: Array,
+            required: true,
         }
-    </script>
+    },
+    mounted() {
+        console.log(this.materiels)
+
+    },
+    data() {
+        return {
+
+        }
+    },
+};
+</script>
