@@ -14,16 +14,16 @@
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
 
-Route::prefix('inventaire')->middleware('auth')->group(function() {
+Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/', 'InventaireController@index');
-    Route::get('/dashboard',function(){
-    Route::get('/reserver/{id}',[ReservationController::class,'show']);
+    Route::get('/dashboard', function () {
         return view('inventaire::dashboard');
     })->middleware('auth');
+    Route::get('/reserver/{id}', [ReservationController::class, 'show']);
     Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
     Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
