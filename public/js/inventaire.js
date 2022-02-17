@@ -196,6 +196,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log(this.utility);
@@ -228,6 +234,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       valid: true,
       nom: '',
       nomRules: [function (v) {
@@ -241,16 +248,10 @@ __webpack_require__.r(__webpack_exports__);
       }, function (v) {
         return v && v.length <= 100 || 'E-mail must be less than 10 characters';
       }],
-      token: '',
-      tokenRules: [function (v) {
-        return !!v || 'Token is required';
-      }, function (v) {
-        return v && v.length <= 100 || 'Token must be less than 10 characters';
-      }],
       statut_id: '',
       type_id: '',
       place_id: '',
-      duree: '',
+      // duree: '',
       processeur: '',
       processeurRules: [function (v) {
         return !!v || 'Processeur is required';
@@ -7166,7 +7167,11 @@ var render = function () {
         "v-form",
         {
           ref: "form",
-          attrs: { "lazy-validation": "" },
+          attrs: {
+            action: "/inventaire/materiel/create",
+            method: "POST",
+            "lazy-validation": "",
+          },
           model: {
             value: _vm.valid,
             callback: function ($$v) {
@@ -7176,8 +7181,14 @@ var render = function () {
           },
         },
         [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf },
+          }),
+          _vm._v(" "),
           _c("v-text-field", {
             attrs: {
+              name: "nom",
               counter: 30,
               rules: _vm.nomRules,
               label: "Name",
@@ -7197,6 +7208,7 @@ var render = function () {
               counter: 100,
               rules: _vm.numero_serieRules,
               label: "Numero  de serie",
+              name: "numero_serie",
               required: "",
             },
             model: {
@@ -7208,24 +7220,15 @@ var render = function () {
             },
           }),
           _vm._v(" "),
-          _c("v-text-field", {
+          _c("v-select", {
             attrs: {
-              counter: 100,
-              rules: _vm.tokenRules,
-              label: "Token",
+              items: this.statut,
+              name: "statut_id",
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Statut",
               required: "",
             },
-            model: {
-              value: _vm.token,
-              callback: function ($$v) {
-                _vm.token = $$v
-              },
-              expression: "token",
-            },
-          }),
-          _vm._v(" "),
-          _c("v-select", {
-            attrs: { items: this.statut.nom, label: "Statut", required: "" },
             model: {
               value: _vm.statut_id,
               callback: function ($$v) {
@@ -7236,7 +7239,14 @@ var render = function () {
           }),
           _vm._v(" "),
           _c("v-select", {
-            attrs: { items: this.utility, label: "Utility", required: "" },
+            attrs: {
+              name: "utility_id",
+              items: this.utility,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Utility",
+              required: "",
+            },
             model: {
               value: _vm.utility_id,
               callback: function ($$v) {
@@ -7247,7 +7257,14 @@ var render = function () {
           }),
           _vm._v(" "),
           _c("v-select", {
-            attrs: { items: this.type, label: "Type", required: "" },
+            attrs: {
+              name: "type_id",
+              items: this.type,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Type",
+              required: "",
+            },
             model: {
               value: _vm.type_id,
               callback: function ($$v) {
@@ -7258,7 +7275,14 @@ var render = function () {
           }),
           _vm._v(" "),
           _c("v-select", {
-            attrs: { items: this.place, label: "Place", required: "" },
+            attrs: {
+              name: "place_id",
+              items: this.place,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Place",
+              required: "",
+            },
             model: {
               value: _vm.place_id,
               callback: function ($$v) {
@@ -7273,6 +7297,7 @@ var render = function () {
               counter: 100,
               rules: _vm.processeurRules,
               label: "Processeur",
+              name: "processeur",
               required: "",
             },
             model: {
@@ -7286,6 +7311,7 @@ var render = function () {
           _vm._v(" "),
           _c("v-text-field", {
             attrs: {
+              name: "ram",
               counter: 50,
               rules: _vm.ramRules,
               label: "Ram",
@@ -7305,6 +7331,7 @@ var render = function () {
               counter: 100,
               rules: _vm.taille_stockageRules,
               label: "Taille de stcokage",
+              name: "taille_stockage",
               required: "",
             },
             model: {
@@ -7321,6 +7348,7 @@ var render = function () {
               counter: 100,
               rules: _vm.marqueRules,
               label: "Marque",
+              name: "marque",
               required: "",
             },
             model: {
@@ -7337,6 +7365,7 @@ var render = function () {
               counter: 200,
               rules: _vm.descriptionRules,
               label: "Description",
+              name: "description",
               required: "",
             },
             model: {
@@ -7353,6 +7382,7 @@ var render = function () {
               counter: 100,
               rules: _vm.degatsRules,
               label: "Degats",
+              name: "degats",
               required: "",
             },
             model: {
@@ -7364,30 +7394,12 @@ var render = function () {
             },
           }),
           _vm._v(" "),
-          _c("v-date-picker", {
-            model: {
-              value: _vm.duree,
-              callback: function ($$v) {
-                _vm.duree = $$v
-              },
-              expression: "duree",
-            },
-          }),
-          _vm._v(" "),
-          _c("v-select", {
-            attrs: { items: this.type, label: "Type", required: "" },
-            model: {
-              value: _vm.type_id,
-              callback: function ($$v) {
-                _vm.type_id = $$v
-              },
-              expression: "type_id",
-            },
-          }),
-          _vm._v(" "),
           _c("v-select", {
             attrs: {
-              items: this.stockage.nom,
+              name: "stockage_id",
+              items: this.stockage,
+              "item-value": "id",
+              "item-text": "nom",
               label: "Stockage",
               required: "",
             },
@@ -7404,7 +7416,7 @@ var render = function () {
             "v-btn",
             {
               staticClass: "mr-4",
-              attrs: { disabled: !_vm.valid, color: "success" },
+              attrs: { disabled: !_vm.valid, color: "success", type: "submit" },
               on: { click: _vm.validate },
             },
             [_vm._v("Validate")]

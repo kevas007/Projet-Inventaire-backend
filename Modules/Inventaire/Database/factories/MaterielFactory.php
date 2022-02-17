@@ -42,7 +42,6 @@ class MaterielFactory extends Factory
             'token' => $this->faker->unique()->randomNumber(8),
             'utility_id' =>  $utility->id,
             'statut_id' => $statut->id,
-            'duree' => $this->faker->dateTime,
             'type_id' => $type->id,
             'place_id' => $place->id,
         ];

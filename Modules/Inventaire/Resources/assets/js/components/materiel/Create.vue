@@ -1,24 +1,24 @@
 <template>
     <v-container>
-        <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field v-model="nom" :counter="30" :rules="nomRules" label="Name" required></v-text-field>
+        <v-form ref="form" v-model="valid"  action='/inventaire/materiel/create' method="POST" lazy-validation>
+           <input type="hidden" name="_token" :value="csrf" />
+            <v-text-field name="nom" v-model="nom" :counter="30" :rules="nomRules" label="Name" required></v-text-field>
 
             <v-text-field
                 :counter="100"
                 v-model="numero_serie"
                 :rules="numero_serieRules"
                 label="Numero  de serie"
+                 name="numero_serie"
                 required
             ></v-text-field>
 
-            <v-text-field :counter="100" v-model="token" :rules="tokenRules" label="Token" required></v-text-field>
+            <v-select v-model="statut_id" :items="this.statut" name="statut_id"   item-value="id" item-text="nom"  label="Statut" required></v-select>
+            <v-select v-model="utility_id"  name="utility_id"  :items="this.utility"  item-value="id" item-text="nom" label="Utility" required></v-select>
 
-            <v-select v-model="statut_id" :items="this.statut.nom" label="Statut" required></v-select>
-            <v-select v-model="utility_id" :items="this.utility" label="Utility" required></v-select>
+            <v-select v-model="type_id"  name="type_id" :items="this.type" item-value="id" item-text="nom"  label="Type" required></v-select>
 
-            <v-select v-model="type_id" :items="this.type" label="Type" required></v-select>
-
-            <v-select v-model="place_id" :items="this.place" label="Place" required></v-select>
+            <v-select v-model="place_id" name="place_id" :items="this.place"  item-value="id" item-text="nom" label="Place" required></v-select>
 
             <!-- <v-text-field :counter="100" v-model="duree" :rules="dureeRules" label="Durée" required></v-text-field> -->
             <v-text-field
@@ -26,14 +26,17 @@
                 v-model="processeur"
                 :rules="processeurRules"
                 label="Processeur"
+                name="processeur"
+                 
                 required
             ></v-text-field>
-            <v-text-field :counter="50" v-model="ram" :rules="ramRules" label="Ram" required></v-text-field>
+            <v-text-field name="ram"  :counter="50" v-model="ram" :rules="ramRules" label="Ram" required></v-text-field>
             <v-text-field
                 :counter="100"
                 v-model="taille_stockage"
                 :rules="taille_stockageRules"
                 label="Taille de stcokage"
+                name="taille_stockage"
                 required
             ></v-text-field>
             <v-text-field
@@ -41,6 +44,7 @@
                 v-model="marque"
                 :rules="marqueRules"
                 label="Marque"
+                name="marque"
                 required
             ></v-text-field>
             <v-text-field
@@ -48,6 +52,7 @@
                 v-model="description"
                 :rules="descriptionRules"
                 label="Description"
+                  name="description"
                 required
             ></v-text-field>
             <v-text-field
@@ -55,12 +60,13 @@
                 v-model="degats"
                 :rules="degatsRules"
                 label="Degats"
+                 name="degats"
                 required
             ></v-text-field>
-        <v-date-picker v-model="duree"></v-date-picker>
-            <v-select v-model="type_id" :items="this.type" label="Type" required></v-select>
-         <v-select v-model="stockage_id" :items="this.stockage.nom" label="Stockage" required></v-select>
-            <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
+        <!-- <v-date-picker v-model="duree"  name="duree" v-if="statut_id ==2 || statut_id==3"></v-date-picker> -->
+            <!-- <v-select v-model="type_id" :menu-props="{ auto: true, overflowY: true }" :items="this.type" label="Type"  item-value="id" item-text="nom" required></v-select> -->
+         <v-select v-model="stockage_id" name="stockage_id" :items="this.stockage"  item-value="id" item-text="nom" label="Stockage" required></v-select>
+            <v-btn :disabled="!valid" color="success" type="submit" class="mr-4" @click="validate">Validate</v-btn>
 
             <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
 
@@ -100,6 +106,9 @@ export default {
       }
   },
     data: () => ({
+         csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
         valid: true,
         nom: '',
         nomRules: [
@@ -111,18 +120,13 @@ export default {
             v => !!v || 'E-mail is required',
             v => (v && v.length <= 100) || 'E-mail must be less than 10 characters',
         ],
-        token: '',
-        tokenRules: [
-            v => !!v || 'Token is required',
-            v => (v && v.length <= 100) || 'Token must be less than 10 characters',
-        ],
         statut_id: '',
-      
+
         type_id: '',
-     
+
         place_id: '',
-     
-        duree: '',
+
+        // duree: '',
         processeur: '',
         processeurRules: [
             v => !!v || 'Processeur is required',
@@ -155,7 +159,7 @@ export default {
         ],
         stockage_id:'',
         utility_id: '',
-    
+
 
 
         checkbox: false,
@@ -164,6 +168,7 @@ export default {
     methods: {
         validate() {
             this.$refs.form.validate()
+
         },
         reset() {
             this.$refs.form.reset()

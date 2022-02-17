@@ -57,18 +57,17 @@ class MaterielController extends Controller
             'statut_id' => 'required|min:1',
             'type_id' => 'required|min:1',
             'place_id' => 'required|min:1',
-            'duree' => 'required|date',
         ]);
-
+      
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
         $materiel->numero_serie = $request->numero_serie;
-        $materiel->token = $request->token;
+        $token = Str::random(60);
+         $materiel->token = $token ;
         $materiel->utility_id = $request->utility_id;
         $materiel->statut_id = $request->statut_id;
         $materiel->type_id = $request->type_id;
         $materiel->place_id = $request->place_id;
-        $materiel->duree = $request->duree;
         $materiel->save();
         $info = new Info();
         $info->processeur = $request->processeur;

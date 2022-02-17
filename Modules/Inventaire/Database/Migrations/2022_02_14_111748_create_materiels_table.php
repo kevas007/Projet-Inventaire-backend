@@ -20,7 +20,6 @@ class CreateMaterielsTable extends Migration
             $table->string('token')->unique();
             $table->foreignId('utility_id')->constrained();
             $table->foreignId('statut_id')->constrained();
-            $table->datetime('duree')->nullable();
             $table->foreignId('type_id')->constrained();
             $table->foreignId('place_id')->constrained();
             $table->timestamps();
