@@ -29,7 +29,7 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
 
     // Reservation de matériel
-    Route::get('/reserver/{id}', [ReservationController::class, 'show']);
+    Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
 });
 
