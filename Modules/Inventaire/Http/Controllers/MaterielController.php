@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
+use Modules\Inventaire\Entities\Place;
+use Modules\Inventaire\Entities\Statut;
+use Modules\Inventaire\Entities\Stockage;
+use Modules\Inventaire\Entities\Type;
+use Modules\Inventaire\Entities\Utility;
 
 class MaterielController extends Controller
 {
@@ -28,7 +33,13 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('inventaire::partials.materiel.create');
+        $utility = Utility::all();
+        $statut = Statut::all();
+        $type= Type::all();
+        $info = Info::all();
+        $place= Place::all();
+        $stockage= Stockage::all();
+        return view('inventaire::partials.materiel.create', compact('utility','statut','type','info','place','stockage'));
     }
 
     /**

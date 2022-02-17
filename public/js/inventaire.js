@@ -154,24 +154,141 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log(this.utility);
+  },
+  props: {
+    utility: {
+      type: Array,
+      required: true
+    },
+    statut: {
+      type: Array,
+      required: true
+    },
+    type: {
+      type: Array,
+      required: true
+    },
+    info: {
+      type: Array,
+      required: true
+    },
+    place: {
+      type: Array,
+      required: true
+    },
+    stockage: {
+      type: Array,
+      required: true
+    }
+  },
   data: function data() {
     return {
       valid: true,
-      name: '',
-      nameRules: [function (v) {
+      nom: '',
+      nomRules: [function (v) {
         return !!v || 'Name is required';
       }, function (v) {
         return v && v.length <= 10 || 'Name must be less than 10 characters';
       }],
-      email: '',
-      emailRules: [function (v) {
+      numero_serie: '',
+      numero_serieRules: [function (v) {
         return !!v || 'E-mail is required';
       }, function (v) {
-        return /.+@.+\..+/.test(v) || 'E-mail must be valid';
+        return v && v.length <= 100 || 'E-mail must be less than 10 characters';
       }],
-      select: null,
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+      token: '',
+      tokenRules: [function (v) {
+        return !!v || 'Token is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Token must be less than 10 characters';
+      }],
+      statut_id: '',
+      type_id: '',
+      place_id: '',
+      duree: '',
+      processeur: '',
+      processeurRules: [function (v) {
+        return !!v || 'Processeur is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Processeur must be less than 10 characters';
+      }],
+      ram: '',
+      ramRules: [function (v) {
+        return !!v || 'Ram is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Ram must be less than 10 characters';
+      }],
+      taille_stockage: '',
+      taille_stockageRules: [function (v) {
+        return !!v || 'Taille de stockage is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Taille de stockage must be less than 10 characters';
+      }],
+      marque: '',
+      marqueRules: [function (v) {
+        return !!v || 'Marque is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Marque must be less than 10 characters';
+      }],
+      description: '',
+      descriptionRules: [function (v) {
+        return !!v || 'Description is required';
+      }, function (v) {
+        return v && v.length <= 200 || 'Description must be less than 10 characters';
+      }],
+      degats: '',
+      degatsRules: [function (v) {
+        return !!v || 'Degats is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Degats must be less than 10 characters';
+      }],
+      stockage_id: '',
+      utility_id: '',
       checkbox: false
     };
   },
@@ -7043,109 +7160,273 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-form",
-    {
-      ref: "form",
-      attrs: { "lazy-validation": "" },
-      model: {
-        value: _vm.valid,
-        callback: function ($$v) {
-          _vm.valid = $$v
-        },
-        expression: "valid",
-      },
-    },
+    "v-container",
     [
-      _c("v-text-field", {
-        attrs: {
-          counter: 10,
-          rules: _vm.nameRules,
-          label: "Name",
-          required: "",
-        },
-        model: {
-          value: _vm.name,
-          callback: function ($$v) {
-            _vm.name = $$v
-          },
-          expression: "name",
-        },
-      }),
-      _vm._v(" "),
-      _c("v-text-field", {
-        attrs: { rules: _vm.emailRules, label: "E-mail", required: "" },
-        model: {
-          value: _vm.email,
-          callback: function ($$v) {
-            _vm.email = $$v
-          },
-          expression: "email",
-        },
-      }),
-      _vm._v(" "),
-      _c("v-select", {
-        attrs: {
-          items: _vm.items,
-          rules: [
-            function (v) {
-              return !!v || "Item is required"
-            },
-          ],
-          label: "Item",
-          required: "",
-        },
-        model: {
-          value: _vm.select,
-          callback: function ($$v) {
-            _vm.select = $$v
-          },
-          expression: "select",
-        },
-      }),
-      _vm._v(" "),
-      _c("v-checkbox", {
-        attrs: {
-          rules: [
-            function (v) {
-              return !!v || "You must agree to continue!"
-            },
-          ],
-          label: "Do you agree?",
-          required: "",
-        },
-        model: {
-          value: _vm.checkbox,
-          callback: function ($$v) {
-            _vm.checkbox = $$v
-          },
-          expression: "checkbox",
-        },
-      }),
-      _vm._v(" "),
       _c(
-        "v-btn",
+        "v-form",
         {
-          staticClass: "mr-4",
-          attrs: { disabled: !_vm.valid, color: "success" },
-          on: { click: _vm.validate },
+          ref: "form",
+          attrs: { "lazy-validation": "" },
+          model: {
+            value: _vm.valid,
+            callback: function ($$v) {
+              _vm.valid = $$v
+            },
+            expression: "valid",
+          },
         },
-        [_vm._v("Validate")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          staticClass: "mr-4",
-          attrs: { color: "error" },
-          on: { click: _vm.reset },
-        },
-        [_vm._v("Reset Form")]
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        { attrs: { color: "warning" }, on: { click: _vm.resetValidation } },
-        [_vm._v("Reset Validation")]
+        [
+          _c("v-text-field", {
+            attrs: {
+              counter: 30,
+              rules: _vm.nomRules,
+              label: "Name",
+              required: "",
+            },
+            model: {
+              value: _vm.nom,
+              callback: function ($$v) {
+                _vm.nom = $$v
+              },
+              expression: "nom",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.numero_serieRules,
+              label: "Numero  de serie",
+              required: "",
+            },
+            model: {
+              value: _vm.numero_serie,
+              callback: function ($$v) {
+                _vm.numero_serie = $$v
+              },
+              expression: "numero_serie",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.tokenRules,
+              label: "Token",
+              required: "",
+            },
+            model: {
+              value: _vm.token,
+              callback: function ($$v) {
+                _vm.token = $$v
+              },
+              expression: "token",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: { items: this.statut.nom, label: "Statut", required: "" },
+            model: {
+              value: _vm.statut_id,
+              callback: function ($$v) {
+                _vm.statut_id = $$v
+              },
+              expression: "statut_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: { items: this.utility, label: "Utility", required: "" },
+            model: {
+              value: _vm.utility_id,
+              callback: function ($$v) {
+                _vm.utility_id = $$v
+              },
+              expression: "utility_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: { items: this.type, label: "Type", required: "" },
+            model: {
+              value: _vm.type_id,
+              callback: function ($$v) {
+                _vm.type_id = $$v
+              },
+              expression: "type_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: { items: this.place, label: "Place", required: "" },
+            model: {
+              value: _vm.place_id,
+              callback: function ($$v) {
+                _vm.place_id = $$v
+              },
+              expression: "place_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.processeurRules,
+              label: "Processeur",
+              required: "",
+            },
+            model: {
+              value: _vm.processeur,
+              callback: function ($$v) {
+                _vm.processeur = $$v
+              },
+              expression: "processeur",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 50,
+              rules: _vm.ramRules,
+              label: "Ram",
+              required: "",
+            },
+            model: {
+              value: _vm.ram,
+              callback: function ($$v) {
+                _vm.ram = $$v
+              },
+              expression: "ram",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.taille_stockageRules,
+              label: "Taille de stcokage",
+              required: "",
+            },
+            model: {
+              value: _vm.taille_stockage,
+              callback: function ($$v) {
+                _vm.taille_stockage = $$v
+              },
+              expression: "taille_stockage",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.marqueRules,
+              label: "Marque",
+              required: "",
+            },
+            model: {
+              value: _vm.marque,
+              callback: function ($$v) {
+                _vm.marque = $$v
+              },
+              expression: "marque",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 200,
+              rules: _vm.descriptionRules,
+              label: "Description",
+              required: "",
+            },
+            model: {
+              value: _vm.description,
+              callback: function ($$v) {
+                _vm.description = $$v
+              },
+              expression: "description",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.degatsRules,
+              label: "Degats",
+              required: "",
+            },
+            model: {
+              value: _vm.degats,
+              callback: function ($$v) {
+                _vm.degats = $$v
+              },
+              expression: "degats",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-date-picker", {
+            model: {
+              value: _vm.duree,
+              callback: function ($$v) {
+                _vm.duree = $$v
+              },
+              expression: "duree",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: { items: this.type, label: "Type", required: "" },
+            model: {
+              value: _vm.type_id,
+              callback: function ($$v) {
+                _vm.type_id = $$v
+              },
+              expression: "type_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              items: this.stockage.nom,
+              label: "Stockage",
+              required: "",
+            },
+            model: {
+              value: _vm.stockage_id,
+              callback: function ($$v) {
+                _vm.stockage_id = $$v
+              },
+              expression: "stockage_id",
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticClass: "mr-4",
+              attrs: { disabled: !_vm.valid, color: "success" },
+              on: { click: _vm.validate },
+            },
+            [_vm._v("Validate")]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticClass: "mr-4",
+              attrs: { color: "error" },
+              on: { click: _vm.reset },
+            },
+            [_vm._v("Reset Form")]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "warning" }, on: { click: _vm.resetValidation } },
+            [_vm._v("Reset Validation")]
+          ),
+        ],
+        1
       ),
     ],
     1

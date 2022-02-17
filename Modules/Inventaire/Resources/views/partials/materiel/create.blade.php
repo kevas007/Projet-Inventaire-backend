@@ -2,8 +2,9 @@
 
 @section('main')
 <h1>
-    Inventaire
-    <small>Liste</small>
+Ajouter
+    un materiel
 </h1>
-{{-- <create-component></create-component> --}}
+{{-- {{ dd("choco") }} --}}
+<create-component :utility="{{ $utility }}" :statut="{{ $statut }}" :type="{{ $type }}" :info="{{ $info }}" :place="{{ $place }}" :stockage="{{ $stockage }}"></create-component>
 @endsection
