@@ -19,6 +19,8 @@ Route::prefix('inventaire')->group(function() {
         return view('inventaire::partials.materiel.materiel');
     })->middleware('auth');
     Route::get('/generate-qrcode', [MaterielController::class, 'validate']);
+    Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
+    Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
 });
 
 
