@@ -11,7 +11,8 @@
 <body>
     <div id="app">
         <v-app id="inspire" app>
-            <v-main>
+            <inventaire-component></inventaire-component>
+            <v-main app>
                 @yield('main')
             </v-main>
         </v-app>

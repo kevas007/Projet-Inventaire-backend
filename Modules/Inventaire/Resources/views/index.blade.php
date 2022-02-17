@@ -7,5 +7,4 @@
         This view is loaded from module: {!! config('inventaire.name') !!}
     </p>
 
-    <inventaire></inventaire>
     @endsection
