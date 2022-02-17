@@ -28,7 +28,7 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('inventaire::materiels.create');
+        return view('inventaire::partials.materiel.create');
     }
 
     /**

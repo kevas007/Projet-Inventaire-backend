@@ -38,14 +38,14 @@
                         this.materiel.duree
                     }}
                 </p>
-                <div v-if='this.materiel.statut.id ==2 || this.materiel.statut.id==3'>
-                      <v-btn :href="'/inventaire/reserver/'+ this.materiel.id" color="primary">Reserver</v-btn>
-                    </div>
+                <div v-if="this.materiel.statut.id == 2 || this.materiel.statut.id == 3">
+                    <v-btn
+                        :href="'/inventaire/reserver/' + this.materiel.id"
+                        color="primary"
+                    >Reserver</v-btn>
+                </div>
             </v-card-text>
             <v-card-actions>
-                
-              
-
                 <v-btn color="orange lighten-2" text>Plus</v-btn>
 
                 <v-spacer></v-spacer>
