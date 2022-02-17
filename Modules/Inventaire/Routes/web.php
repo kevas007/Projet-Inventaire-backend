@@ -12,19 +12,22 @@
 */
 
 use Modules\Inventaire\Http\Controllers\MaterielController;
+use Modules\Inventaire\Http\Controllers\ReservationController;
 
-// Route::prefix('inventaire')->group(function() {
-//     Route::get('/', 'InventaireController@index');
-
-//     //dashboard
-//     Route::get('/dashboard',function(){
-//         return view('inventaire::dashboard');
-//     })->middleware('auth');
-//     Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
-
-//     Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
-//     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
-// });
+Route::prefix('inventaire')->middleware('auth')->group(function () {
+    Route::get('/', 'InventaireController@index');
+    Route::get('/dashboard', function () {
+        return view('inventaire::dashboard');
+    })->middleware('auth');
+  // Reservation de matériel
+    Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
+    Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
+    Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
 
 
-require __DIR__.'/auth.php';
+    Route::get('/reserver/{id}', [ReservationController::class, 'show']);
+    Route::post('/reserver/{id}', [ReservationController::class, 'store']);
+});
+
+
+require __DIR__ . '/auth.php';

@@ -10,8 +10,18 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vuetify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vuetify */ "./Resources/assets/js/vuetify.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-chartkick'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'chart.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-fullcalendar'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 
+
+
+
+Vue.use(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-chartkick'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+  adapter: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'chart.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+});
+Vue.component('full-calendar', Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-fullcalendar'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 Vue.component('inventaire', (__webpack_require__(/*! ./components/Inventaire.vue */ "./Resources/assets/js/components/Inventaire.vue")["default"])); //Materiel
 
 Vue.component('index-component', (__webpack_require__(/*! ./components/materiel/Index.vue */ "./Resources/assets/js/components/materiel/Index.vue")["default"]));
