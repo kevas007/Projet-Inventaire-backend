@@ -12,13 +12,15 @@
 */
 
 use Modules\Inventaire\Http\Controllers\MaterielController;
+use Modules\Inventaire\Http\Controllers\ReservationController;
 
-Route::prefix('inventaire')->group(function() {
+Route::prefix('inventaire')->middleware('auth')->group(function() {
     Route::get('/', 'InventaireController@index');
     Route::get('/dashboard',function(){
         return view('inventaire::partials.materiel.materiel');
-    })->middleware('auth');
+    });
     Route::get('/generate-qrcode', [MaterielController::class, 'validate']);
+    Route::get('/reserver/{id}',[ReservationController::class,'show']);
 });
 
 

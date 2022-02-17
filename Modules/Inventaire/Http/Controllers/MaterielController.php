@@ -103,4 +103,5 @@ class MaterielController extends Controller
     {
         return view('inventaire::codeQr');
     }
+    
 }
