@@ -144,6 +144,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiels: {
@@ -216,18 +226,82 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiel: {
       type: Object,
       required: true
+    },
+    info: {
+      type: Object,
+      required: true
     }
   },
   mounted: function mounted() {
-    console.log(this.materiel);
+    console.log(this.materiel, this.info);
   },
   data: function data() {
-    return {//
+    return {
+      show: false
     };
   }
 });
@@ -6772,7 +6846,26 @@ var render = function () {
   return _c(
     "v-container",
     [
-      _c("h1", [_vm._v("Liste des matériels")]),
+      _c(
+        "v-row",
+        [
+          _c("v-col", [_c("h1", [_vm._v("Liste des matériels")])]),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            { staticClass: "mt-2" },
+            [
+              _c("v-btn", { staticClass: "text--primary" }, [
+                _vm._v(
+                  "\n                Ajouter un nouveau materiel\n            "
+                ),
+              ]),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("v-simple-table", {
         scopedSlots: _vm._u([
@@ -6881,7 +6974,7 @@ var render = function () {
             _c("p", { staticClass: "text-h6 text--primary" }, [
               _vm._v(
                 "\n                Muméro de serie : " +
-                  _vm._s(this.materiel.numeroSerie) +
+                  _vm._s(this.materiel.numero_serie) +
                   "\n            "
               ),
             ]),
@@ -6925,6 +7018,135 @@ var render = function () {
                   "\n            "
               ),
             ]),
+            _vm._v(" "),
+            this.materiel.statut.id == 2 || this.materiel.statut.id == 3
+              ? _c(
+                  "div",
+                  [
+                    _c(
+                      "v-btn",
+                      {
+                        attrs: {
+                          href: "/inventaire/reserver/" + this.materiel.id,
+                          color: "primary",
+                        },
+                      },
+                      [_vm._v("Reserver")]
+                    ),
+                  ],
+                  1
+                )
+              : _vm._e(),
+          ]),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            [
+              _c("v-btn", { attrs: { color: "orange lighten-2", text: "" } }, [
+                _vm._v("Plus"),
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { icon: "" },
+                  on: {
+                    click: function ($event) {
+                      _vm.show = !_vm.show
+                    },
+                  },
+                },
+                [
+                  _c("v-icon", [
+                    _vm._v(
+                      _vm._s(_vm.show ? "mdi-chevron-up" : "mdi-chevron-down")
+                    ),
+                  ]),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-expand-transition", [
+            _c(
+              "div",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.show,
+                    expression: "show",
+                  },
+                ],
+              },
+              [
+                _c("v-divider"),
+                _vm._v(" "),
+                _c("v-card-text", [
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Processeur : " +
+                        _vm._s(this.info.processeur) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Ram : " +
+                        _vm._s(this.info.ram) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Taille du Stockage: " +
+                        _vm._s(this.info.taille_stockage) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Marque: " +
+                        _vm._s(this.info.marque) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Description : " +
+                        _vm._s(this.info.description) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Dégats: " +
+                        _vm._s(this.info.degats) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-h6 text--primary" }, [
+                    _vm._v(
+                      "\n                        Stockage: " +
+                        _vm._s(this.info.stockage.nom) +
+                        "\n                    "
+                    ),
+                  ]),
+                ]),
+              ],
+              1
+            ),
           ]),
         ],
         1

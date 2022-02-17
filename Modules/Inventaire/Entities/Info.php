@@ -15,4 +15,10 @@ class Info extends Model
     {
         return \Modules\Inventaire\Database\factories\InfoFactory::new();
     }
+    public function materiel(){
+        return $this->belongsTo(Materiel::class);
+    }
+    public function stockage(){
+        return $this->belongsTo(Stockage::class);
+    }
 }
