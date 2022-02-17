@@ -28,7 +28,7 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('inventaire::materiels.create');
+        return view('inventaire::partials.materiel.create');
     }
 
     /**
@@ -81,7 +81,8 @@ class MaterielController extends Controller
     public function show($id)
     {
         $materiel = Materiel::with("statut","utility","type","place")->where("id",$id )->first();
-        return view('inventaire::partials.materiel.show', compact('materiel'));
+        $info = Info::with("stockage")->where("materiel_id",$id )->first();
+        return view('inventaire::partials.materiel.show', compact('materiel','info'));
     }
 
     /**
@@ -118,5 +119,5 @@ class MaterielController extends Controller
     {
         return view('inventaire::codeQr');
     }
-    
+
 }
