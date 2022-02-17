@@ -12,8 +12,8 @@ class ReservationController extends Controller
 {
     public function show($id){
         $materiel = Materiel::find($id);
-        $utitlies = Utility::all();
-        return view('inventaire::reservation.show', compact('utitlies', 'materiel'));
+        $utilities = Utility::all();
+        return view('inventaire::reservation.show', compact('utilities', 'materiel'));
     }
 
     public function store(Request $request, $id){
@@ -22,6 +22,6 @@ class ReservationController extends Controller
             'date'=>['required', 'date'],
         ]);
 
-        $
+        $materiel = Materiel::find($id);
     }
 }
