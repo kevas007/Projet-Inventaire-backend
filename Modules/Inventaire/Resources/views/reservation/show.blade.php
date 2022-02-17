@@ -1,4 +1,6 @@
 @extends('inventaire::layouts.main')
 @section('main')
-<full-calendar></full-calendar>
+
+<reservation-show :materiel="{{$materiel}}" :utilities="{{$utilities}}"></reservation-show>
+
 @endsection
