@@ -13,6 +13,10 @@
 
 <script>
 export default {
-    //
+    data() {
+        return {
+            drawer:false,
+        };
+    },
 }
 </script>

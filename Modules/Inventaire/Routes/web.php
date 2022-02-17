@@ -27,6 +27,10 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     //materiel
     Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
+    Route::get('/materiel/{id}/edit', [MaterielController::class, 'edit'])->middleware('auth');
+    Route::post('/materiel/{id}/edit', [MaterielController::class, 'update'])->middleware('auth');
+    Route::get('/materiel/create', [MaterielController::class, 'create'])->middleware('auth');
+    Route::post('/materiel/create', [MaterielController::class, 'store'])->middleware('auth');
 
     // Reservation de matériel
     Route::get('/reserver/{id}', [ReservationController::class, 'show']);
