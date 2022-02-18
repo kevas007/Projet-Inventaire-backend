@@ -4,6 +4,5 @@
 <h1>
     Inventaire
     <small>Liste</small>
-</h1>
-{{-- <create-component></create-component> --}}
+<create-component></create-component>
 @endsection
