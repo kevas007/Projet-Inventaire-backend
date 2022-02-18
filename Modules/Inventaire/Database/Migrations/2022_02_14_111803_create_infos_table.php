@@ -22,7 +22,7 @@ class CreateInfosTable extends Migration
             $table->text('description');
             $table->string('degats');
             $table->foreignId('stockage_id')->constrained();
-            $table->foreignId('materiel_id')->constrained();
+            $table->foreignId('materiel_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
