@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '81d0c49da7630b639cc81ec3adada14e3431241c',
+    'reference' => '9a6adfd6e0d85f81c6fa1de088ccfbc0e8a2f668',
     'name' => 'nwidart/inventaire',
   ),
   'versions' => 
@@ -43,6 +43,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0069435e2a01a57193b25790f105a5d3168653c1',
+    ),
+    'barryvdh/laravel-dompdf' => 
+    array (
+      'pretty_version' => 'v1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e3f429e97087b2ef19b83e5ed313f080f2477685',
     ),
     'barryvdh/laravel-snappy' => 
     array (
@@ -79,6 +88,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c',
+    ),
+    'dompdf/dompdf' => 
+    array (
+      'pretty_version' => 'v1.2.0',
+      'version' => '1.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '60b704331479a69e9bcdb3496da2315b5c4f94fd',
     ),
     'egulias/email-validator' => 
     array (
@@ -217,12 +235,12 @@ private static $installed = array (
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.56.0',
-      'version' => '2.56.0.0',
+      'pretty_version' => '2.57.0',
+      'version' => '2.57.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '626ec8cbb724cd3c3400c3ed8f730545b744e3f4',
+      'reference' => '4a54375c21eea4811dbd1149fe6b246517554e78',
     ),
     'nwidart/inventaire' => 
     array (
@@ -231,16 +249,34 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '81d0c49da7630b639cc81ec3adada14e3431241c',
+      'reference' => '9a6adfd6e0d85f81c6fa1de088ccfbc0e8a2f668',
     ),
-    'psr/container' => 
+    'phenx/php-font-lib' => 
     array (
-      'pretty_version' => '1.1.1',
-      'version' => '1.1.1.0',
+      'pretty_version' => '0.5.4',
+      'version' => '0.5.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '8622567409010282b7aeebe4bb841fe98b58dcaf',
+      'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
+    ),
+    'phenx/php-svg-lib' => 
+    array (
+      'pretty_version' => '0.4.0',
+      'version' => '0.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3ffbbb037f0871c3a819e90cff8b36dd7e656189',
+    ),
+    'psr/container' => 
+    array (
+      'pretty_version' => '1.1.2',
+      'version' => '1.1.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '513e0666f7216c7459170d56df27dfcefe1689ea',
     ),
     'psr/container-implementation' => 
     array (
@@ -273,6 +309,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+    ),
+    'sabberworm/php-css-parser' => 
+    array (
+      'pretty_version' => '8.4.0',
+      'version' => '8.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e41d2140031d533348b2192a83f02d8dd8a71d30',
     ),
     'simplesoftwareio/simple-qrcode' => 
     array (

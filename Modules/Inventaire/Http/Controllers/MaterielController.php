@@ -159,10 +159,11 @@ class MaterielController extends Controller
         $data = Materiel::find($id);
         // share data to view
         // view()->share('materiel', compact('data'));
-        return   $pdf =PDF::assertViewIs('inventaire::partials.materiel.codeQr')
-;
+        $pdf = PDF::loadView('inventaire::partials.materiel.codeQr', compact('data'));
+
+
 
         // download PDF file with download method
-        // return $pdf->download('pdf_file.pdf');
+        return $pdf->download('pdf_file.pdf');
     }
 }
