@@ -14,7 +14,7 @@ class ContratController extends Controller
      */
     public function index()
     {
-        return view('inventaire::index');
+        return view('inventaire::partials.contrat.index');
     }
 
     /**
@@ -43,7 +43,7 @@ class ContratController extends Controller
      */
     public function show($id)
     {
-        return view('inventaire::show');
+        return view('inventaire::partials.contrat.show');
     }
 
     /**
@@ -53,7 +53,7 @@ class ContratController extends Controller
      */
     public function edit($id)
     {
-        return view('inventaire::edit');
+        return view('inventaire::partials.contrat.edit');
     }
 
     /**
@@ -64,7 +64,7 @@ class ContratController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return view('inventaire::partials.contrat.index');
     }
 
     /**

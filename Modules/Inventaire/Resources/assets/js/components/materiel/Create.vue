@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-form ref="form" v-model="valid"  action='/inventaire/materiel/create' method="POST" lazy-validation>
-           <input type="hidden" name="_token" :value="csrf" />
+            <input type="hidden" name="_token" :value="csrf" />
             <v-text-field name="nom" v-model="nom" :counter="30" :rules="nomRules" label="Name" required></v-text-field>
 
             <v-text-field
@@ -9,7 +9,7 @@
                 v-model="numero_serie"
                 :rules="numero_serieRules"
                 label="Numero  de serie"
-                 name="numero_serie"
+                name="numero_serie"
                 required
             ></v-text-field>
 
@@ -60,12 +60,12 @@
                 v-model="degats"
                 :rules="degatsRules"
                 label="Degats"
-                 name="degats"
+                name="degats"
                 required
             ></v-text-field>
         <!-- <v-date-picker v-model="duree"  name="duree" v-if="statut_id ==2 || statut_id==3"></v-date-picker> -->
             <!-- <v-select v-model="type_id" :menu-props="{ auto: true, overflowY: true }" :items="this.type" label="Type"  item-value="id" item-text="nom" required></v-select> -->
-         <v-select v-model="stockage_id" name="stockage_id" :items="this.stockage"  item-value="id" item-text="nom" label="Stockage" required></v-select>
+            <v-select v-model="stockage_id" name="stockage_id" :items="this.stockage"  item-value="id" item-text="nom" label="Stockage" required></v-select>
             <v-btn :disabled="!valid" color="success" type="submit" class="mr-4" @click="validate">Validate</v-btn>
 
             <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
@@ -79,34 +79,34 @@ export default {
     mounted(){
         console.log(this.utility)
     },
-  props: {
-    utility:{
+    props: {
+        utility:{
+                type: Array,
+                required: true,
+            },
+        statut:{
             type: Array,
-            required: true,
+                required: true,
         },
-      statut:{
-           type: Array,
-            required: true,
-      },
-      type:{
+        type:{
+                type: Array,
+                required: true,
+        },
+        info:{
+                type: Array,
+                required: true,
+        },
+        place:{
             type: Array,
-            required: true,
-      },
-      info:{
+                required: true,
+        },
+        stockage:{
             type: Array,
-            required: true,
-      },
-      place:{
-          type: Array,
-            required: true,
-      },
-      stockage:{
-          type: Array,
-            required: true,
-      }
-  },
+                required: true,
+        }
+    },
     data: () => ({
-         csrf: document
+        csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
         valid: true,

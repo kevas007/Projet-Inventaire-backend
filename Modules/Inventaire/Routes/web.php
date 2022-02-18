@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use Modules\Inventaire\Http\Controllers\ContratController;
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
 
@@ -35,6 +37,12 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     // Reservation de matériel
     Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
+
+    //Contrat
+    Route::get('/contrat', [ContratController::class, 'index'])->middleware('auth');
+    Route::get('/contrat/{id}', [ContratController::class, 'show'])->middleware('auth');
+    Route::get('/contrat/{id}/edit', [ContratController::class, 'edit'])->middleware('auth');
+    Route::post('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
 });
 
 

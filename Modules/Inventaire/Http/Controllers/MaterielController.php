@@ -5,6 +5,7 @@ namespace Modules\Inventaire\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
 use Modules\Inventaire\Entities\Place;
@@ -58,12 +59,12 @@ class MaterielController extends Controller
             'type_id' => 'required|min:1',
             'place_id' => 'required|min:1',
         ]);
-      
+    
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
         $materiel->numero_serie = $request->numero_serie;
         $token = Str::random(60);
-         $materiel->token = $token ;
+        $materiel->token = $token ;
         $materiel->utility_id = $request->utility_id;
         $materiel->statut_id = $request->statut_id;
         $materiel->type_id = $request->type_id;
