@@ -23,8 +23,8 @@ Vue.component('full-calendar', (vue_fullcalendar__WEBPACK_IMPORTED_MODULE_2___de
 Vue.component('inventaire-component', (__webpack_require__(/*! ./components/Inventaire.vue */ "./Resources/assets/js/components/Inventaire.vue")["default"])); //Materiel
 
 Vue.component('index-component', (__webpack_require__(/*! ./components/materiel/Index.vue */ "./Resources/assets/js/components/materiel/Index.vue")["default"]));
-Vue.component('reservation-create', (__webpack_require__(/*! ./components/reservation/Create.vue */ "./Resources/assets/js/components/reservation/Create.vue")["default"]));
-Vue.component('reservation-show', Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/reservation/Show.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+Vue.component('reservation-create', (__webpack_require__(/*! ./components/reservation/Create.vue */ "./Resources/assets/js/components/reservation/Create.vue")["default"])); // Vue.component('reservation-show', require('./components/reservation/Show.vue').default);
+
 Vue.component('create-component', (__webpack_require__(/*! ./components/materiel/Create.vue */ "./Resources/assets/js/components/materiel/Create.vue")["default"]));
 Vue.component('show-component', (__webpack_require__(/*! ./components/materiel/Show.vue */ "./Resources/assets/js/components/materiel/Show.vue")["default"]));
 var app = new Vue({
@@ -127,6 +127,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -358,6 +424,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiels: {
@@ -369,7 +472,9 @@ __webpack_require__.r(__webpack_exports__);
     console.log(this.materiels);
   },
   data: function data() {
-    return {};
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+    };
   }
 });
 
@@ -489,6 +594,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiel: {
@@ -498,13 +606,18 @@ __webpack_require__.r(__webpack_exports__);
     info: {
       type: Object,
       required: true
+    },
+    statut: {
+      type: Array,
+      required: true
     }
   },
   mounted: function mounted() {
-    console.log(this.materiel, this.info);
+    console.log(this.statut);
   },
   data: function data() {
     return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       show: false
     };
   }
@@ -7313,6 +7426,24 @@ var render = function () {
             },
           }),
           _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              name: "stockage_id",
+              items: this.stockage,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Stockage",
+              required: "",
+            },
+            model: {
+              value: _vm.stockage_id,
+              callback: function ($$v) {
+                _vm.stockage_id = $$v
+              },
+              expression: "stockage_id",
+            },
+          }),
+          _vm._v(" "),
           _c("v-text-field", {
             attrs: {
               counter: 100,
@@ -7415,24 +7546,6 @@ var render = function () {
             },
           }),
           _vm._v(" "),
-          _c("v-select", {
-            attrs: {
-              name: "stockage_id",
-              items: this.stockage,
-              "item-value": "id",
-              "item-text": "nom",
-              label: "Stockage",
-              required: "",
-            },
-            model: {
-              value: _vm.stockage_id,
-              callback: function ($$v) {
-                _vm.stockage_id = $$v
-              },
-              expression: "stockage_id",
-            },
-          }),
-          _vm._v(" "),
           _c(
             "v-btn",
             {
@@ -7532,6 +7645,12 @@ var render = function () {
                     _c("th", { staticClass: "text-left" }, [_vm._v("Statut")]),
                     _vm._v(" "),
                     _c("th", { staticClass: "text-left" }),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "text-left" }, [_vm._v("Archivé")]),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "text-left" }, [
+                      _vm._v("Supprimer"),
+                    ]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -7545,23 +7664,124 @@ var render = function () {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.statut.nom))]),
                       _vm._v(" "),
-                      _c(
-                        "td",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: {
-                                href: "/inventaire/materiel/" + item.id,
-                                color: "primary",
+                      _c("td", [
+                        _c(
+                          "div",
+                          [
+                            _c(
+                              "v-btn",
+                              {
+                                attrs: {
+                                  href: "/inventaire/materiel/" + item.id,
+                                  color: "primary",
+                                },
                               },
-                            },
-                            [_c("v-icon", [_vm._v("mdi-eye")])],
-                            1
-                          ),
-                        ],
-                        1
-                      ),
+                              [_c("v-icon", [_vm._v("mdi-eye")])],
+                              1
+                            ),
+                          ],
+                          1
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        item.deleted_at == null
+                          ? _c(
+                              "div",
+                              [
+                                _c(
+                                  "v-form",
+                                  {
+                                    attrs: {
+                                      action:
+                                        "/inventaire/materiel/" +
+                                        item.id +
+                                        "/delete",
+                                      method: "POST",
+                                    },
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "hidden", name: "_token" },
+                                      domProps: { value: _vm.csrf },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "hidden",
+                                        name: "_method",
+                                        value: "delete",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        staticClass: "white--text",
+                                        attrs: { type: "submit", color: "red" },
+                                      },
+                                      [_vm._v("Archivé")]
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ],
+                              1
+                            )
+                          : _c("div", [_c("p", [_vm._v("Archivé")])]),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        item.deleted_at != null
+                          ? _c(
+                              "div",
+                              [
+                                _c(
+                                  "v-form",
+                                  {
+                                    attrs: {
+                                      action:
+                                        "/inventaire/materiel/" +
+                                        item.id +
+                                        "/forceDelete",
+                                      method: "POST",
+                                    },
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "hidden", name: "_token" },
+                                      domProps: { value: _vm.csrf },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      attrs: {
+                                        type: "hidden",
+                                        name: "_method",
+                                        value: "delete",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-btn",
+                                      {
+                                        staticClass: "white--text",
+                                        attrs: { type: "submit", color: "red" },
+                                      },
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-trash-can-outline"),
+                                        ]),
+                                      ],
+                                      1
+                                    ),
+                                  ],
+                                  1
+                                ),
+                              ],
+                              1
+                            )
+                          : _vm._e(),
+                      ]),
                     ])
                   }),
                   0
@@ -7606,86 +7826,111 @@ var render = function () {
         "v-card",
         { staticClass: "mx-auto", attrs: { "max-width": "344" } },
         [
-          _c("v-card-text", [
-            _c("p", { staticClass: "text-h4 text--primary" }, [
-              _vm._v("Fiche du Matériel"),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Matériel : " +
-                  _vm._s(this.materiel.nom) +
-                  "\n            "
+          _c(
+            "v-card-text",
+            [
+              _c("p", { staticClass: "text-h4 text--primary" }, [
+                _vm._v("Fiche du Matériel"),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-h6 text--primary" }, [
+                _vm._v(
+                  "\n                Matériel : " +
+                    _vm._s(this.materiel.nom) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-h6 text--primary" }, [
+                _vm._v(
+                  "\n                Muméro de serie : " +
+                    _vm._s(this.materiel.numero_serie) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-h6 text--primary" }, [
+                _vm._v(
+                  "\n                Token : " +
+                    _vm._s(this.materiel.token) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-form",
+                {
+                  attrs: {
+                    action:
+                      "/inventaire/materiel/" + this.materiel.id + "/edit",
+                    method: "POST",
+                  },
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf },
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_method", value: "put" },
+                  }),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: {
+                      items: this.statut,
+                      "item-value": "id",
+                      "item-text": "nom",
+                      name: "statut_id",
+                      value: this.materiel.statut,
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { type: "submit" } }, [
+                    _vm._v("Changer"),
+                  ]),
+                ],
+                1
               ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Muméro de serie : " +
-                  _vm._s(this.materiel.numero_serie) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Token : " +
-                  _vm._s(this.materiel.token) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Statut : " +
-                  _vm._s(this.materiel.statut.nom) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Type : " +
-                  _vm._s(this.materiel.type.nom) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Place : " +
-                  _vm._s(this.materiel.place.nom) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-h6 text--primary" }, [
-              _vm._v(
-                "\n                Durée : " +
-                  _vm._s(this.materiel.duree) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            this.materiel.statut.id == 2 || this.materiel.statut.id == 3
-              ? _c(
-                  "div",
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        attrs: {
-                          href: "/inventaire/reserver/" + this.materiel.id,
-                          color: "primary",
+              _vm._v(" "),
+              _c("p", { staticClass: "text-h6 text--primary" }, [
+                _vm._v(
+                  "\n                Type : " +
+                    _vm._s(this.materiel.type.nom) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-h6 text--primary" }, [
+                _vm._v(
+                  "\n                Place : " +
+                    _vm._s(this.materiel.place.nom) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              this.materiel.deleted_at == null
+                ? _c(
+                    "div",
+                    { staticClass: "ma-2" },
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            href: "/inventaire/reserver/" + this.materiel.id,
+                            color: "primary",
+                          },
                         },
-                      },
-                      [_vm._v("Reserver")]
-                    ),
-                  ],
-                  1
-                )
-              : _vm._e(),
-          ]),
+                        [_vm._v("Reserver")]
+                      ),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+            ],
+            1
+          ),
           _vm._v(" "),
           _c(
             "v-card-actions",

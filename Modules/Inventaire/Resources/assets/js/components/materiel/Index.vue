@@ -5,7 +5,10 @@
                 <h1>Liste des matériels</h1>
             </v-col>
             <v-col class="mt-2">
-                <v-btn class="text--primary" href="/inventaire/materiel/create">Ajouter un nouveau materiel</v-btn>
+                <v-btn
+                    class="text--primary"
+                    href="/inventaire/materiel/create"
+                >Ajouter un nouveau materiel</v-btn>
             </v-col>
         </v-row>
         <v-simple-table>
@@ -16,6 +19,8 @@
                         <th class="text-left">Numéro de série</th>
                         <th class="text-left">Statut</th>
                         <th class="text-left"></th>
+                        <th class="text-left">Archivé</th>
+                        <th class="text-left">Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,10 +29,42 @@
                         <td>{{ item.numero_serie }}</td>
                         <td>{{ item.statut.nom }}</td>
                         <td>
-                            <v-btn :href="'/inventaire/materiel/' + item.id" color="primary">
-                                <v-icon>mdi-eye</v-icon>
-                                <!-- <v-icon>Plus</v-icon> -->
-                            </v-btn>
+                            <div >
+                                <v-btn :href="'/inventaire/materiel/' + item.id" color="primary">
+                                    <v-icon>mdi-eye</v-icon>
+                                    <!-- <v-icon>Plus</v-icon> -->
+                                </v-btn>
+                            </div>
+                        </td>
+                        <td>
+                            <div v-if="item.deleted_at == null">
+                                <v-form
+                                    :action="'/inventaire/materiel/' + item.id + '/delete'"
+                                    method="POST"
+                                >
+                                    <input type="hidden" name="_token" :value="csrf" />
+                                    <input type="hidden" name="_method" value="delete" />
+                                    <v-btn type="submit" color="red" class="white--text">Archivé</v-btn>
+                                </v-form>
+                            </div>
+                            <div v-else>
+                                <p>Archivé</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div v-if="item.deleted_at != null">
+                                <v-form
+                                    :action="'/inventaire/materiel/' + item.id + '/forceDelete'"
+                                    method="POST"
+                                >
+                                    <input type="hidden" name="_token" :value="csrf" />
+                                    <input type="hidden" name="_method" value="delete" />
+                                    <v-btn type="submit" color="red" class="white--text">
+                                        <v-icon>mdi-trash-can-outline</v-icon>
+                                        <!-- <v-icon>Plus</v-icon> -->
+                                    </v-btn>
+                                </v-form>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -50,6 +87,9 @@ export default {
     },
     data() {
         return {
+            csrf: document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content"),
 
         }
     },
