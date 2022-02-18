@@ -5,6 +5,8 @@ namespace Modules\Inventaire\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Inventaire\Entities\Contrat;
+use Modules\Inventaire\Entities\Materiel;
 
 class ContratController extends Controller
 {
@@ -31,9 +33,15 @@ class ContratController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(Request $request, $token)
     {
-        //
+        $materiel = Materiel::where('token', $token)->first();
+        $contrat = new Contrat();
+        $contrat->materiel_id=$materiel->id;
+        $contrat->statut_id = 1;
+        $contrat->save();
+        
+
     }
 
     /**
