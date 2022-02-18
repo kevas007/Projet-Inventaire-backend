@@ -16,7 +16,7 @@
          {{-- @foreach ($data as $item ) --}}
              {{$data->nom }}
              <div class="card-body">
-                {!! base64_encode(QrCode::format('svg')->size(200)->errorCorrection('H')->generate('string')) !!}
+                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('svg')->size(200)->errorCorrection('H')->generate('string')) !!}>
             </div>
         </h1>
     </div>

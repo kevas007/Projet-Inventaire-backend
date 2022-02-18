@@ -461,6 +461,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiels: {
@@ -7651,6 +7655,8 @@ var render = function () {
                     _c("th", { staticClass: "text-left" }, [
                       _vm._v("Supprimer"),
                     ]),
+                    _vm._v(" "),
+                    _c("th", { staticClass: "text-left" }, [_vm._v("Pdf")]),
                   ]),
                 ]),
                 _vm._v(" "),
@@ -7782,6 +7788,24 @@ var render = function () {
                             )
                           : _vm._e(),
                       ]),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: {
+                                href:
+                                  "/inventaire/materiel/" + item.id + "/pdf",
+                              },
+                            },
+                            [_vm._v("Export to PDF")]
+                          ),
+                        ],
+                        1
+                      ),
                     ])
                   }),
                   0
