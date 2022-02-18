@@ -22,12 +22,16 @@ class InventaireServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(\Illuminate\Routing\Router $router)
     {
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+        // $kernel = $this->app->make('Illuminate\Contracts\Http\Kernel');
+        // $kernel->pushMiddleware('Modules\Inventaire\Http\Middleware\Lead');
+
+        $router->aliasMiddleware('Lead', \Modules\Inventaire\Http\Middleware\Lead::class);
     }
 
     /**
