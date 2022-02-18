@@ -11,6 +11,7 @@
 |
 */
 
+use Modules\Inventaire\Http\Controllers\EmprunteurController;
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
 
@@ -38,6 +39,11 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     // Reservation de matériel
     Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
+
+    // Emprunt Materiel
+    Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
+
+    Route::get('/contrat/{token}/', [ContratController::class,'store']);
 });
 
 

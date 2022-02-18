@@ -14,6 +14,9 @@
         <v-app id="inspire" app>
             <inventaire-component></inventaire-component>
             <v-main app>
+                @if (Session::has('msg'))
+                    <v-alert dismissible>{{ Session::get('msg') }}</v-alert>
+                @endif
                 @yield('main')
             </v-main>
         </v-app>
