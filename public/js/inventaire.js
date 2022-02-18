@@ -523,6 +523,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     materiels: {
@@ -7987,7 +8001,11 @@ var render = function () {
                               ],
                               1
                             )
-                          : _c("div", [_c("p", [_vm._v("Archivé")])]),
+                          : _c("div", [
+                              _c("p", { staticClass: "text-center" }, [
+                                _vm._v("Archivé"),
+                              ]),
+                            ]),
                       ]),
                       _vm._v(" "),
                       _c("td", [
@@ -8039,26 +8057,44 @@ var render = function () {
                               ],
                               1
                             )
-                          : _vm._e(),
+                          : _c("div", [
+                              _c("p", { staticClass: "text-center" }, [
+                                _vm._v("/"),
+                              ]),
+                            ]),
                       ]),
                       _vm._v(" "),
-                      _c(
-                        "td",
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: {
-                                href:
-                                  "/inventaire/materiel/" + item.id + "/pdf",
-                              },
-                            },
-                            [_vm._v("Export to PDF")]
-                          ),
-                        ],
-                        1
-                      ),
+                      _c("td", [
+                        item.deleted_at == null
+                          ? _c(
+                              "div",
+                              [
+                                _c(
+                                  "v-btn",
+                                  {
+                                    staticClass: "btn btn-primary",
+                                    attrs: {
+                                      href:
+                                        "/inventaire/materiel/" +
+                                        item.id +
+                                        "/pdf",
+                                    },
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                Export to PDF\n                                "
+                                    ),
+                                  ]
+                                ),
+                              ],
+                              1
+                            )
+                          : _c("div", [
+                              _c("p", { staticClass: "text-center" }, [
+                                _vm._v("/"),
+                              ]),
+                            ]),
+                      ]),
                     ])
                   }),
                   0

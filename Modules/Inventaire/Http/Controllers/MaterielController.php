@@ -2,9 +2,11 @@
 
 namespace Modules\Inventaire\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+
 use Illuminate\Support\Str;
 use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
@@ -18,6 +20,11 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MaterielController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('Lead')
+            ->except('index', 'show', 'pdf', 'qrcode');
+    }
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -158,9 +165,14 @@ class MaterielController extends Controller
         // retreive all records from db
         $data = Materiel::find($id);
         // share data to view
-        // view()->share('materiel', compact('data'));
-        return   $pdf =PDF::assertViewIs('inventaire::partials.materiel.codeQr')
-;
+        view()->share('inventaire::partials.materiel.codeQr', compact('data'));
+        return   $pdf = FacadePdf::loadView('inventaire::partials.materiel.codeQr', compact('data'))
+            ->setPaper('a4', 'landscape')
+            ->setWarnings(false)
+            // ->save(storage_path('app/public/qr/' . $data->token . '.pdf'))
+            ->stream();
+
+
 
         // download PDF file with download method
         // return $pdf->download('pdf_file.pdf');

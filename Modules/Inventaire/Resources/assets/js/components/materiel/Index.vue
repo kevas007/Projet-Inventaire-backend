@@ -30,7 +30,7 @@
                         <td>{{ item.numero_serie }}</td>
                         <td>{{ item.statut.nom }}</td>
                         <td>
-                            <div >
+                            <div>
                                 <v-btn :href="'/inventaire/materiel/' + item.id" color="primary">
                                     <v-icon>mdi-eye</v-icon>
                                     <!-- <v-icon>Plus</v-icon> -->
@@ -49,7 +49,7 @@
                                 </v-form>
                             </div>
                             <div v-else>
-                                <p>Archivé</p>
+                                <p class="text-center">Archivé</p>
                             </div>
                         </td>
                         <td>
@@ -66,9 +66,23 @@
                                     </v-btn>
                                 </v-form>
                             </div>
+                            <div v-else>
+                                <p class="text-center">/</p>
+                            </div>
                         </td>
                         <td>
-                            <v-btn class="btn btn-primary" :href="'/inventaire/materiel/' + item.id + '/pdf'">Export to PDF</v-btn>
+                            <div v-if="item.deleted_at == null">
+                                <v-btn
+                                    class="btn btn-primary"
+                                    :href="'/inventaire/materiel/' + item.id + '/pdf'"
+                                >
+                                    Export to PDF
+                                    <!-- <v-icon>Plus</v-icon> -->
+                                </v-btn>
+                            </div>
+                            <div v-else>
+                                <p class="text-center">/</p>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
