@@ -13,6 +13,8 @@ use Modules\Inventaire\Entities\Statut;
 use Modules\Inventaire\Entities\Stockage;
 use Modules\Inventaire\Entities\Type;
 use Modules\Inventaire\Entities\Utility;
+use PDF;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MaterielController extends Controller
 {
@@ -36,11 +38,11 @@ class MaterielController extends Controller
     {
         $utility = Utility::all();
         $statut = Statut::all();
-        $type= Type::all();
+        $type = Type::all();
         $info = Info::all();
-        $place= Place::all();
-        $stockage= Stockage::all();
-        return view('inventaire::partials.materiel.create', compact('utility','statut','type','info','place','stockage'));
+        $place = Place::all();
+        $stockage = Stockage::all();
+        return view('inventaire::partials.materiel.create', compact('utility', 'statut', 'type', 'info', 'place', 'stockage'));
     }
 
     /**
@@ -62,11 +64,11 @@ class MaterielController extends Controller
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
         $materiel->numero_serie = $request->numero_serie;
-        $token=false;
+        $token = false;
         do {
             $token = random_int(100000, 999999);
         } while (Materiel::where("token", "=", $token)->first());
-        $materiel->token =$token;
+        $materiel->token = $token;
         $materiel->utility_id = $request->utility_id;
         $materiel->statut_id = $request->statut_id;
         $materiel->type_id = $request->type_id;
@@ -93,10 +95,10 @@ class MaterielController extends Controller
      */
     public function show($id)
     {
-        $materiel = Materiel::withTrashed()->with("statut","utility","type","place")->where("id",$id )->first();
-        $info = Info::with("stockage")->where("materiel_id",$id )->first();
+        $materiel = Materiel::withTrashed()->with("statut", "utility", "type", "place")->where("id", $id)->first();
+        $info = Info::with("stockage")->where("materiel_id", $id)->first();
         $statut = Statut::all();
-        return view('inventaire::partials.materiel.show', compact('materiel','info', 'statut'));
+        return view('inventaire::partials.materiel.show', compact('materiel', 'info', 'statut'));
     }
 
     /**
@@ -118,7 +120,7 @@ class MaterielController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'statut_id' => ['required','exists:statuts,id'],
+            'statut_id' => ['required', 'exists:statuts,id'],
         ]);
         $update = Materiel::find($id);
         $update->statut_id = $request->statut_id;
@@ -150,5 +152,17 @@ class MaterielController extends Controller
     {
         return view('inventaire::codeQr');
     }
+    // Generate PDF
+    public function createPDF($id)
+    {
+        // retreive all records from db
+        $data = Materiel::find($id);
+        // share data to view
+        // view()->share('materiel', compact('data'));
+        return   $pdf =PDF::assertViewIs('inventaire::partials.materiel.codeQr')
+;
 
+        // download PDF file with download method
+        // return $pdf->download('pdf_file.pdf');
+    }
 }
