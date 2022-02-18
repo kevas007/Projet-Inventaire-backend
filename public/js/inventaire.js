@@ -23,10 +23,10 @@ Vue.component('full-calendar', (vue_fullcalendar__WEBPACK_IMPORTED_MODULE_2___de
 Vue.component('inventaire-component', (__webpack_require__(/*! ./components/Inventaire.vue */ "./Resources/assets/js/components/Inventaire.vue")["default"])); //Materiel
 
 Vue.component('index-component', (__webpack_require__(/*! ./components/materiel/Index.vue */ "./Resources/assets/js/components/materiel/Index.vue")["default"]));
-Vue.component('reservation-create', (__webpack_require__(/*! ./components/reservation/Create.vue */ "./Resources/assets/js/components/reservation/Create.vue")["default"]));
-Vue.component('reservation-show', Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/reservation/Show.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+Vue.component('reservation-create', (__webpack_require__(/*! ./components/reservation/Create.vue */ "./Resources/assets/js/components/reservation/Create.vue")["default"])); // Vue.component('reservation-show', require('./components/reservation/Show.vue').default);
+
 Vue.component('create-component', (__webpack_require__(/*! ./components/materiel/Create.vue */ "./Resources/assets/js/components/materiel/Create.vue")["default"]));
-Vue.component('show-component', (__webpack_require__(/*! ./components/materiel/Show.vue */ "./Resources/assets/js/components/materiel/Show.vue")["default"]));
+Vue.component('show-component', __webpack_require__(/*! ./components/materiel/Show.vue */ "./Resources/assets/js/components/materiel/Show.vue"));
 var app = new Vue({
   el: '#app',
   vuetify: _vuetify__WEBPACK_IMPORTED_MODULE_0__["default"]
