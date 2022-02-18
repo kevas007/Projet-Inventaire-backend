@@ -21,6 +21,7 @@
                         <th class="text-left"></th>
                         <th class="text-left">Archivé</th>
                         <th class="text-left">Supprimer</th>
+                        <th class="text-left">Pdf</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,6 +66,9 @@
                                     </v-btn>
                                 </v-form>
                             </div>
+                        </td>
+                        <td>
+                            <v-btn class="btn btn-primary" :href="'/inventaire/materiel/' + item.id + '/pdf'">Export to PDF</v-btn>
                         </td>
                     </tr>
                 </tbody>

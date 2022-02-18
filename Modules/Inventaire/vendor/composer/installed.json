@@ -55,7 +55,88 @@
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
             },
-            "install-path": "../bacon/bacon-qr-code"
+            "install-path": "../../../../Modules/Inventaire/vendor/bacon/bacon-qr-code"
+        },
+        {
+            "name": "barryvdh/laravel-snappy",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-snappy.git",
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^6|^7|^8|^9",
+                "illuminate/support": "^6|^7|^8|^9",
+                "knplabs/knp-snappy": "^1",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4|^5|^6|^7"
+            },
+            "time": "2022-01-29T19:36:49+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvdh\\Snappy\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "PDF": "Barryvdh\\Snappy\\Facades\\SnappyPdf",
+                        "SnappyImage": "Barryvdh\\Snappy\\Facades\\SnappyImage"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Snappy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Snappy PDF/Image for Laravel",
+            "keywords": [
+                "image",
+                "laravel",
+                "pdf",
+                "snappy",
+                "wkhtmltoimage",
+                "wkhtmltopdf"
+            ],
+            "support": {
+                "issues": "https://github.com/barryvdh/laravel-snappy/issues",
+                "source": "https://github.com/barryvdh/laravel-snappy/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://fruitcake.nl",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../../../../Modules/Inventaire/vendor/barryvdh/laravel-snappy"
         },
         {
             "name": "dasprid/enum",
@@ -105,7 +186,7 @@
                 "issues": "https://github.com/DASPRiD/Enum/issues",
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
-            "install-path": "../dasprid/enum"
+            "install-path": "../../../../Modules/Inventaire/vendor/dasprid/enum"
         },
         {
             "name": "doctrine/inflector",
@@ -199,7 +280,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../doctrine/inflector"
+            "install-path": "../../../../Modules/Inventaire/vendor/doctrine/inflector"
         },
         {
             "name": "doctrine/lexer",
@@ -278,7 +359,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../doctrine/lexer"
+            "install-path": "../../../../Modules/Inventaire/vendor/doctrine/lexer"
         },
         {
             "name": "egulias/email-validator",
@@ -349,7 +430,106 @@
                     "type": "github"
                 }
             ],
-            "install-path": "../egulias/email-validator"
+            "install-path": "../../../../Modules/Inventaire/vendor/egulias/email-validator"
+        },
+        {
+            "name": "h4cc/wkhtmltoimage-amd64",
+            "version": "0.12.4",
+            "version_normalized": "0.12.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h4cc/wkhtmltoimage-amd64.git",
+                "reference": "c4e33f635207af89a704205b8902fb5715ca88be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h4cc/wkhtmltoimage-amd64/zipball/c4e33f635207af89a704205b8902fb5715ca88be",
+                "reference": "c4e33f635207af89a704205b8902fb5715ca88be",
+                "shasum": ""
+            },
+            "time": "2018-01-15T07:23:40+00:00",
+            "bin": [
+                "bin/wkhtmltoimage-amd64"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL Version 3"
+            ],
+            "authors": [
+                {
+                    "name": "Julius Beckmann",
+                    "email": "github@h4cc.de"
+                }
+            ],
+            "description": "Convert html to image using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
+            "homepage": "http://wkhtmltopdf.org/",
+            "keywords": [
+                "binary",
+                "convert",
+                "image",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltoimage"
+            ],
+            "support": {
+                "issues": "https://github.com/h4cc/wkhtmltoimage-amd64/issues",
+                "source": "https://github.com/h4cc/wkhtmltoimage-amd64/tree/master"
+            },
+            "install-path": "../../../../Modules/Inventaire/vendor/h4cc/wkhtmltoimage-amd64"
+        },
+        {
+            "name": "h4cc/wkhtmltopdf-amd64",
+            "version": "0.12.4",
+            "version_normalized": "0.12.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h4cc/wkhtmltopdf-amd64.git",
+                "reference": "4e2ab2d032a5d7fbe2a741de8b10b8989523c95b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-amd64/zipball/4e2ab2d032a5d7fbe2a741de8b10b8989523c95b",
+                "reference": "4e2ab2d032a5d7fbe2a741de8b10b8989523c95b",
+                "shasum": ""
+            },
+            "time": "2018-01-15T06:57:33+00:00",
+            "bin": [
+                "bin/wkhtmltopdf-amd64"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "h4cc\\WKHTMLToPDF\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL Version 3"
+            ],
+            "authors": [
+                {
+                    "name": "Julius Beckmann",
+                    "email": "github@h4cc.de"
+                }
+            ],
+            "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
+            "homepage": "http://wkhtmltopdf.org/",
+            "keywords": [
+                "binary",
+                "convert",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "support": {
+                "issues": "https://github.com/h4cc/wkhtmltopdf-amd64/issues",
+                "source": "https://github.com/h4cc/wkhtmltopdf-amd64/tree/master"
+            },
+            "install-path": "../../../../Modules/Inventaire/vendor/h4cc/wkhtmltopdf-amd64"
         },
         {
             "name": "illuminate/collections",
@@ -406,7 +586,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/collections"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/collections"
         },
         {
             "name": "illuminate/console",
@@ -469,7 +649,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/console"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/console"
         },
         {
             "name": "illuminate/container",
@@ -523,7 +703,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/container"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/container"
         },
         {
             "name": "illuminate/contracts",
@@ -574,7 +754,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/contracts"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/contracts"
         },
         {
             "name": "illuminate/filesystem",
@@ -639,7 +819,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/filesystem"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/filesystem"
         },
         {
             "name": "illuminate/macroable",
@@ -688,7 +868,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/macroable"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/macroable"
         },
         {
             "name": "illuminate/support",
@@ -759,7 +939,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/support"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/support"
         },
         {
             "name": "illuminate/translation",
@@ -814,7 +994,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/translation"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/translation"
         },
         {
             "name": "illuminate/validation",
@@ -877,7 +1057,84 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../illuminate/validation"
+            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/validation"
+        },
+        {
+            "name": "knplabs/knp-snappy",
+            "version": "v1.4.1",
+            "version_normalized": "1.4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/snappy.git",
+                "reference": "5126fb5b335ec929a226314d40cd8dad497c3d67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/5126fb5b335ec929a226314d40cd8dad497c3d67",
+                "reference": "5126fb5b335ec929a226314d40cd8dad497c3d67",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "psr/log": "^1.0||^2.0||^3.0",
+                "symfony/process": "~3.4||~4.3||~5.0||~6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16||^3.0",
+                "pedrotroller/php-cs-custom-fixer": "^2.19",
+                "phpstan/phpstan": "^0.12.7",
+                "phpstan/phpstan-phpunit": "^0.12.6",
+                "phpunit/phpunit": "~7.4||~8.5"
+            },
+            "suggest": {
+                "h4cc/wkhtmltoimage-amd64": "Provides wkhtmltoimage-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltoimage-i386": "Provides wkhtmltoimage-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-amd64": "Provides wkhtmltopdf-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-i386": "Provides wkhtmltopdf-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "wemersonjanuario/wkhtmltopdf-windows": "Provides wkhtmltopdf executable for Windows, use version `~0.12` as dependency"
+            },
+            "time": "2022-01-07T13:03:38+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Snappy\\": "src/Knp/Snappy"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KNP Labs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/snappy/contributors"
+                }
+            ],
+            "description": "PHP library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage.",
+            "homepage": "http://github.com/KnpLabs/snappy",
+            "keywords": [
+                "knp",
+                "knplabs",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/snappy/issues",
+                "source": "https://github.com/KnpLabs/snappy/tree/v1.4.1"
+            },
+            "install-path": "../../../../Modules/Inventaire/vendor/knplabs/knp-snappy"
         },
         {
             "name": "laravel/breeze",
@@ -937,7 +1194,7 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "install-path": "../laravel/breeze"
+            "install-path": "../../../../Modules/Inventaire/vendor/laravel/breeze"
         },
         {
             "name": "laravel/ui",
@@ -1001,7 +1258,7 @@
             "support": {
                 "source": "https://github.com/laravel/ui/tree/v3.4.4"
             },
-            "install-path": "../laravel/ui"
+            "install-path": "../../../../Modules/Inventaire/vendor/laravel/ui"
         },
         {
             "name": "nesbot/carbon",
@@ -1100,7 +1357,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../nesbot/carbon"
+            "install-path": "../../../../Modules/Inventaire/vendor/nesbot/carbon"
         },
         {
             "name": "psr/container",
@@ -1151,7 +1408,60 @@
                 "issues": "https://github.com/php-fig/container/issues",
                 "source": "https://github.com/php-fig/container/tree/1.1.1"
             },
-            "install-path": "../psr/container"
+            "install-path": "../../../../Modules/Inventaire/vendor/psr/container"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.4",
+            "version_normalized": "1.1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2021-05-03T11:20:27+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
+            "install-path": "../../../../Modules/Inventaire/vendor/psr/log"
         },
         {
             "name": "psr/simple-cache",
@@ -1205,7 +1515,7 @@
             "support": {
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
             },
-            "install-path": "../psr/simple-cache"
+            "install-path": "../../../../Modules/Inventaire/vendor/psr/simple-cache"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -1276,7 +1586,7 @@
                 "issues": "https://github.com/SimpleSoftwareIO/simple-qrcode/issues",
                 "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/4.2.0"
             },
-            "install-path": "../simplesoftwareio/simple-qrcode"
+            "install-path": "../../../../Modules/Inventaire/vendor/simplesoftwareio/simple-qrcode"
         },
         {
             "name": "symfony/console",
@@ -1378,7 +1688,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/console"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/console"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1448,7 +1758,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/deprecation-contracts"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/deprecation-contracts"
         },
         {
             "name": "symfony/finder",
@@ -1514,7 +1824,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/finder"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/finder"
         },
         {
             "name": "symfony/http-foundation",
@@ -1590,7 +1900,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/http-foundation"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/http-foundation"
         },
         {
             "name": "symfony/mime",
@@ -1676,7 +1986,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/mime"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/mime"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1761,7 +2071,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-ctype"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-ctype"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -1845,7 +2155,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-intl-grapheme"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-grapheme"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -1935,7 +2245,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-intl-idn"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-idn"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
@@ -2022,7 +2332,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-intl-normalizer"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-normalizer"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2108,7 +2418,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-mbstring"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-mbstring"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -2187,7 +2497,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-php72"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php72"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -2269,7 +2579,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-php73"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php73"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -2355,7 +2665,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-php80"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php80"
         },
         {
             "name": "symfony/process",
@@ -2420,7 +2730,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/process"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/process"
         },
         {
             "name": "symfony/service-contracts",
@@ -2506,7 +2816,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/service-contracts"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/service-contracts"
         },
         {
             "name": "symfony/string",
@@ -2595,7 +2905,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/string"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/string"
         },
         {
             "name": "symfony/translation",
@@ -2695,7 +3005,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/translation"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/translation"
         },
         {
             "name": "symfony/translation-contracts",
@@ -2776,7 +3086,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/translation-contracts"
+            "install-path": "../../../../Modules/Inventaire/vendor/symfony/translation-contracts"
         },
         {
             "name": "voku/portable-ascii",
@@ -2853,7 +3163,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../voku/portable-ascii"
+            "install-path": "../../../../Modules/Inventaire/vendor/voku/portable-ascii"
         }
     ],
     "dev": true,

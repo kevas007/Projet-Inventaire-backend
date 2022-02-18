@@ -33,6 +33,7 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::put('/materiel/{id}/edit', [MaterielController::class, 'update'])->middleware('auth');
     Route::delete('/materiel/{id}/delete', [MaterielController::class, 'destroy'])->middleware('auth');
     Route::delete('/materiel/{id}/forceDelete', [MaterielController::class, 'delete'])->middleware('auth');
+    Route::get('/materiel/{id}/pdf', [MaterielController::class, 'createPDF'])->middleware('auth');
 
     // Reservation de matériel
     Route::get('/reserver/{id}', [ReservationController::class, 'create']);
