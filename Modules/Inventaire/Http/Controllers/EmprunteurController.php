@@ -5,6 +5,8 @@ namespace Modules\Inventaire\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
+use Modules\Inventaire\Entities\Emprunteur;
 
 class EmprunteurController extends Controller
 {
@@ -31,9 +33,30 @@ class EmprunteurController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom'=>['required','min:1','string'],
+            'prenom'=>['required','min:1','string'],
+            'formation'=>['required','min:1','string'],
+            'adresse'=>['required','min:1','string'],
+            'cart_id'=>['required','image'],
+            'date_naissance'=>['required','date','before:today'],
+        ]);
+
+        $emprunteur = new Emprunteur();
+        $emprunteur->nom = $request->nom;
+        $emprunteur->prenom = $request->prenom;
+        $emprunteur->formation = $request->formation;
+        $emprunteur->adresse = $request->adresse;
+        $emprunteur->date_naissance = $request->date_naissance;
+
+        $filename = Storage::disk('public')->put('/carte_identite',$request->cart_id);
+        $emprunteur->cart_id = $filename;
+
+        $emprunteur->save();
+
+        return redirect();
     }
 
     /**

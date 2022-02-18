@@ -25,14 +25,18 @@ class ReservationController extends Controller
             'start_date' => ['required', 'date', 'after:today', 'before:end_date'],
             'end_date' => ['required', 'date', 'after:start_date'],
         ]);
+
+        // Vérifie si le matériel a déjà été réservé aux dates spécifiées
         $reservationsExists = Reservation::where('materiel_id', $id)->whereDate('debut', '>=', $request->start_date)->whereDate('fin', '<=', $request->end_date)->exists();
         if (!$reservationsExists) {
+
+            // D'abord, on change l'état du matériel à libre jusqu'à
 
             $materiel = Materiel::find($id);
             $materiel->utility_id = $request->utility_id;
             $materiel->statut_id = 3;
             $materiel->save();
-
+            // Ensuite, on crée la réservation pour ce matériel
             $reservation = new Reservation();
             $reservation->debut = $request->start_date;
             $reservation->fin = $request->end_date;
