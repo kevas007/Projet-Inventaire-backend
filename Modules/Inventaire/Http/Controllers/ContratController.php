@@ -25,6 +25,7 @@ class ContratController extends Controller
      */
     public function create()
     {
+
         return view('inventaire::create');
     }
 
@@ -40,8 +41,6 @@ class ContratController extends Controller
         $contrat->materiel_id=$materiel->id;
         $contrat->statut_id = 1;
         $contrat->save();
-        
-
     }
 
     /**

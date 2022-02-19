@@ -10,7 +10,7 @@ class Contrat extends Model
     use HasFactory;
 
     protected $fillable = [];
-    
+
     protected static function newFactory()
     {
         return \Modules\Inventaire\Database\factories\ContratFactory::new();
