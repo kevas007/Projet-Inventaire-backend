@@ -177,4 +177,11 @@ class MaterielController extends Controller
         // download PDF file with download method
         // return $pdf->download('pdf_file.pdf');
     }
+
+
+    public function search(Request $request)
+    {
+        $materiels = Materiel::with("statut")->get();
+        return view('inventaire::partials.materiel.search', compact('materiels'));
+    }
 }
