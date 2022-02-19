@@ -38,8 +38,7 @@ Vue.component('inventaire-component', (__webpack_require__(/*! ./components/Inve
 
 Vue.component('index-component', (__webpack_require__(/*! ./components/materiel/Index.vue */ "./Resources/assets/js/components/materiel/Index.vue")["default"]));
 Vue.component('reservation-create', (__webpack_require__(/*! ./components/reservation/Create.vue */ "./Resources/assets/js/components/reservation/Create.vue")["default"]));
-Vue.component('emprunt-create', (__webpack_require__(/*! ./components/emprunt/Create.vue */ "./Resources/assets/js/components/emprunt/Create.vue")["default"])); // Vue.component('reservation-show', require('./components/reservation/Show.vue').default);
-
+Vue.component('emprunt-create', (__webpack_require__(/*! ./components/emprunt/Create.vue */ "./Resources/assets/js/components/emprunt/Create.vue")["default"]));
 Vue.component('create-component', (__webpack_require__(/*! ./components/materiel/Create.vue */ "./Resources/assets/js/components/materiel/Create.vue")["default"]));
 Vue.component('show-component', (__webpack_require__(/*! ./components/materiel/Show.vue */ "./Resources/assets/js/components/materiel/Show.vue")["default"]));
 Vue.component('search-component', (__webpack_require__(/*! ./components/materiel/CodeQr.vue */ "./Resources/assets/js/components/materiel/CodeQr.vue")["default"]));
@@ -711,6 +710,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4936,7 +4941,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.qr[data-v-6d5bbd53] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n}\n.camera[data-v-6d5bbd53] {\n    width: 50%;\n    height: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.qr[data-v-6d5bbd53] {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-direction: column;\n}\n.camera[data-v-6d5bbd53] {\r\n    width: 50%;\r\n    height: 100%;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4960,7 +4965,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.validation-success[data-v-52627d8e],\n.validation-failure[data-v-52627d8e],\n.validation-pending[data-v-52627d8e] {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n\n    background-color: rgba(255, 255, 255, 0.8);\n    text-align: center;\n    font-weight: bold;\n    font-size: 1.4rem;\n    padding: 10px;\n\n    display: flex;\n    flex-flow: column nowrap;\n    justify-content: center;\n}\n.validation-success[data-v-52627d8e] {\n    color: green;\n}\n.validation-failure[data-v-52627d8e] {\n    color: red;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.validation-success[data-v-52627d8e],\r\n.validation-failure[data-v-52627d8e],\r\n.validation-pending[data-v-52627d8e] {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n\r\n    background-color: rgba(255, 255, 255, 0.8);\r\n    text-align: center;\r\n    font-weight: bold;\r\n    font-size: 1.4rem;\r\n    padding: 10px;\r\n\r\n    display: flex;\r\n    flex-flow: column nowrap;\r\n    justify-content: center;\n}\n.validation-success[data-v-52627d8e] {\r\n    color: green;\n}\n.validation-failure[data-v-52627d8e] {\r\n    color: red;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9740,9 +9745,27 @@ var render = function () {
                               1
                             )
                           : _c("div", [
-                              _c("p", { staticClass: "text-center" }, [
-                                _vm._v("Archivé"),
-                              ]),
+                              _c(
+                                "p",
+                                { staticClass: "text-center" },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass: "ma-1 flex items-center ",
+                                      attrs: {
+                                        href:
+                                          "/inventaire/materiel/" +
+                                          item.id +
+                                          "/restaurer",
+                                        color: "primary",
+                                      },
+                                    },
+                                    [_vm._v("Restaurer")]
+                                  ),
+                                ],
+                                1
+                              ),
                             ]),
                       ]),
                       _vm._v(" "),
