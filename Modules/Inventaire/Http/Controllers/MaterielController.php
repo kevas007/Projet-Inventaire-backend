@@ -190,4 +190,8 @@ class MaterielController extends Controller
         $materiels = Materiel::where('token', $token)->first();
         return redirect('/inventaire/materiel/' . $materiels->id);
     }
+    public function restore($id){
+        $materiels = Materiel::withTrashed()->find($id)->restore();
+        return redirect()->back();
+    }
 }

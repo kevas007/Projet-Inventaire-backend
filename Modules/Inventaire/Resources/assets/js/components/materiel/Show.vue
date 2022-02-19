@@ -137,7 +137,7 @@ export default {
             required: true,
         },
     },
- 
+
     data: () => ({
         csrf: document
             .querySelector('meta[name="csrf-token"]')
