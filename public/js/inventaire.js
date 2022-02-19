@@ -154,20 +154,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Create",
   props: {
-    id: [Number, String]
+    id: [Number, String],
+    users: [Array]
   },
   data: function data() {
     return {
       typeEmpruntSelect: "moi",
+      team_member_id: 0,
+      photo_id: null,
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
     setEmprunt: function setEmprunt(value) {
       this.typeEmpruntSelect = value;
+    }
+  },
+  computed: {
+    checkSelectedTeamMember: function checkSelectedTeamMember() {
+      var _this = this;
+
+      return this.users.filter(function (elem) {
+        return elem.id == _this.team_member_id;
+      }).length > 0;
     }
   }
 });
@@ -7503,23 +7562,191 @@ var render = function () {
         { staticClass: "mx-auto text-center" },
         [
           _vm.typeEmpruntSelect == "moi"
-            ? _c("v-btn", [_vm._v("Confirmer")])
+            ? _c("v-btn", { attrs: { color: "primary" } }, [
+                _vm._v("Confirmer"),
+              ])
             : _vm.typeEmpruntSelect == "team"
-            ? _c("v-form", [
-                _c("input", {
-                  attrs: { type: "hidden", name: "_token" },
-                  domProps: { value: _vm.csrf },
-                }),
-                _vm._v("\n      Team\n    "),
-              ])
+            ? _c(
+                "v-form",
+                { attrs: { method: "post" } },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf },
+                  }),
+                  _vm._v(" "),
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.users,
+                      "item-text": ["firstname", "lastname"],
+                      name: "team_id",
+                      "item-value": "id",
+                      label: "Team",
+                      "single-line": "",
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "selection",
+                        fn: function (data) {
+                          return [
+                            _vm._v(
+                              "\n          " +
+                                _vm._s(data.item.firstname) +
+                                " " +
+                                _vm._s(data.item.lastname) +
+                                "\n        "
+                            ),
+                          ]
+                        },
+                      },
+                      {
+                        key: "item",
+                        fn: function (data) {
+                          return [
+                            _vm._v(
+                              "\n          " +
+                                _vm._s(data.item.firstname) +
+                                " " +
+                                _vm._s(data.item.lastname) +
+                                "\n        "
+                            ),
+                          ]
+                        },
+                      },
+                    ]),
+                    model: {
+                      value: _vm.team_member_id,
+                      callback: function ($$v) {
+                        _vm.team_member_id = $$v
+                      },
+                      expression: "team_member_id",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _vm.checkSelectedTeamMember
+                    ? _c(
+                        "v-btn",
+                        { attrs: { type: "submit", color: "primary" } },
+                        [_vm._v("Confirm")]
+                      )
+                    : _vm._e(),
+                ],
+                1
+              )
             : _vm.typeEmpruntSelect == "autre"
-            ? _c("v-form", [
-                _c("input", {
-                  attrs: { type: "hidden", name: "_token" },
-                  domProps: { value: _vm.csrf },
-                }),
-                _vm._v("\n      Autre\n    "),
-              ])
+            ? _c(
+                "v-form",
+                { attrs: { enctype: "multipart/form-data", method: "POST" } },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf },
+                  }),
+                  _vm._v(" "),
+                  _c("v-file-input", {
+                    attrs: { name: "cart_id" },
+                    model: {
+                      value: _vm.photo_id,
+                      callback: function ($$v) {
+                        _vm.photo_id = $$v
+                      },
+                      expression: "photo_id",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-row",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.photo_id,
+                          expression: "photo_id",
+                        },
+                      ],
+                    },
+                    [
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "4" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { name: "nom", label: "nom" },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "4" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { name: "prenom", label: "prenom" },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "4" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { name: "formation", label: "formation" },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "4" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { name: "adresse", label: "adresse" },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "4" } },
+                        [
+                          _c("v-text-field", {
+                            attrs: { name: "duree", label: "duree" },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { cols: "12" } },
+                        [
+                          _c("p", [_vm._v("Date de naissance")]),
+                          _vm._v(" "),
+                          _c("v-date-picker", {
+                            attrs: {
+                              name: "date_naissance",
+                              label: "date_naissance",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { type: "submit", color: "primary" } }, [
+                    _vm._v("Register"),
+                  ]),
+                ],
+                1
+              )
             : _vm._e(),
         ],
         1
