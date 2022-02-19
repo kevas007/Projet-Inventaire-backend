@@ -1,6 +1,6 @@
 window.Vue = require('vue').default;
 import vuetify from './vuetify';
-
+import VueQrcodeReader from "vue-qrcode-reader";
 import VueChartkick from 'vue-chartkick';
 // import Chart from 'chart.js';
 import fullCalendar from 'vue-fullcalendar';
@@ -12,10 +12,12 @@ Vue.component('inventaire-component', require('./components/Inventaire.vue').def
 //Materiel
 Vue.component('index-component', require('./components/materiel/Index.vue').default);
 Vue.component('reservation-create', require('./components/reservation/Create.vue').default);
+Vue.component('emprunt-create', require('./components/emprunt/Create.vue').default);
 // Vue.component('reservation-show', require('./components/reservation/Show.vue').default);
 Vue.component('create-component', require('./components/materiel/Create.vue').default);
-Vue.component('show-component', require('./components/materiel/Show.vue'));
-
+Vue.component('show-component', require('./components/materiel/Show.vue').default);
+Vue.component('search-component', require('./components/materiel/CodeQr.vue').default);
+Vue.use(VueQrcodeReader);
 const app = new Vue({
     el: '#app',
     vuetify,
