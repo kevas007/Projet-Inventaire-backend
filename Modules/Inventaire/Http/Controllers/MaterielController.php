@@ -184,4 +184,10 @@ class MaterielController extends Controller
         $materiels = Materiel::with("statut")->get();
         return view('inventaire::partials.materiel.search', compact('materiels'));
     }
+
+    public function searchResult($token)
+    {
+        $materiels = Materiel::where('token', $token)->first();
+        return redirect('/inventaire/materiel/' . $materiels->id);
+    }
 }

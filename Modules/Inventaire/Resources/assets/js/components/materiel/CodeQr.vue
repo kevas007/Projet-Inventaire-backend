@@ -104,11 +104,13 @@ export default {
             promise.catch(console.error)
         },
         onDecode(decodedString) {
-            window.location.href = decodedString;
+            let arr= decodedString.split("/");
+            let token = arr[arr.length-1];
+            window.location.href = `/inventaire/materiel/${token}/search` ;
         },
         onDragOver(draggingOver) {
             this.draggingOver = draggingOver
-        }
+        },
     }
 
 }
