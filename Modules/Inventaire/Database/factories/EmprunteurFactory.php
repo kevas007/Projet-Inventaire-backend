@@ -24,6 +24,7 @@ class EmprunteurFactory extends Factory
             'prenom'=>$this->faker->lastName(),
             'formation'=>$this->faker->jobTitle(),
             'adresse'=>$this->faker->address(),
+            'carte_id'=>'fake',
             'date_naissance'=>$this->faker->dateTime($max = 'now', $timezone = null),
         ];
     }

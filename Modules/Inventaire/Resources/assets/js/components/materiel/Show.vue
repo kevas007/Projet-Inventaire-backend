@@ -18,11 +18,19 @@
                         this.materiel.token
                     }}
                 </p>
-                <p class="text-h6 text--primary">
-                    Statut : {{
-                        this.materiel.statut.nom
-                    }}
-                </p>
+                <v-form :action="'/inventaire/materiel/' + this.materiel.id + '/edit'" method="POST">
+                    <input type="hidden" name="_token" :value="csrf" />
+                    <input type="hidden" name="_method" value="put" />
+                    <v-select
+                        :items="this.statut"
+                        item-value="id"
+                        item-text="nom"
+                        name="statut_id"
+                        :value="this.materiel.statut"
+                    ></v-select>
+                    <v-btn type="submit">Changer</v-btn>
+                </v-form>
+
                 <p class="text-h6 text--primary">
                     Type : {{
                         this.materiel.type.nom
@@ -33,12 +41,7 @@
                         this.materiel.place.nom
                     }}
                 </p>
-                <p class="text-h6 text--primary">
-                    Durée : {{
-                        this.materiel.duree
-                    }}
-                </p>
-                <div v-if="this.materiel.statut.id == 2 || this.materiel.statut.id == 3">
+                <div class="ma-2" v-if="this.materiel.deleted_at == null">
                     <v-btn
                         :href="'/inventaire/reserver/' + this.materiel.id"
                         color="primary"
@@ -112,11 +115,18 @@ export default {
             type: Object,
             required: true,
         },
+        statut: {
+            type: Array,
+            required: true,
+        },
     },
     mounted() {
-        console.log(this.materiel, this.info);
+        console.log(this.statut);
     },
     data: () => ({
+        csrf: document
+            .querySelector('meta[name="csrf-token"]')
+            .getAttribute("content"),
         show: false,
     }),
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
 use Modules\Inventaire\Entities\Emprunteur;
+use Modules\Inventaire\Entities\Materiel;
 
 class EmprunteurController extends Controller
 {
@@ -23,9 +24,13 @@ class EmprunteurController extends Controller
      * Show the form for creating a new resource.
      * @return Renderable
      */
-    public function create()
+    public function create($id)
     {
-        return view('inventaire::create');
+        if(Materiel::where('id',$id)->exists()){
+            return view('inventaire::emprunt.create', compact('id'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     /**
