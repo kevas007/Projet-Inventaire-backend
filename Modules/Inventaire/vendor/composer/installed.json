@@ -55,7 +55,7 @@
                 "issues": "https://github.com/Bacon/BaconQrCode/issues",
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.6"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/bacon/bacon-qr-code"
+            "install-path": "../bacon/bacon-qr-code"
         },
         {
             "name": "barryvdh/laravel-snappy",
@@ -136,7 +136,7 @@
                     "type": "github"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/barryvdh/laravel-snappy"
+            "install-path": "../barryvdh/laravel-snappy"
         },
         {
             "name": "dasprid/enum",
@@ -186,7 +186,7 @@
                 "issues": "https://github.com/DASPRiD/Enum/issues",
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/dasprid/enum"
+            "install-path": "../dasprid/enum"
         },
         {
             "name": "doctrine/inflector",
@@ -280,7 +280,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/doctrine/inflector"
+            "install-path": "../doctrine/inflector"
         },
         {
             "name": "doctrine/lexer",
@@ -359,7 +359,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/doctrine/lexer"
+            "install-path": "../doctrine/lexer"
         },
         {
             "name": "egulias/email-validator",
@@ -430,7 +430,7 @@
                     "type": "github"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/egulias/email-validator"
+            "install-path": "../egulias/email-validator"
         },
         {
             "name": "h4cc/wkhtmltoimage-amd64",
@@ -477,7 +477,7 @@
                 "issues": "https://github.com/h4cc/wkhtmltoimage-amd64/issues",
                 "source": "https://github.com/h4cc/wkhtmltoimage-amd64/tree/master"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/h4cc/wkhtmltoimage-amd64"
+            "install-path": "../h4cc/wkhtmltoimage-amd64"
         },
         {
             "name": "h4cc/wkhtmltopdf-amd64",
@@ -529,7 +529,7 @@
                 "issues": "https://github.com/h4cc/wkhtmltopdf-amd64/issues",
                 "source": "https://github.com/h4cc/wkhtmltopdf-amd64/tree/master"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/h4cc/wkhtmltopdf-amd64"
+            "install-path": "../h4cc/wkhtmltopdf-amd64"
         },
         {
             "name": "illuminate/collections",
@@ -586,7 +586,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/collections"
+            "install-path": "../illuminate/collections"
         },
         {
             "name": "illuminate/console",
@@ -649,7 +649,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/console"
+            "install-path": "../illuminate/console"
         },
         {
             "name": "illuminate/container",
@@ -703,7 +703,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/container"
+            "install-path": "../illuminate/container"
         },
         {
             "name": "illuminate/contracts",
@@ -754,7 +754,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/contracts"
+            "install-path": "../illuminate/contracts"
         },
         {
             "name": "illuminate/filesystem",
@@ -819,7 +819,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/filesystem"
+            "install-path": "../illuminate/filesystem"
         },
         {
             "name": "illuminate/macroable",
@@ -868,7 +868,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/macroable"
+            "install-path": "../illuminate/macroable"
         },
         {
             "name": "illuminate/support",
@@ -939,7 +939,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/support"
+            "install-path": "../illuminate/support"
         },
         {
             "name": "illuminate/translation",
@@ -994,7 +994,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/translation"
+            "install-path": "../illuminate/translation"
         },
         {
             "name": "illuminate/validation",
@@ -1057,7 +1057,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/illuminate/validation"
+            "install-path": "../illuminate/validation"
         },
         {
             "name": "knplabs/knp-snappy",
@@ -1134,7 +1134,7 @@
                 "issues": "https://github.com/KnpLabs/snappy/issues",
                 "source": "https://github.com/KnpLabs/snappy/tree/v1.4.1"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/knplabs/knp-snappy"
+            "install-path": "../knplabs/knp-snappy"
         },
         {
             "name": "laravel/breeze",
@@ -1194,7 +1194,7 @@
                 "issues": "https://github.com/laravel/breeze/issues",
                 "source": "https://github.com/laravel/breeze"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/laravel/breeze"
+            "install-path": "../laravel/breeze"
         },
         {
             "name": "laravel/ui",
@@ -1258,21 +1258,21 @@
             "support": {
                 "source": "https://github.com/laravel/ui/tree/v3.4.4"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/laravel/ui"
+            "install-path": "../laravel/ui"
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.56.0",
-            "version_normalized": "2.56.0.0",
+            "version": "2.57.0",
+            "version_normalized": "2.57.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "626ec8cbb724cd3c3400c3ed8f730545b744e3f4"
+                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/626ec8cbb724cd3c3400c3ed8f730545b744e3f4",
-                "reference": "626ec8cbb724cd3c3400c3ed8f730545b744e3f4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a54375c21eea4811dbd1149fe6b246517554e78",
+                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78",
                 "shasum": ""
             },
             "require": {
@@ -1293,7 +1293,7 @@
                 "phpunit/phpunit": "^7.5.20 || ^8.5.14",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2022-01-21T17:08:38+00:00",
+            "time": "2022-02-13T18:13:33+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -1357,7 +1357,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/nesbot/carbon"
+            "install-path": "../nesbot/carbon"
         },
         {
             "name": "psr/container",
@@ -1408,7 +1408,7 @@
                 "issues": "https://github.com/php-fig/container/issues",
                 "source": "https://github.com/php-fig/container/tree/1.1.1"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/psr/container"
+            "install-path": "../psr/container"
         },
         {
             "name": "psr/log",
@@ -1461,7 +1461,7 @@
             "support": {
                 "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/psr/log"
+            "install-path": "../psr/log"
         },
         {
             "name": "psr/simple-cache",
@@ -1515,7 +1515,7 @@
             "support": {
                 "source": "https://github.com/php-fig/simple-cache/tree/master"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/psr/simple-cache"
+            "install-path": "../psr/simple-cache"
         },
         {
             "name": "simplesoftwareio/simple-qrcode",
@@ -1586,7 +1586,7 @@
                 "issues": "https://github.com/SimpleSoftwareIO/simple-qrcode/issues",
                 "source": "https://github.com/SimpleSoftwareIO/simple-qrcode/tree/4.2.0"
             },
-            "install-path": "../../../../Modules/Inventaire/vendor/simplesoftwareio/simple-qrcode"
+            "install-path": "../simplesoftwareio/simple-qrcode"
         },
         {
             "name": "symfony/console",
@@ -1688,7 +1688,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/console"
+            "install-path": "../symfony/console"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1758,7 +1758,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/deprecation-contracts"
+            "install-path": "../symfony/deprecation-contracts"
         },
         {
             "name": "symfony/finder",
@@ -1824,7 +1824,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/finder"
+            "install-path": "../symfony/finder"
         },
         {
             "name": "symfony/http-foundation",
@@ -1900,7 +1900,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/http-foundation"
+            "install-path": "../symfony/http-foundation"
         },
         {
             "name": "symfony/mime",
@@ -1986,7 +1986,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/mime"
+            "install-path": "../symfony/mime"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2071,7 +2071,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-ctype"
+            "install-path": "../symfony/polyfill-ctype"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -2155,7 +2155,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-grapheme"
+            "install-path": "../symfony/polyfill-intl-grapheme"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -2245,7 +2245,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-idn"
+            "install-path": "../symfony/polyfill-intl-idn"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
@@ -2332,7 +2332,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-intl-normalizer"
+            "install-path": "../symfony/polyfill-intl-normalizer"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2418,7 +2418,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-mbstring"
+            "install-path": "../symfony/polyfill-mbstring"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -2497,7 +2497,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php72"
+            "install-path": "../symfony/polyfill-php72"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -2579,7 +2579,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php73"
+            "install-path": "../symfony/polyfill-php73"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -2665,7 +2665,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/polyfill-php80"
+            "install-path": "../symfony/polyfill-php80"
         },
         {
             "name": "symfony/process",
@@ -2730,7 +2730,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/process"
+            "install-path": "../symfony/process"
         },
         {
             "name": "symfony/service-contracts",
@@ -2816,7 +2816,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/service-contracts"
+            "install-path": "../symfony/service-contracts"
         },
         {
             "name": "symfony/string",
@@ -2905,7 +2905,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/string"
+            "install-path": "../symfony/string"
         },
         {
             "name": "symfony/translation",
@@ -3005,7 +3005,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/translation"
+            "install-path": "../symfony/translation"
         },
         {
             "name": "symfony/translation-contracts",
@@ -3086,7 +3086,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/symfony/translation-contracts"
+            "install-path": "../symfony/translation-contracts"
         },
         {
             "name": "voku/portable-ascii",
@@ -3163,7 +3163,7 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../../../../Modules/Inventaire/vendor/voku/portable-ascii"
+            "install-path": "../voku/portable-ascii"
         }
     ],
     "dev": true,
