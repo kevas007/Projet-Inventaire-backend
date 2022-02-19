@@ -10,6 +10,12 @@
                     href="/inventaire/materiel/create"
                 >Ajouter un nouveau materiel</v-btn>
             </v-col>
+            <v-col class="mt-2">
+                <v-btn
+                    class="text--primary"
+                    href="/inventaire/materiel/codeQr"
+                >Recheche via qrcode</v-btn>
+            </v-col>
         </v-row>
         <v-simple-table>
             <template v-slot:default>

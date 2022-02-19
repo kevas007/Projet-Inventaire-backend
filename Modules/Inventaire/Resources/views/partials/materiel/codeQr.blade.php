@@ -16,7 +16,7 @@
                 <img src="data:image/png;base64, {!! base64_encode(
     QrCode::format('svg')->size(500)
     ->errorCorrection('H')
-    ->generate(URL::to('/inventaire/materiel/'.$data->id)),
+    ->generate(URL::to('/inventaire/materiel/'.$data->token) ),
 ) !!}>
             </div>
         </h1>

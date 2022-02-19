@@ -11,6 +11,7 @@
 |
 */
 
+use Modules\Inventaire\Entities\Role;
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
@@ -29,6 +30,8 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/materiel', [MaterielController::class, 'index'])->middleware('auth');
     Route::get('/materiel/create', [MaterielController::class, 'create'])->middleware('auth');
     Route::post('/materiel/create', [MaterielController::class, 'store'])->middleware('auth');
+    Route::get('/materiel/codeQr', [MaterielController::class, 'search'])->middleware('auth');
+    Route::get('/materiel/{token}/search', [MaterielController::class, 'searchResult'])->middleware('auth');
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
     Route::get('/materiel/{id}/edit', [MaterielController::class, 'edit'])->middleware('auth');
     Route::put('/materiel/{id}/edit', [MaterielController::class, 'update'])->middleware('auth');
