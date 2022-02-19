@@ -12,14 +12,61 @@
       </v-col>
     </v-row>
     <v-container class="mx-auto text-center">
-      <v-btn v-if="typeEmpruntSelect == 'moi'">Confirmer</v-btn>
-      <v-form v-else-if="typeEmpruntSelect == 'team'">
+      <v-btn v-if="typeEmpruntSelect == 'moi'" color="primary">Confirmer</v-btn>
+      <v-form v-else-if="typeEmpruntSelect == 'team'" method="post">
         <input type="hidden" name="_token" :value="csrf" />
-        Team
+        <v-select
+          :items="users"
+          :item-text="['firstname', 'lastname']"
+          name="team_id"
+          v-model="team_member_id"
+          item-value="id"
+          label="Team"
+          single-line
+        >
+          <template slot="selection" slot-scope="data">
+            {{ data.item.firstname }} {{ data.item.lastname }}
+          </template>
+          <template slot="item" slot-scope="data">
+            {{ data.item.firstname }} {{ data.item.lastname }}
+          </template>
+        </v-select>
+        <v-btn type="submit" v-if="checkSelectedTeamMember" color="primary"
+          >Confirm</v-btn
+        >
       </v-form>
-      <v-form v-else-if="typeEmpruntSelect == 'autre'">
+      <v-form
+        v-else-if="typeEmpruntSelect == 'autre'"
+        enctype="multipart/form-data"
+        method="POST"
+      >
         <input type="hidden" name="_token" :value="csrf" />
-        Autre
+        <v-file-input name="cart_id" v-model="photo_id"></v-file-input>
+        <v-row v-show="photo_id">
+          <v-col cols="4">
+            <v-text-field name="nom" label="nom"></v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-text-field name="prenom" label="prenom"></v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-text-field name="formation" label="formation"></v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-text-field name="adresse" label="adresse"></v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-text-field name="duree" label="duree"></v-text-field>
+          </v-col>
+          <v-col cols="12">
+            <p>Date de naissance</p>
+            <v-date-picker
+              name="date_naissance"
+              label="date_naissance"
+            ></v-date-picker>
+          </v-col>
+        </v-row>
+        <v-btn type="submit" color="primary">Register</v-btn>
       </v-form>
     </v-container>
   </v-container>
@@ -29,10 +76,13 @@ export default {
   name: "Create",
   props: {
     id: [Number, String],
+    users: [Array],
   },
   data() {
     return {
       typeEmpruntSelect: "moi",
+      team_member_id: 0,
+      photo_id: null,
       csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
@@ -41,6 +91,13 @@ export default {
   methods: {
     setEmprunt(value) {
       this.typeEmpruntSelect = value;
+    },
+  },
+  computed: {
+    checkSelectedTeamMember() {
+      return (
+        this.users.filter((elem) => elem.id == this.team_member_id).length > 0
+      );
     },
   },
 };
