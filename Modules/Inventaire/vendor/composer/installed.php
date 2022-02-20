@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3a4e05848c84411524fb059457917339bc12ce09',
+        'reference' => '499f9e3b83a05b51dbb59ec3e27d3c0c11ccd05c',
         'name' => 'nwidart/inventaire',
         'dev' => true,
     ),
@@ -223,7 +223,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3a4e05848c84411524fb059457917339bc12ce09',
+            'reference' => '499f9e3b83a05b51dbb59ec3e27d3c0c11ccd05c',
             'dev_requirement' => false,
         ),
         'phenx/php-font-lib' => array(
