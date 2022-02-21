@@ -11,26 +11,17 @@
 |
 */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
 use Illuminate\Support\Facades\Route;
 use Modules\Inventaire\Http\Controllers\ContratController;
-=======
-=======
-use App\Models\User;
-use Modules\Inventaire\Entities\Emprunteur;
-use Modules\Inventaire\Entities\Materiel;
-use Modules\Inventaire\Entities\Role;
 
-// use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
->>>>>>> origin/main
+
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
->>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
-=======
+
 use Illuminate\Support\Facades\Route;
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
->>>>>>> origin/Tania
+
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
 
@@ -62,32 +53,24 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     //Contrat
     Route::get('/contrat', [ContratController::class, 'index'])->middleware('auth');
     Route::get('/contrat/{id}', [ContratController::class, 'show'])->middleware('auth');
     Route::get('/contrat/{id}/edit', [ContratController::class, 'edit'])->middleware('auth');
     Route::post('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
-=======
-=======
->>>>>>> origin/Tania
+
     // Emprunt Materiel
+
     Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
-    Route::get('testContrat', function(){
-        $preteur = User::first();
-        $materiel = Materiel::first();
-        $emprunteur = Emprunteur::first();
-        $duree= 'lol';
-        // view()->share('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-        return view('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-    });
+
 
     Route::get('/contrat/{token}/', [ContratController::class,'store']);
-<<<<<<< HEAD
->>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
-=======
->>>>>>> origin/Tania
+
+
+    Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
+
 });
 
 
