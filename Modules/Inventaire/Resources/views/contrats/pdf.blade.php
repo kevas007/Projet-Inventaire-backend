@@ -8,7 +8,7 @@
     <title>Contrat Prêt de matériel</title>
     <style>
         body{
-            width: 50%;
+            width: 85%;
             margin: 0 auto;
         }
         .titre{
@@ -18,7 +18,7 @@
         }
         .section-signature{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
         }
     </style>
 </head>

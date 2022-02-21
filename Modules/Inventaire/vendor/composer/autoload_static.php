@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
+class ComposerStaticInitb3f674b292f59dbb4dd48bcb1139eb38
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -12,24 +12,20 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'v' => 
         array (
             'voku\\' => 5,
-        ),
-        'h' => 
-        array (
-            'h4cc\\WKHTMLToPDF\\' => 17,
         ),
         'S' => 
         array (
@@ -57,7 +53,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
-            'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
         ),
         'M' => 
@@ -68,10 +63,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         array (
             'Laravel\\Ui\\' => 11,
             'Laravel\\Breeze\\' => 15,
-        ),
-        'K' => 
-        array (
-            'Knp\\Snappy\\' => 11,
         ),
         'I' => 
         array (
@@ -105,7 +96,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         ),
         'B' => 
         array (
-            'Barryvdh\\Snappy\\' => 16,
             'Barryvdh\\DomPDF\\' => 16,
             'BaconQrCode\\' => 12,
         ),
@@ -115,10 +105,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
-        ),
-        'h4cc\\WKHTMLToPDF\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/h4cc/wkhtmltopdf-amd64',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -204,10 +190,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -224,10 +206,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
-        'Knp\\Snappy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
-        ),
         'Illuminate\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/validation',
@@ -238,8 +216,8 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/macroable',
+            1 => __DIR__ . '/..' . '/illuminate/collections',
             2 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Foundation\\Auth\\' => 
@@ -290,10 +268,6 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'Barryvdh\\Snappy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/barryvdh/laravel-snappy/src',
-        ),
         'Barryvdh\\DomPDF\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
@@ -323,9 +297,9 @@ class ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2c6f47b7aa20a49e1f884df40c4cac9a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb3f674b292f59dbb4dd48bcb1139eb38::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb3f674b292f59dbb4dd48bcb1139eb38::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb3f674b292f59dbb4dd48bcb1139eb38::$classMap;
 
         }, null, ClassLoader::class);
     }

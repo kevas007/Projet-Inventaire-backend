@@ -11,12 +11,6 @@
 |
 */
 
-use App\Models\User;
-use Modules\Inventaire\Entities\Emprunteur;
-use Modules\Inventaire\Entities\Materiel;
-use Modules\Inventaire\Entities\Role;
-
-// use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
@@ -50,17 +44,8 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
 
     // Emprunt Materiel
-    Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
-    Route::get('testContrat', function(){
-        $preteur = User::first();
-        $materiel = Materiel::first();
-        $emprunteur = Emprunteur::first();
-        $duree= 'lol';
-        // view()->share('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-        return view('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-    });
-
-    Route::get('/contrat/{token}/', [ContratController::class,'store']);
+    Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
 });
 
 
