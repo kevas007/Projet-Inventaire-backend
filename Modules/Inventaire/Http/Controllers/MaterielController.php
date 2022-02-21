@@ -7,9 +7,12 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+>>>>>>> origin/Tania
 use Illuminate\Support\Str;
 use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
@@ -71,6 +74,7 @@ class MaterielController extends Controller
             'place_id' => 'required|min:1',
         ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
     
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
@@ -78,6 +82,8 @@ class MaterielController extends Controller
         $token = Str::random(60);
         $materiel->token = $token ;
 =======
+=======
+>>>>>>> origin/Tania
 
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
@@ -87,7 +93,10 @@ class MaterielController extends Controller
             $token = random_int(100000, 999999);
         } while (Materiel::where("token", "=", $token)->first());
         $materiel->token = $token;
+<<<<<<< HEAD
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+>>>>>>> origin/Tania
         $materiel->utility_id = $request->utility_id;
         $materiel->statut_id = $request->statut_id;
         $materiel->type_id = $request->type_id;

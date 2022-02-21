@@ -1,10 +1,13 @@
 <template>
     <v-container>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <v-form ref="form" v-model="valid"  action='/inventaire/materiel/create' method="POST" lazy-validation>
             <input type="hidden" name="_token" :value="csrf" />
             <v-text-field name="nom" v-model="nom" :counter="30" :rules="nomRules" label="Name" required></v-text-field>
 =======
+=======
+>>>>>>> origin/Tania
         <v-form
             ref="form"
             v-model="valid"
@@ -21,7 +24,10 @@
                 label="Name"
                 required
             ></v-text-field>
+<<<<<<< HEAD
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+>>>>>>> origin/Tania
 
             <v-text-field
                 :counter="100"
@@ -132,9 +138,12 @@
             <!-- <v-date-picker v-model="duree"  name="duree" v-if="statut_id ==2 || statut_id==3"></v-date-picker> -->
             <!-- <v-select v-model="type_id" :menu-props="{ auto: true, overflowY: true }" :items="this.type" label="Type"  item-value="id" item-text="nom" required></v-select> -->
 <<<<<<< HEAD
+<<<<<<< HEAD
             <v-select v-model="stockage_id" name="stockage_id" :items="this.stockage"  item-value="id" item-text="nom" label="Stockage" required></v-select>
             <v-btn :disabled="!valid" color="success" type="submit" class="mr-4" @click="validate">Validate</v-btn>
 =======
+=======
+>>>>>>> origin/Tania
 
             <v-btn
                 :disabled="!valid"
@@ -143,7 +152,10 @@
                 class="mr-4"
                 @click="validate"
             >Validate</v-btn>
+<<<<<<< HEAD
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+>>>>>>> origin/Tania
 
             <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
 
@@ -157,6 +169,7 @@ export default {
         console.log(this.utility)
     },
     props: {
+<<<<<<< HEAD
 <<<<<<< HEAD
         utility:{
                 type: Array,
@@ -186,6 +199,12 @@ export default {
             type: Array,
                 required: true,
 =======
+=======
+        utility: {
+            type: Array,
+                required: true,
+        },
+>>>>>>> origin/Tania
         statut: {
             type: Array,
             required: true,
@@ -205,11 +224,15 @@ export default {
         stockage: {
             type: Array,
             required: true,
+<<<<<<< HEAD
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+>>>>>>> origin/Tania
         }
     },
     data: () => ({
         csrf: document
+<<<<<<< HEAD
 <<<<<<< HEAD
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
@@ -217,6 +240,10 @@ export default {
             .querySelector('meta[name="csrf-token"]')
             .getAttribute("content"),
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
+=======
+            .querySelector('meta[name="csrf-token"]')
+            .getAttribute("content"),
+>>>>>>> origin/Tania
         valid: true,
         nom: '',
         nomRules: [
