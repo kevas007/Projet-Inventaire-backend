@@ -2,9 +2,11 @@
 
 namespace Modules\Inventaire\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Modules\Inventaire\Entities\Emprunteur;
 use Modules\Inventaire\Entities\Materiel;
@@ -27,7 +29,8 @@ class EmprunteurController extends Controller
     public function create($id)
     {
         if(Materiel::where('id',$id)->exists()){
-            return view('inventaire::emprunt.create', compact('id'));
+            $users = User::where('id', '!=', Auth::id())->get();
+            return view('inventaire::emprunt.create', compact('id','users'));
         }else{
             return redirect()->back();
         }

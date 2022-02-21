@@ -55,7 +55,13 @@
                                 </v-form>
                             </div>
                             <div v-else>
-                                <p class="text-center">Archivé</p>
+                                <p class="text-center">
+                                    <v-btn
+                                    class="ma-1 flex items-center "
+                                        :href="'/inventaire/materiel/' + item.id + '/restaurer'"
+                                        color="primary"
+                                    >Restaurer</v-btn>
+                                </p>
                             </div>
                         </td>
                         <td>

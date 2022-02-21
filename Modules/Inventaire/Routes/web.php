@@ -13,9 +13,18 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 use Modules\Inventaire\Http\Controllers\ContratController;
 =======
+=======
+use App\Models\User;
+use Modules\Inventaire\Entities\Emprunteur;
+use Modules\Inventaire\Entities\Materiel;
+use Modules\Inventaire\Entities\Role;
+
+// use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+>>>>>>> origin/main
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
 >>>>>>> b3e3b66443744eae52d6f27753152186a639cf35
 =======
@@ -40,6 +49,8 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/materiel/create', [MaterielController::class, 'create'])->middleware('auth');
     Route::post('/materiel/create', [MaterielController::class, 'store'])->middleware('auth');
     Route::get('/materiel/codeQr', [MaterielController::class, 'search'])->middleware('auth');
+    Route::get('/materiel/{token}/search', [MaterielController::class, 'searchResult'])->middleware('auth');
+    Route::get('/materiel/{id}/restaurer', [MaterielController::class, 'restore'])->middleware('auth');
     Route::get('/materiel/{id}', [MaterielController::class, 'show'])->middleware('auth');
     Route::get('/materiel/{id}/edit', [MaterielController::class, 'edit'])->middleware('auth');
     Route::put('/materiel/{id}/edit', [MaterielController::class, 'update'])->middleware('auth');
@@ -63,6 +74,14 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
 >>>>>>> origin/Tania
     // Emprunt Materiel
     Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
+    Route::get('testContrat', function(){
+        $preteur = User::first();
+        $materiel = Materiel::first();
+        $emprunteur = Emprunteur::first();
+        $duree= 'lol';
+        // view()->share('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
+        return view('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
+    });
 
     Route::get('/contrat/{token}/', [ContratController::class,'store']);
 <<<<<<< HEAD
