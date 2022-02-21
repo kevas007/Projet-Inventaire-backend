@@ -14,45 +14,37 @@
             </v-toolbar>
 
             <v-list two-line>
-            <template v-for="(item, index) in items">
-                <v-subheader
-                v-if="item.header"
-                :key="item.header"
-                >
-                {{ item.header }}
-                </v-subheader>
+                <template v-for="(item, index) in items">
+                    <v-subheader
+                    v-if="item.header"
+                    :key="item.header"
+                    >
+                    {{ item.header }}
+                    </v-subheader>
 
-                <v-divider
-                v-else-if="item.divider"
-                :key="index"
-                :inset="item.inset"
-                ></v-divider>
+                    <v-divider
+                    v-else-if="item.divider"
+                    :key="index"
+                    :inset="item.inset"
+                    ></v-divider>
 
-                <v-list-tile
-                v-else
-                :key="item.title"
-                avatar
-                @click="openDetail"
-                >
-                    <v-list-tile-avatar>
-                        <img :src="item.avatar">
-                    </v-list-tile-avatar>
+                    <v-list-tile
+                    v-else
+                    :key="item.title"
+                    avatar
+                    @click="openDetail"
+                    >
+                        <v-list-tile-avatar>
+                            <img :src="item.avatar">
+                        </v-list-tile-avatar>
 
-                    <v-list-tile-content>
-                        <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                        <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                        <v-list-tile-content>
+                            <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                            <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
 
-                <v-select
-                v-model="select"
-                :items="items"
-                :rules="[v => !!v || 'Item is required']"
-                label="Item"
-                required 
-                ></v-select>
-
-            </template>
+                </template>
             </v-list>
         </v-card>
         </v-flex>
@@ -107,13 +99,6 @@ export default {
             title: "Statut de l'emprunt",
             subtitle: "",
             }
-        ],
-        select: null,
-        items: [
-            'Item 1',
-            'Item 2',
-            'Item 3',
-            'Item 4'
         ],
         }
     },

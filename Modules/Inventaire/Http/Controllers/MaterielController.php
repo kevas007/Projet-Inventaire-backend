@@ -6,10 +6,6 @@ use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 use Illuminate\Support\Str;
 use Modules\Inventaire\Entities\Info;
 use Modules\Inventaire\Entities\Materiel;
@@ -70,14 +66,6 @@ class MaterielController extends Controller
             'type_id' => 'required|min:1',
             'place_id' => 'required|min:1',
         ]);
-<<<<<<< HEAD
-    
-        $materiel = new Materiel();
-        $materiel->nom = $request->nom;
-        $materiel->numero_serie = $request->numero_serie;
-        $token = Str::random(60);
-        $materiel->token = $token ;
-=======
 
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
@@ -87,7 +75,6 @@ class MaterielController extends Controller
             $token = random_int(100000, 999999);
         } while (Materiel::where("token", "=", $token)->first());
         $materiel->token = $token;
->>>>>>> origin/main
         $materiel->utility_id = $request->utility_id;
         $materiel->statut_id = $request->statut_id;
         $materiel->type_id = $request->type_id;

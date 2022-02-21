@@ -11,12 +11,8 @@
 |
 */
 
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
-use Modules\Inventaire\Http\Controllers\ContratController;
-=======
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
->>>>>>> origin/main
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
 
@@ -46,18 +42,10 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/reserver/{id}', [ReservationController::class, 'create']);
     Route::post('/reserver/{id}', [ReservationController::class, 'store']);
 
-<<<<<<< HEAD
-    //Contrat
-    Route::get('/contrat', [ContratController::class, 'index'])->middleware('auth');
-    Route::get('/contrat/{id}', [ContratController::class, 'show'])->middleware('auth');
-    Route::get('/contrat/{id}/edit', [ContratController::class, 'edit'])->middleware('auth');
-    Route::post('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
-=======
     // Emprunt Materiel
     Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
 
     Route::get('/contrat/{token}/', [ContratController::class,'store']);
->>>>>>> origin/main
 });
 
 
