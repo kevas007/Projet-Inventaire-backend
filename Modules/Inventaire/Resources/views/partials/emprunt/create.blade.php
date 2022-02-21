@@ -1,6 +1,6 @@
 @extends('inventaire::layouts.main')
 @section('main')
 
-<emprunt-create :id="{{$id}}" :users="{{$users}}"></emprunt-create>
+<emprunt-create :materiels="{{$materiels}}" :users="{{$users}}"></emprunt-create>
 
 @endsection

@@ -75,7 +75,7 @@
 export default {
   name: "Create",
   props: {
-    id: [Number, String],
+    materiels: [Array],
     users: [Array],
   },
   data() {

@@ -8,7 +8,7 @@ return [
     ],
     'aliases' => [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
+        "PDF" => Barryvdh\DomPDF\Facade::class
 
     ]
 ];

@@ -66,14 +66,6 @@ class MaterielController extends Controller
             'type_id' => 'required|min:1',
             'place_id' => 'required|min:1',
         ]);
-
-
-        $materiel = new Materiel();
-        $materiel->nom = $request->nom;
-        $materiel->numero_serie = $request->numero_serie;
-        $token = Str::random(60);
-        $materiel->token = $token ;
-
         $materiel = new Materiel();
         $materiel->nom = $request->nom;
         $materiel->numero_serie = $request->numero_serie;

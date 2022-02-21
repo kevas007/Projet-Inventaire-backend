@@ -26,14 +26,12 @@ class EmprunteurController extends Controller
      * Show the form for creating a new resource.
      * @return Renderable
      */
-    public function create($id)
+    public function create()
     {
-        if(Materiel::where('id',$id)->exists()){
+
             $users = User::where('id', '!=', Auth::id())->get();
-            return view('inventaire::emprunt.create', compact('id','users'));
-        }else{
-            return redirect()->back();
-        }
+            $materiels = Materiel::where('statut_id', 2)->get();
+            return view('inventaire::emprunt.create', compact('materiels','users'));
     }
 
     /**
