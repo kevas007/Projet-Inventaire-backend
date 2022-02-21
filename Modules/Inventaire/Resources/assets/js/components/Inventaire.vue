@@ -40,7 +40,7 @@ export default {
                     id:2,
                     name: 'Emprunt',
                     icon: 'mdi-hardware',
-                    path: '/materiel'
+                    path: '/emprunt'
                 },
             ]
 
