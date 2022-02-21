@@ -51,7 +51,7 @@
                                 >
                                     <input type="hidden" name="_token" :value="csrf" />
                                     <input type="hidden" name="_method" value="delete" />
-                                    <v-btn type="submit" color="red" class="white--text">Archivé</v-btn>
+                                    <v-btn type="submit" color="red" class="white--text">Archiver</v-btn>
                                 </v-form>
                             </div>
                             <div v-else>
@@ -88,7 +88,7 @@
                                     class="btn btn-primary"
                                     :href="'/inventaire/materiel/' + item.id + '/pdf'"
                                 >
-                                    Export to PDF
+                                    Exporter en  PDF
                                     <!-- <v-icon>Plus</v-icon> -->
                                 </v-btn>
                             </div>

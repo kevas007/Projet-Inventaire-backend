@@ -27,7 +27,7 @@
                         <td>
                             <div>
                                 <v-btn :href="'/inventaire/contrat/' + item.id" color="primary">
-                                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                    <!-- <script src="https://cdn.lordicon.com/lusqsztk.js"></script> -->
                                     <lord-icon
                                         src="https://cdn.lordicon.com/tyounuzx.json"
                                         trigger="loop"
@@ -40,7 +40,7 @@
                         <td>
                             <div>
                                 <v-btn :href="'/inventaire/contrat/' + item.id" color="success">
-                                    <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                    <!-- <script src="https://cdn.lordicon.com/lusqsztk.js"></script> -->
                                     <lord-icon
                                         src="https://cdn.lordicon.com/puvaffet.json"
                                         trigger="loop"
@@ -59,7 +59,7 @@
                                     <input type="hidden" name="_token" :value="csrf" />
                                     <input type="hidden" name="_method" value="delete" />
                                     <v-btn type="submit" color="red" class="white--text">
-                                        <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+                                        <!-- <script src="https://cdn.lordicon.com/lusqsztk.js"></script> -->
                                         <lord-icon
                                             src="https://cdn.lordicon.com/gsqxdxog.json"
                                             trigger="loop"
@@ -86,10 +86,14 @@ export default {
         materiels: {
             type: Array,
             required: true,
-        }
+        },
+        contrats: {
+            type: Array,
+            required: true,
+        },
     },
     mounted() {
-        console.log(this.materiels)
+        console.log(this.contrats);
 
     },
     data() {

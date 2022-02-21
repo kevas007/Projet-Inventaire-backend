@@ -16,7 +16,9 @@ class ContratController extends Controller
      */
     public function index()
     {
-        return view('inventaire::partials.contrat.index');
+        $materiels = Materiel::all();
+        $contrats = Contrat::all();
+        return view('inventaire::partials.contrats.index', compact('materiels', 'contrats'));
     }
 
     /**

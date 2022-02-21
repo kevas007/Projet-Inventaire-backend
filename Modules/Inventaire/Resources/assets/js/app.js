@@ -16,6 +16,11 @@ Vue.component('emprunt-create', require('./components/emprunt/Create.vue').defau
 Vue.component('create-component', require('./components/materiel/Create.vue').default);
 Vue.component('show-component', require('./components/materiel/Show.vue').default);
 Vue.component('search-component', require('./components/materiel/CodeQr.vue').default);
+
+//contrat
+Vue.component('contrat-edit', require('./components/Contrat/Edit.vue').default);
+Vue.component('contrat-show', require('./components/Contrat/Show.vue').default);
+Vue.component('contrat-index', require('./components/Contrat/Index.vue').default);
 Vue.use(VueQrcodeReader);
 const app = new Vue({
     el: '#app',

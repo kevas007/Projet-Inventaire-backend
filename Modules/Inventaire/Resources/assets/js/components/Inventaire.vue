@@ -42,6 +42,12 @@ export default {
                     icon: 'mdi-hardware',
                     path: '/materiel'
                 },
+                {
+                    id:3,
+                    name: 'Contrat',
+                    icon: 'mdi-hardware',
+                    path: '/contrat'
+                },
             ]
 
         }
