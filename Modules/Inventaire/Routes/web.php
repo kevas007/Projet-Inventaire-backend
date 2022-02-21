@@ -19,8 +19,6 @@ use Modules\Inventaire\Http\Controllers\ContratController;
 
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
 
-use Illuminate\Support\Facades\Route;
-use Modules\Inventaire\Http\Controllers\EmprunteurController;
 
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
@@ -62,7 +60,7 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
 
     // Emprunt Materiel
 
-    Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
+    Route::get('/emprunt', [EmprunteurController::class,'create']);
 
 
     Route::get('/contrat/{token}/', [ContratController::class,'store']);

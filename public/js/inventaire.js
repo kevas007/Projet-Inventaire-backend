@@ -147,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
         id: 2,
         name: 'Emprunt',
         icon: 'mdi-hardware',
-        path: '/materiel'
+        path: '/emprunt'
       }]
     };
   }
@@ -242,7 +242,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Create",
   props: {
-    id: [Number, String],
+    materiels: [Array],
     users: [Array]
   },
   data: function data() {
