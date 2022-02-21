@@ -121,11 +121,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Inventaire',
   data: function data() {
     return {
-      drawer: false
+      drawer: false,
+      route: [{
+        id: 1,
+        name: 'Matériel',
+        icon: 'mdi-material-ui',
+        path: '/materiel'
+      }, {
+        id: 2,
+        name: 'Emprunt',
+        icon: 'mdi-hardware',
+        path: '/materiel'
+      }]
     };
   }
 });
@@ -855,6 +878,20 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -884,10 +921,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     QrcodeStream: vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_1__.QrcodeStream
   },
   data: function data() {
+    var options = [{
+      text: "nothing (default)",
+      value: undefined
+    }, {
+      text: "outline",
+      value: this.paintOutline
+    }, {
+      text: "centered text",
+      value: this.paintCenterText
+    }, {
+      text: "bounding box",
+      value: this.paintBoundingBox
+    }];
+    var selected = options[1];
     return {
       isValid: undefined,
       camera: 'auto',
-      result: null
+      result: null,
+      selected: selected,
+      options: options
     };
   },
   mounted: function mounted() {
@@ -905,6 +958,100 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   methods: {
+    paintOutline: function paintOutline(detectedCodes, ctx) {
+      var _iterator = _createForOfIteratorHelper(detectedCodes),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var detectedCode = _step.value;
+
+          var _detectedCode$cornerP = _toArray(detectedCode.cornerPoints),
+              firstPoint = _detectedCode$cornerP[0],
+              otherPoints = _detectedCode$cornerP.slice(1);
+
+          ctx.strokeStyle = "green";
+          ctx.beginPath();
+          ctx.moveTo(firstPoint.x, firstPoint.y);
+
+          var _iterator2 = _createForOfIteratorHelper(otherPoints),
+              _step2;
+
+          try {
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var _step2$value = _step2.value,
+                  x = _step2$value.x,
+                  y = _step2$value.y;
+              ctx.lineTo(x, y);
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
+
+          ctx.lineTo(firstPoint.x, firstPoint.y);
+          ctx.closePath();
+          ctx.stroke();
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    },
+    paintBoundingBox: function paintBoundingBox(detectedCodes, ctx) {
+      var _iterator3 = _createForOfIteratorHelper(detectedCodes),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var detectedCode = _step3.value;
+          var _detectedCode$boundin = detectedCode.boundingBox,
+              x = _detectedCode$boundin.x,
+              y = _detectedCode$boundin.y,
+              width = _detectedCode$boundin.width,
+              height = _detectedCode$boundin.height;
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#007bff';
+          ctx.strokeRect(x, y, width, height);
+        }
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
+      }
+    },
+    paintCenterText: function paintCenterText(detectedCodes, ctx) {
+      var _iterator4 = _createForOfIteratorHelper(detectedCodes),
+          _step4;
+
+      try {
+        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+          var detectedCode = _step4.value;
+          var boundingBox = detectedCode.boundingBox,
+              rawValue = detectedCode.rawValue;
+          var centerX = boundingBox.x + boundingBox.width / 2;
+          var centerY = boundingBox.y + boundingBox.height / 2;
+          var fontSize = Math.max(12, 50 * boundingBox.width / ctx.canvas.width);
+          console.log(boundingBox.width, ctx.canvas.width);
+          ctx.font = "bold ".concat(fontSize, "px sans-serif");
+          ctx.textAlign = "center";
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = '#35495e';
+          ctx.strokeText(detectedCode.rawValue, centerX, centerY);
+          ctx.fillStyle = '#5cb984';
+          ctx.fillText(rawValue, centerX, centerY);
+        }
+      } catch (err) {
+        _iterator4.e(err);
+      } finally {
+        _iterator4.f();
+      }
+    },
+    logErrors: function logErrors(promise) {
+      promise["catch"](console.error);
+    },
     onInit: function onInit(promise) {
       promise["catch"](console.error).then(this.resetValidationState);
     },
@@ -1124,6 +1271,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+      shows: false,
       show: false
     };
   }
@@ -8868,12 +9016,7 @@ var render = function () {
     "v-navigation-drawer",
     {
       staticClass: "pt-4",
-      attrs: {
-        permanent: "",
-        app: "",
-        color: "grey lighten-3",
-        "mini-variant": "",
-      },
+      attrs: { permanent: "", app: "", color: "grey lighten-3" },
       model: {
         value: _vm.drawer,
         callback: function ($$v) {
@@ -8882,16 +9025,31 @@ var render = function () {
         expression: "drawer",
       },
     },
-    _vm._l(6, function (n) {
-      return _c("v-avatar", {
-        key: n,
-        staticClass: "d-block text-center mx-auto mb-9",
-        attrs: {
-          color: "grey " + (n === 1 ? "darken" : "lighten") + "-1",
-          size: n === 1 ? 36 : 20,
-        },
-      })
-    }),
+    [
+      _c(
+        "v-list",
+        _vm._l(_vm.route, function (n) {
+          return _c(
+            "v-list-item",
+            {
+              key: n.id,
+              staticClass: "d-block text-center mx-auto mb-9 mdi mdi-24px",
+              attrs: { href: "/inventaire" + n.path },
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v(_vm._s(n.icon))])],
+                1
+              ),
+              _vm._v("\n        " + _vm._s(n.name)),
+            ],
+            1
+          )
+        }),
+        1
+      ),
+    ],
     1
   )
 }
@@ -9904,7 +10062,8 @@ var render = function () {
       _c(
         "qrcode-stream",
         {
-          attrs: { camera: _vm.camera },
+          key: _vm._uid,
+          attrs: { camera: _vm.camera, track: _vm.selected.value },
           on: { decode: _vm.onDecode, init: _vm.onInit },
         },
         [
@@ -9916,13 +10075,13 @@ var render = function () {
           _vm._v(" "),
           _vm.validationFailure
             ? _c("div", { staticClass: "validation-failure" }, [
-                _vm._v("C'est pas le bon Matériel!"),
+                _vm._v("C'est pas le bon Matériel! Relancer le scan"),
               ])
             : _vm._e(),
           _vm._v(" "),
           _vm.validationPending
             ? _c("div", { staticClass: "validation-pending" }, [
-                _vm._v("Long validation in progress..."),
+                _vm._v("Scan en cours..."),
               ])
             : _vm._e(),
         ]
@@ -10209,7 +10368,7 @@ var render = function () {
                 {
                   on: {
                     click: function ($event) {
-                      _vm.show = !_vm.show
+                      _vm.shows = !_vm.shows
                     },
                   },
                 },
@@ -10217,7 +10376,7 @@ var render = function () {
                 1
               ),
               _vm._v(" "),
-              _vm.show
+              _vm.shows
                 ? _c("SearchQr", { attrs: { materiel: this.materiel.token } })
                 : _vm._e(),
             ],

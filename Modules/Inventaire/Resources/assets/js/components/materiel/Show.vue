@@ -109,10 +109,10 @@
                 </v-card>
             </v-col>
             <v-col>
-                <v-btn @click="show = !show" >
+                <v-btn @click="shows = !shows" >
                     <v-icon>mdi-qrcode-scan</v-icon>
                 </v-btn>
-                <SearchQr :materiel="this.materiel.token"  v-if="show" />
+                <SearchQr :materiel="this.materiel.token"  v-if="shows" />
             </v-col>
         </v-row>
     </v-container>
@@ -142,6 +142,7 @@ export default {
         csrf: document
             .querySelector('meta[name="csrf-token"]')
             .getAttribute("content"),
+        shows: false,
         show: false,
     }),
 

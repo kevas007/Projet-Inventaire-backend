@@ -1,22 +1,49 @@
 <template>
-
-        <v-navigation-drawer permanent v-model="drawer" app class="pt-4" color="grey lighten-3" mini-variant>
-            <v-avatar
-                v-for="n in 6"
-                :key="n"
-                :color="`grey ${n === 1 ? 'darken' : 'lighten'}-1`"
-                :size="n === 1 ? 36 : 20"
-                class="d-block text-center mx-auto mb-9"
-            ></v-avatar>
-        </v-navigation-drawer>
+    <v-navigation-drawer
+        permanent
+        v-model="drawer"
+        app
+        class="pt-4"
+        color="grey lighten-3"
+    >
+        <v-list>
+            <v-list-item
+            v-for="n in route"
+        :key="n.id"
+        class="d-block text-center mx-auto mb-9 mdi mdi-24px"
+        :href="'/inventaire'+ n.path"
+            >
+            <v-list-item-icon>
+                <v-icon>{{n.icon}}</v-icon>
+            </v-list-item-icon>
+            {{
+                n.name
+            }}</v-list-item>
+        </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script>
 export default {
-    name:'Inventaire',
-    data(){
+    name: 'Inventaire',
+    data() {
         return {
-            drawer: false
+            drawer: false,
+            route: [
+                {
+                    id:1,
+                    name: 'Matériel',
+                    icon: 'mdi-material-ui',
+                    path: '/materiel'
+                },
+                {
+                    id:2,
+                    name: 'Emprunt',
+                    icon: 'mdi-hardware',
+                    path: '/materiel'
+                },
+            ]
+
         }
     }
 }
