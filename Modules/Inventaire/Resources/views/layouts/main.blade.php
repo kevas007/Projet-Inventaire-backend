@@ -17,6 +17,15 @@
                 @if (Session::has('msg'))
                     <v-alert dismissible>{{ Session::get('msg') }}</v-alert>
                 @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @yield('main')
             </v-main>
         </v-app>
