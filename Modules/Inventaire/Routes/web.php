@@ -59,16 +59,17 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
 
     // Emprunt Materiel
+    Route::get('/emprunt', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/self/store', [ContratController::class, 'storeSelf']);
+    Route::post('/contrat/{id}/team', [ContratController::class, 'storeTeam']);
+    Route::post('/contrat/{id}/emprunteur', [ContratController::class, 'storeEmprunteur']);
 
-    Route::get('/emprunt', [EmprunteurController::class,'create']);
 
-
-    Route::get('/contrat/{token}/', [ContratController::class,'store']);
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
 
 
     Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
     Route::get('/contrat/{token}/', [ContratController::class, 'store']);
-
 });
 
 
