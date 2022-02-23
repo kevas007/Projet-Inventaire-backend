@@ -60,17 +60,17 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
 
 
     // Emprunt Materiel
-    Route::get('/emprunt/{id}/', [EmprunteurController::class,'create']);
-    Route::get('testContrat', function(){
-        $preteur = User::first();
-        $materiel = Materiel::first();
-        $emprunteur = Emprunteur::first();
-        $duree= 'lol';
-        // view()->share('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-        return view('inventaire::contrats.pdf', compact('preteur','materiel', 'emprunteur', 'duree'));
-    });
+    Route::get('/emprunt', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/self/store', [ContratController::class, 'storeSelf']);
+    Route::post('/contrat/{id}/team', [ContratController::class, 'storeTeam']);
+    Route::post('/contrat/{id}/emprunteur', [ContratController::class, 'storeEmprunteur']);
 
-    Route::get('/contrat/{token}/', [ContratController::class,'store']);
+
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
+
+
+    Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
 });
 
 
