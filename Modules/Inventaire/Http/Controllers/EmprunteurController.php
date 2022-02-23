@@ -31,7 +31,7 @@ class EmprunteurController extends Controller
 
             $users = User::where('id', '!=', Auth::id())->get();
             $materiels = Materiel::where('statut_id', 2)->get();
-            return view('inventaire::emprunt.create', compact('materiels','users'));
+            return view('inventaire::partials.emprunt.create', compact('materiels','users'));
     }
 
     /**
