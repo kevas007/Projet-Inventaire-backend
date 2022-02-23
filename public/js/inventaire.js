@@ -166,6 +166,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-qrcode-reader */ "./node_modules/vue-qrcode-reader/dist/VueQrcodeReader.common.js");
+/* harmony import */ var vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -239,23 +241,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Create",
   props: {
     materiels: [Array],
     users: [Array]
   },
+  components: {
+    QrcodeStream: vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_0__.QrcodeStream
+  },
   data: function data() {
     return {
       typeEmpruntSelect: "moi",
       team_member_id: 0,
       photo_id: null,
+      draggingOver: false,
+      date_naissance: '',
+      materiel: null,
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
     setEmprunt: function setEmprunt(value) {
       this.typeEmpruntSelect = value;
+      this.materiel = null;
+    },
+    checkIsValidToken: function checkIsValidToken(token) {
+      return this.materiels.find(function (elem) {
+        console.log(elem.token, token);
+        return elem.token == token;
+      });
+    },
+    onDecode: function onDecode(decodedString) {
+      var arr = decodedString.split("/");
+      var tokenToCheck = arr[arr.length - 1];
+
+      if (this.checkIsValidToken(tokenToCheck)) {
+        this.materiel = this.checkIsValidToken(tokenToCheck);
+      }
+    },
+    onDragOver: function onDragOver(draggingOver) {
+      this.draggingOver = draggingOver;
     }
   },
   computed: {
@@ -4823,6 +4885,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* MaterialDesignIcons.com */\n@font-f
 
 /***/ }),
 
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.camera {\n  width: 50%;\n  height: 100%;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/materiel/CodeQr.vue?vue&type=style&index=0&id=6d5bbd53&scoped=true&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/materiel/CodeQr.vue?vue&type=style&index=0&id=6d5bbd53&scoped=true&lang=css& ***!
@@ -6268,6 +6354,36 @@ var update = _LevelUp_School_Projet_Groupe_Projet_Inventaire_backend_Modules_Inv
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_LevelUp_School_Projet_Groupe_Projet_Inventaire_backend_Modules_Inventaire_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_LevelUp_School_Projet_Groupe_Projet_Inventaire_backend_Modules_Inventaire_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Create.vue?vue&type=style&index=0&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -8193,15 +8309,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Create_vue_vue_type_template_id_1e9c3991___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Create.vue?vue&type=template&id=1e9c3991& */ "./Resources/assets/js/components/emprunt/Create.vue?vue&type=template&id=1e9c3991&");
 /* harmony import */ var _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Create.vue?vue&type=script&lang=js& */ "./Resources/assets/js/components/emprunt/Create.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Create.vue?vue&type=style&index=0&lang=css& */ "./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Create_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Create_vue_vue_type_template_id_1e9c3991___WEBPACK_IMPORTED_MODULE_0__.render,
   _Create_vue_vue_type_template_id_1e9c3991___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -8585,6 +8703,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************************!*\
+  !*** ./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Create_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Create.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/emprunt/Create.vue?vue&type=style&index=0&lang=css&");
+
+
+/***/ }),
+
 /***/ "./Resources/assets/js/components/materiel/CodeQr.vue?vue&type=style&index=0&id=6d5bbd53&scoped=true&lang=css&":
 /*!*********************************************************************************************************************!*\
   !*** ./Resources/assets/js/components/materiel/CodeQr.vue?vue&type=style&index=0&id=6d5bbd53&scoped=true&lang=css& ***!
@@ -8902,13 +9033,9 @@ var render = function () {
         { staticClass: "mx-auto text-center" },
         [
           _vm.typeEmpruntSelect == "moi"
-            ? _c("v-btn", { attrs: { color: "primary" } }, [
-                _vm._v("Confirmer"),
-              ])
-            : _vm.typeEmpruntSelect == "team"
             ? _c(
                 "v-form",
-                { attrs: { method: "post" } },
+                { attrs: { action: "/inventaire/contrat/self/store" } },
                 [
                   _c("input", {
                     attrs: { type: "hidden", name: "_token" },
@@ -8917,51 +9044,103 @@ var render = function () {
                   _vm._v(" "),
                   _c("v-select", {
                     attrs: {
-                      items: _vm.users,
-                      "item-text": ["firstname", "lastname"],
-                      name: "team_id",
+                      name: "materiel_id",
+                      items: _vm.materiels,
                       "item-value": "id",
-                      label: "Team",
-                      "single-line": "",
+                      "item-text": "nom",
                     },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "selection",
-                        fn: function (data) {
-                          return [
-                            _vm._v(
-                              "\n          " +
-                                _vm._s(data.item.firstname) +
-                                " " +
-                                _vm._s(data.item.lastname) +
-                                "\n        "
-                            ),
-                          ]
-                        },
-                      },
-                      {
-                        key: "item",
-                        fn: function (data) {
-                          return [
-                            _vm._v(
-                              "\n          " +
-                                _vm._s(data.item.firstname) +
-                                " " +
-                                _vm._s(data.item.lastname) +
-                                "\n        "
-                            ),
-                          ]
-                        },
-                      },
-                    ]),
                     model: {
-                      value: _vm.team_member_id,
+                      value: _vm.materiel,
                       callback: function ($$v) {
-                        _vm.team_member_id = $$v
+                        _vm.materiel = $$v
                       },
-                      expression: "team_member_id",
+                      expression: "materiel",
                     },
                   }),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { color: "primary", type: "submit" } }, [
+                    _vm._v("Confirmer"),
+                  ]),
+                ],
+                1
+              )
+            : _vm.typeEmpruntSelect == "team"
+            ? _c(
+                "v-form",
+                {
+                  attrs: {
+                    action:
+                      "/inventaire/contrat/" +
+                      (_vm.materiel ? _vm.materiel.id : "0") +
+                      "/team",
+                    method: "post",
+                  },
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf },
+                  }),
+                  _vm._v(" "),
+                  _c("qrcode-stream", {
+                    staticClass: "camera",
+                    on: { decode: _vm.onDecode },
+                  }),
+                  _vm._v(" "),
+                  _vm.materiel
+                    ? _c("v-select", {
+                        attrs: {
+                          items: _vm.users,
+                          "item-text": "firstname",
+                          name: "team_id",
+                          "item-value": "id",
+                          label: "Team",
+                          "single-line": "",
+                        },
+                        scopedSlots: _vm._u(
+                          [
+                            {
+                              key: "selection",
+                              fn: function (data) {
+                                return [
+                                  _vm._v(
+                                    "\n          " +
+                                      _vm._s(data.item.firstname) +
+                                      " " +
+                                      _vm._s(data.item.lastname) +
+                                      "\n        "
+                                  ),
+                                ]
+                              },
+                            },
+                            {
+                              key: "item",
+                              fn: function (data) {
+                                return [
+                                  _vm._v(
+                                    "\n          " +
+                                      _vm._s(data.item.firstname) +
+                                      " " +
+                                      _vm._s(data.item.lastname) +
+                                      "\n        "
+                                  ),
+                                ]
+                              },
+                            },
+                          ],
+                          null,
+                          false,
+                          2086356156
+                        ),
+                        model: {
+                          value: _vm.team_member_id,
+                          callback: function ($$v) {
+                            _vm.team_member_id = $$v
+                          },
+                          expression: "team_member_id",
+                        },
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
                   _vm.checkSelectedTeamMember
                     ? _c(
@@ -8976,114 +9155,154 @@ var render = function () {
             : _vm.typeEmpruntSelect == "autre"
             ? _c(
                 "v-form",
-                { attrs: { enctype: "multipart/form-data", method: "POST" } },
+                {
+                  attrs: {
+                    enctype: "multipart/form-data",
+                    action:
+                      "/inventaire/contrat/" +
+                      (_vm.materiel ? _vm.materiel.id : "0") +
+                      "/emprunteur",
+                    method: "POST",
+                  },
+                },
                 [
+                  _c("qrcode-stream", {
+                    staticClass: "camera",
+                    on: { decode: _vm.onDecode },
+                  }),
+                  _vm._v(" "),
                   _c("input", {
                     attrs: { type: "hidden", name: "_token" },
                     domProps: { value: _vm.csrf },
                   }),
                   _vm._v(" "),
-                  _c("v-file-input", {
-                    attrs: { name: "cart_id" },
-                    model: {
-                      value: _vm.photo_id,
-                      callback: function ($$v) {
-                        _vm.photo_id = $$v
-                      },
-                      expression: "photo_id",
-                    },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-row",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
+                  _vm.materiel
+                    ? _c("v-file-input", {
+                        attrs: { name: "cart_id" },
+                        model: {
                           value: _vm.photo_id,
+                          callback: function ($$v) {
+                            _vm.photo_id = $$v
+                          },
                           expression: "photo_id",
                         },
-                      ],
-                    },
-                    [
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "4" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: { name: "nom", label: "nom" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "4" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: { name: "prenom", label: "prenom" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "4" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: { name: "formation", label: "formation" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "4" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: { name: "adresse", label: "adresse" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "4" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: { name: "duree", label: "duree" },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12" } },
-                        [
-                          _c("p", [_vm._v("Date de naissance")]),
-                          _vm._v(" "),
-                          _c("v-date-picker", {
-                            attrs: {
-                              name: "date_naissance",
-                              label: "date_naissance",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c("v-btn", { attrs: { type: "submit", color: "primary" } }, [
-                    _vm._v("Register"),
-                  ]),
+                  _vm.materiel
+                    ? _c(
+                        "v-row",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.photo_id,
+                              expression: "photo_id",
+                            },
+                          ],
+                        },
+                        [
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "4" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: { name: "nom", label: "nom" },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "4" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: { name: "prenom", label: "prenom" },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "4" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  name: "formation",
+                                  label: "formation",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "4" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: { name: "adresse", label: "adresse" },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "4" } },
+                            [
+                              _c("v-text-field", {
+                                attrs: { name: "duree", label: "duree" },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { attrs: { cols: "12" } },
+                            [
+                              _c("p", [_vm._v("Date de naissance")]),
+                              _vm._v(" "),
+                              _c("v-date-picker", {
+                                attrs: {
+                                  name: "date_naissance",
+                                  label: "date_naissance",
+                                },
+                                model: {
+                                  value: _vm.date_naissance,
+                                  callback: function ($$v) {
+                                    _vm.date_naissance = $$v
+                                  },
+                                  expression: "date_naissance",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "hidden",
+                                  name: "date_naissance",
+                                },
+                                domProps: { value: _vm.date_naissance },
+                              }),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.materiel
+                    ? _c(
+                        "v-btn",
+                        { attrs: { type: "submit", color: "primary" } },
+                        [_vm._v("Register")]
+                      )
+                    : _vm._e(),
                 ],
                 1
               )

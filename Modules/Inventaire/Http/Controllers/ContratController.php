@@ -5,11 +5,18 @@ namespace Modules\Inventaire\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Modules\Inventaire\Entities\Contrat;
+use Modules\Inventaire\Entities\Emprunteur;
 use Modules\Inventaire\Entities\Materiel;
 
 class ContratController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('Lead');
+    }
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -29,18 +36,84 @@ class ContratController extends Controller
         return view('inventaire::create');
     }
 
+    public function storeSelf(Request $request)
+    {
+
+        $materiel = Materiel::find($request->materiel_id);
+        if($materiel->statut_id == 2){
+
+            $contrat = new Contrat();
+            $contrat->materiel_id = $request->materiel_id;
+            $contrat->statut_contrat_id = 2;
+            $contrat->preteur_id = Auth::id();
+            $contrat->save();
+
+            $materiel->statut_id = 1;
+            $materiel->save();
+
+            return redirect('/inventaire/materiel');
+        }
+        return back();
+    }
+
     /**
      * Store a newly created resource in storage.
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request, $token)
+    public function storeEmprunteur(Request $request, $id)
     {
-        $materiel = Materiel::where('token', $token)->first();
+        $request->validate([
+            'nom' => ['required', 'min:1', 'string'],
+            'prenom' => ['required', 'min:1', 'string'],
+            'formation' => ['required', 'min:1', 'string'],
+            'adresse' => ['required', 'min:1', 'string'],
+            'cart_id' => ['required', 'image'],
+            'date_naissance' => ['required', 'date', 'before:today'],
+        ]);
+        $emprunteur = new Emprunteur();
+        $emprunteur->nom = $request->nom;
+        $emprunteur->prenom = $request->prenom;
+        $emprunteur->adresse = $request->adresse;
+        $emprunteur->formation = $request->formation;
+        $emprunteur->date_naissance = $request->date_naissance;
+        $filename = Storage::disk('public')->put('/carte_identite', $request->cart_id);
+        $emprunteur->carte_id = $filename;
+        $emprunteur->save();
+
+        $materiel = Materiel::find($id);
         $contrat = new Contrat();
-        $contrat->materiel_id=$materiel->id;
-        $contrat->statut_id = 1;
+        $contrat->materiel_id = $materiel->id;
+        $contrat->statut_contrat_id = 2;
+        $contrat->emprunteur_id = $request->emprunteur_id;
+        $contrat->preteur_id = Auth::id();
         $contrat->save();
+
+        $materiel->statut_id = 1;
+        $materiel->save();
+
+        return redirect('/inventaire/materiel');
+    }
+    /**
+     * Store a newly created resource in storage.
+     * @param Request $request
+     * @return Renderable
+     */
+    public function storeTeam(Request $request, $id)
+    {
+
+
+
+        $materiel = Materiel::find($id);
+        $contrat = new Contrat();
+        $contrat->materiel_id = $materiel->id;
+        $contrat->statut_contrat_id = 2;
+        $contrat->team_id = $request->team_id;
+        $contrat->preteur_id = Auth::id();
+        $contrat->save();
+        $materiel->statut_id = 1;
+        $materiel->save();
+        return redirect('/inventaire/materiel');
     }
 
     /**
