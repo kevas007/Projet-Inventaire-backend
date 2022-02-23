@@ -2,6 +2,7 @@
 
 namespace Modules\Inventaire\Entities;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -31,13 +32,13 @@ class Contrat extends Model
         return $this->belongsTo(Emprunteur::class);
     }
 
-    public function team_id()
+    public function team()
     {
         return $this->belongsTo(User::class, 'team_id');
     }
 
     public function statut()
     {
-        return $this->belongsTo(StatutContrat::class);
+        return $this->belongsTo(StatutContrat::class, 'statut_contrat_id');
     }
 }

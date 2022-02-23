@@ -56,7 +56,7 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::get('/contrat', [ContratController::class, 'index'])->middleware('auth');
     Route::get('/contrat/{id}', [ContratController::class, 'show'])->middleware('auth');
     Route::get('/contrat/{id}/edit', [ContratController::class, 'edit'])->middleware('auth');
-    Route::post('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
+    Route::put('/contrat/{id}/edit', [ContratController::class, 'update'])->middleware('auth');
 
 
     // Emprunt Materiel

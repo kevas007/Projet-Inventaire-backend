@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Inventaire\Entities\Contrat;
 use Modules\Inventaire\Entities\Materiel;
+use Modules\Inventaire\Entities\StatutContrat;
 
 class ContratController extends Controller
 {
@@ -16,9 +17,9 @@ class ContratController extends Controller
      */
     public function index()
     {
-        $materiels = Materiel::all();
-        $contrats = Contrat::all();
-        return view('inventaire::partials.contrats.index', compact('materiels', 'contrats'));
+
+        $contrats = Contrat::with('materiel.place','materiel', 'preteur', 'emprunteur','team', 'statut')->get();
+        return view('inventaire::partials.contrats.index', compact('contrats'));
     }
 
     /**
@@ -52,7 +53,8 @@ class ContratController extends Controller
      */
     public function show($id)
     {
-        return view('inventaire::partials.contrat.show');
+
+        return view('inventaire::partials.contrats.show');
     }
 
     /**
@@ -62,7 +64,9 @@ class ContratController extends Controller
      */
     public function edit($id)
     {
-        return view('inventaire::partials.contrat.edit');
+        $edit= Contrat::with('materiel.place','materiel', 'preteur', 'emprunteur','team', 'statut')->find($id);
+        $statut= StatutContrat::all();
+        return view('inventaire::partials.contrats.edit', compact('edit', 'statut'));
     }
 
     /**
@@ -73,7 +77,13 @@ class ContratController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return view('inventaire::partials.contrat.index');
+        $request->validate([
+            'statut_contrat_id' => ['required', 'exists:statut_contrats,id'],
+        ]);
+        $update=  Contrat::find($id);
+        $update->statut_contrat_id = $request->statut_contrat_id;
+        $update->save();
+        return redirect('/inventaire/contrat')->with(['msg' => "Contrat mis à jour avec succès"]);
     }
 
     /**

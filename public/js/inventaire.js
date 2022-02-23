@@ -112,8 +112,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -169,60 +185,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    edit: {
+      type: Object,
+      required: true
+    },
+    statut: {
+      type: Array,
+      required: true
+    }
+  },
   data: function data() {
-    var _ref;
-
     return {
-      items: [{
-        header: 'Détails du contrat'
-      }, {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-        title: "Lead",
-        subtitle: "Nom du lead"
-      }, {
-        divider: true,
-        inset: true
-      }, (_ref = {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-        title: "Informations de l'emprunteur",
-        subtitle: "Nom"
-      }, _defineProperty(_ref, "subtitle", "Prénom"), _defineProperty(_ref, "subtitle", "Date de naissance"), _defineProperty(_ref, "subtitle", "Formation"), _defineProperty(_ref, "subtitle", "Adresse"), _ref), {
-        divider: true,
-        inset: true
-      }, _defineProperty({
-        title: "Matériel",
-        subtitle: "Nom du matériel"
-      }, "subtitle", "token"), {
-        divider: true,
-        inset: true
-      }, {
-        title: "Place",
-        subtitle: "Endroit de la réservation"
-      }, {
-        divider: true,
-        inset: true
-      }, {
-        title: 'Date de réservation',
-        subtitle: "Du ... au ..."
-      }, {
-        divider: true,
-        inset: true
-      }, {
-        title: 'Utilité',
-        subtitle: ""
-      }, {
-        divider: true,
-        inset: true
-      }, {
-        title: "Statut de l'emprunt",
-        subtitle: ""
-      }]
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   },
   methods: {
     openDetail: function openDetail() {
       var vm = this;
     }
+  },
+  mounted: function mounted() {
+    console.log(this.edit);
   }
 });
 
@@ -313,20 +297,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    materiels: {
-      type: Array,
-      required: true
-    },
     contrats: {
       type: Array,
       required: true
@@ -394,16 +366,12 @@ __webpack_require__.r(__webpack_exports__);
         id: 2,
         name: 'Emprunt',
         icon: 'mdi-hardware',
-<<<<<<< HEAD
-        path: '/materiel'
+        path: '/emprunt'
       }, {
         id: 3,
         name: 'Contrat',
         icon: 'mdi-hardware',
         path: '/contrat'
-=======
-        path: '/emprunt'
->>>>>>> origin/main
       }]
     };
   }
@@ -723,9 +691,258 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./Resources/assets/js/components/materiel/Create.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/Resources/assets/js/components/materiel/Create.vue: Unexpected token (172:0)\n\n\u001b[0m \u001b[90m 170 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 171 |\u001b[39m     props\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 172 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 173 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 174 |\u001b[39m         utility\u001b[33m:\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 175 |\u001b[39m                 type\u001b[33m:\u001b[39m \u001b[33mArray\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:476:17)\n    at Parser.raiseWithData (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:469:17)\n    at Parser.raise (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:430:17)\n    at Parser.unexpected (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:3789:16)\n    at Parser.parsePropertyName (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:13347:24)\n    at Parser.parsePropertyDefinition (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:13179:22)\n    at Parser.parseObjectLike (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:13099:21)\n    at Parser.parseExprAtom (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:12498:23)\n    at Parser.parseExprSubscripts (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:12149:23)\n    at Parser.parseUpdate (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:12129:21)\n    at Parser.parseMaybeUnary (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:12104:23)\n    at Parser.parseMaybeUnaryOrPrivate (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:11901:61)\n    at Parser.parseExprOps (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:11908:23)\n    at Parser.parseMaybeConditional (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:11878:23)\n    at Parser.parseMaybeAssign (/home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:11833:21)\n    at /home/nazam/Projects/LevelUp-School/Projet_Groupe/Projet-Inventaire-backend/Modules/Inventaire/node_modules/@babel/parser/lib/index.js:11791:39");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log(this.utility);
+  },
+  props: {
+    utility: {
+      type: Array,
+      required: true
+    },
+    statut: {
+      type: Array,
+      required: true
+    },
+    type: {
+      type: Array,
+      required: true
+    },
+    info: {
+      type: Array,
+      required: true
+    },
+    place: {
+      type: Array,
+      required: true
+    },
+    stockage: {
+      type: Array,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+      valid: true,
+      nom: '',
+      nomRules: [function (v) {
+        return !!v || 'Name is required';
+      }, function (v) {
+        return v && v.length <= 10 || 'Name must be less than 10 characters';
+      }],
+      numero_serie: '',
+      numero_serieRules: [function (v) {
+        return !!v || 'E-mail is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'E-mail must be less than 10 characters';
+      }],
+      statut_id: '',
+      type_id: '',
+      place_id: '',
+      // duree: '',
+      processeur: '',
+      processeurRules: [function (v) {
+        return !!v || 'Processeur is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Processeur must be less than 10 characters';
+      }],
+      ram: '',
+      ramRules: [function (v) {
+        return !!v || 'Ram is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Ram must be less than 10 characters';
+      }],
+      taille_stockage: '',
+      taille_stockageRules: [function (v) {
+        return !!v || 'Taille de stockage is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Taille de stockage must be less than 10 characters';
+      }],
+      marque: '',
+      marqueRules: [function (v) {
+        return !!v || 'Marque is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Marque must be less than 10 characters';
+      }],
+      description: '',
+      descriptionRules: [function (v) {
+        return !!v || 'Description is required';
+      }, function (v) {
+        return v && v.length <= 200 || 'Description must be less than 10 characters';
+      }],
+      degats: '',
+      degatsRules: [function (v) {
+        return !!v || 'Degats is required';
+      }, function (v) {
+        return v && v.length <= 100 || 'Degats must be less than 10 characters';
+      }],
+      stockage_id: '',
+      utility_id: '',
+      checkbox: false
+    };
+  },
+  methods: {
+    validate: function validate() {
+      this.$refs.form.validate();
+    },
+    reset: function reset() {
+      this.$refs.form.reset();
+    },
+    resetValidation: function resetValidation() {
+      this.$refs.form.resetValidation();
+    }
+  }
+});
 
 /***/ }),
 
@@ -9230,55 +9447,129 @@ var render = function () {
                     "v-list",
                     { attrs: { "two-line": "" } },
                     [
-                      _vm._l(_vm.items, function (item, index) {
-                        return [
-                          item.header
-                            ? _c("v-subheader", { key: item.header }, [
+                      [
+                        _c(
+                          "v-card",
+                          {
+                            staticClass: "m-2",
+                            attrs: { elevation: "2", outlined: "", tile: "" },
+                          },
+                          [
+                            _c("v-card-text", [
+                              _c("p", [
                                 _vm._v(
-                                  "\n                " +
-                                    _vm._s(item.header) +
-                                    "\n                "
+                                  "\n                                    Mateirel :\n                                    "
                                 ),
-                              ])
-                            : item.divider
-                            ? _c("v-divider", {
-                                key: index,
-                                attrs: { inset: item.inset },
-                              })
-                            : _c(
-                                "v-list-tile",
-                                {
-                                  key: item.title,
-                                  attrs: { avatar: "" },
-                                  on: { click: _vm.openDetail },
-                                },
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.materiel.nom)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Nom du préteur :\n                                    "
+                                ),
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.preteur.lastname)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Lieux :\n                                    "
+                                ),
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.materiel.place.nom)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Nom de l'emprunteur :\n                                    "
+                                ),
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.emprunteur.nom)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Prénom de l'emprunteur :\n                                    "
+                                ),
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.emprunteur.prenom)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("p", [
+                                _vm._v(
+                                  "\n                                    Lieu de résidence :\n                                    "
+                                ),
+                                _c("span", [
+                                  _vm._v(_vm._s(_vm.edit.emprunteur.adresse)),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "p",
                                 [
-                                  _c("v-list-tile-avatar", [
-                                    _c("img", { attrs: { src: item.avatar } }),
-                                  ]),
-                                  _vm._v(" "),
+                                  _vm._v(
+                                    "\n                                    Statut du contrat :\n\n\n                                    "
+                                  ),
                                   _c(
-                                    "v-list-tile-content",
+                                    "v-form",
+                                    {
+                                      attrs: {
+                                        action:
+                                          "/inventaire/contrat/" +
+                                          this.edit.id +
+                                          "/edit",
+                                        method: "POST",
+                                      },
+                                    },
                                     [
-                                      _c("v-list-tile-title", {
-                                        domProps: {
-                                          innerHTML: _vm._s(item.title),
+                                      _c("input", {
+                                        attrs: {
+                                          type: "hidden",
+                                          name: "_token",
+                                        },
+                                        domProps: { value: _vm.csrf },
+                                      }),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        attrs: {
+                                          type: "hidden",
+                                          name: "_method",
+                                          value: "put",
                                         },
                                       }),
                                       _vm._v(" "),
-                                      _c("v-list-tile-sub-title", {
-                                        domProps: {
-                                          innerHTML: _vm._s(item.subtitle),
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: this.statut,
+                                          "item-value": "id",
+                                          "item-text": "nom",
+                                          name: "statut_contrat_id",
+                                          value: this.edit.statut,
                                         },
                                       }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        { attrs: { type: "submit" } },
+                                        [_vm._v("Changer")]
+                                      ),
                                     ],
                                     1
                                   ),
                                 ],
                                 1
                               ),
-                        ]
-                      }),
+                            ]),
+                          ],
+                          1
+                        ),
+                      ],
                     ],
                     2
                   ),
@@ -9345,14 +9636,10 @@ var render = function () {
                     _vm._v(" "),
                     _c("th", { staticClass: "text-left" }, [_vm._v("Statut")]),
                     _vm._v(" "),
-                    _c("th", { staticClass: "text-left" }),
+                    _c("th", { staticClass: "text-left" }, [_vm._v("Voir")]),
                     _vm._v(" "),
                     _c("th", { staticClass: "text-left" }, [
                       _vm._v("Modifier"),
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-left" }, [
-                      _vm._v("Supprimer"),
                     ]),
                   ]),
                 ]),
@@ -9361,9 +9648,32 @@ var render = function () {
                   "tbody",
                   _vm._l(_vm.contrats, function (item) {
                     return _c("tr", { key: item.id }, [
-                      _c("td", [_vm._v(_vm._s(item.preteur))]),
+                      _c("td", [
+                        item.preteur.lead_id == 1
+                          ? _c("div", [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(item.preteur.firstname) +
+                                  " " +
+                                  _vm._s(item.preteur.lastname) +
+                                  "\n                        "
+                              ),
+                            ])
+                          : _vm._e(),
+                      ]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.emprunteur))]),
+                      _c("td", [
+                        _vm._v(
+                          " " +
+                            _vm._s(item.emprunteur.nom) +
+                            " " +
+                            _vm._s(item.emprunteur.prenom)
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.materiel.nom))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.materiel.place.nom))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.statut.nom))]),
                       _vm._v(" "),
@@ -9379,19 +9689,7 @@ var render = function () {
                                   color: "primary",
                                 },
                               },
-                              [
-                                _c("lord-icon", {
-                                  staticStyle: {
-                                    width: "70px",
-                                    height: "70px",
-                                  },
-                                  attrs: {
-                                    src: "https://cdn.lordicon.com/tyounuzx.json",
-                                    trigger: "loop",
-                                    colors: "primary:#121331,secondary:#000000",
-                                  },
-                                }),
-                              ],
+                              [_c("v-icon", [_vm._v("mdi-eye")])],
                               1
                             ),
                           ],
@@ -9407,93 +9705,21 @@ var render = function () {
                               "v-btn",
                               {
                                 attrs: {
-                                  href: "/inventaire/contrat/" + item.id,
+                                  href:
+                                    "/inventaire/contrat/" + item.id + "/edit",
                                   color: "success",
                                 },
                               },
                               [
-                                _c("lord-icon", {
-                                  staticStyle: {
-                                    width: "70px",
-                                    height: "70px",
-                                  },
-                                  attrs: {
-                                    src: "https://cdn.lordicon.com/puvaffet.json",
-                                    trigger: "loop",
-                                    colors: "primary:#121331,secondary:#000000",
-                                  },
-                                }),
+                                _c("v-icon", [
+                                  _vm._v("mdi-clipboard-edit-outline"),
+                                ]),
                               ],
                               1
                             ),
                           ],
                           1
                         ),
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        item.deleted_at != null
-                          ? _c(
-                              "div",
-                              [
-                                _c(
-                                  "v-form",
-                                  {
-                                    attrs: {
-                                      action:
-                                        "/inventaire/materiel/" +
-                                        item.id +
-                                        "/forceDelete",
-                                      method: "POST",
-                                    },
-                                  },
-                                  [
-                                    _c("input", {
-                                      attrs: { type: "hidden", name: "_token" },
-                                      domProps: { value: _vm.csrf },
-                                    }),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      attrs: {
-                                        type: "hidden",
-                                        name: "_method",
-                                        value: "delete",
-                                      },
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-btn",
-                                      {
-                                        staticClass: "white--text",
-                                        attrs: { type: "submit", color: "red" },
-                                      },
-                                      [
-                                        _c("lord-icon", {
-                                          staticStyle: {
-                                            width: "70px",
-                                            height: "70px",
-                                          },
-                                          attrs: {
-                                            src: "https://cdn.lordicon.com/gsqxdxog.json",
-                                            trigger: "loop",
-                                            colors:
-                                              "primary:#121331,secondary:#000000",
-                                          },
-                                        }),
-                                      ],
-                                      1
-                                    ),
-                                  ],
-                                  1
-                                ),
-                              ],
-                              1
-                            )
-                          : _c("div", [
-                              _c("p", { staticClass: "text-center" }, [
-                                _vm._v("/"),
-                              ]),
-                            ]),
                       ]),
                     ])
                   }),
@@ -9966,8 +10192,296 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    [
+      _c(
+        "v-form",
+        {
+          ref: "form",
+          attrs: {
+            action: "/inventaire/materiel/create",
+            method: "POST",
+            "lazy-validation": "",
+          },
+          model: {
+            value: _vm.valid,
+            callback: function ($$v) {
+              _vm.valid = $$v
+            },
+            expression: "valid",
+          },
+        },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              name: "nom",
+              counter: 30,
+              rules: _vm.nomRules,
+              label: "Name",
+              required: "",
+            },
+            model: {
+              value: _vm.nom,
+              callback: function ($$v) {
+                _vm.nom = $$v
+              },
+              expression: "nom",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.numero_serieRules,
+              label: "Numero  de serie",
+              name: "numero_serie",
+              required: "",
+            },
+            model: {
+              value: _vm.numero_serie,
+              callback: function ($$v) {
+                _vm.numero_serie = $$v
+              },
+              expression: "numero_serie",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              items: this.statut,
+              name: "statut_id",
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Statut",
+              required: "",
+            },
+            model: {
+              value: _vm.statut_id,
+              callback: function ($$v) {
+                _vm.statut_id = $$v
+              },
+              expression: "statut_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              name: "utility_id",
+              items: this.utility,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Utility",
+              required: "",
+            },
+            model: {
+              value: _vm.utility_id,
+              callback: function ($$v) {
+                _vm.utility_id = $$v
+              },
+              expression: "utility_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              name: "type_id",
+              items: this.type,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Type",
+              required: "",
+            },
+            model: {
+              value: _vm.type_id,
+              callback: function ($$v) {
+                _vm.type_id = $$v
+              },
+              expression: "type_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              name: "place_id",
+              items: this.place,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Place",
+              required: "",
+            },
+            model: {
+              value: _vm.place_id,
+              callback: function ($$v) {
+                _vm.place_id = $$v
+              },
+              expression: "place_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-select", {
+            attrs: {
+              name: "stockage_id",
+              items: this.stockage,
+              "item-value": "id",
+              "item-text": "nom",
+              label: "Stockage",
+              required: "",
+            },
+            model: {
+              value: _vm.stockage_id,
+              callback: function ($$v) {
+                _vm.stockage_id = $$v
+              },
+              expression: "stockage_id",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.processeurRules,
+              label: "Processeur",
+              name: "processeur",
+              required: "",
+            },
+            model: {
+              value: _vm.processeur,
+              callback: function ($$v) {
+                _vm.processeur = $$v
+              },
+              expression: "processeur",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              name: "ram",
+              counter: 50,
+              rules: _vm.ramRules,
+              label: "Ram",
+              required: "",
+            },
+            model: {
+              value: _vm.ram,
+              callback: function ($$v) {
+                _vm.ram = $$v
+              },
+              expression: "ram",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.taille_stockageRules,
+              label: "Taille de stcokage",
+              name: "taille_stockage",
+              required: "",
+            },
+            model: {
+              value: _vm.taille_stockage,
+              callback: function ($$v) {
+                _vm.taille_stockage = $$v
+              },
+              expression: "taille_stockage",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.marqueRules,
+              label: "Marque",
+              name: "marque",
+              required: "",
+            },
+            model: {
+              value: _vm.marque,
+              callback: function ($$v) {
+                _vm.marque = $$v
+              },
+              expression: "marque",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 200,
+              rules: _vm.descriptionRules,
+              label: "Description",
+              name: "description",
+              required: "",
+            },
+            model: {
+              value: _vm.description,
+              callback: function ($$v) {
+                _vm.description = $$v
+              },
+              expression: "description",
+            },
+          }),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              counter: 100,
+              rules: _vm.degatsRules,
+              label: "Degats",
+              name: "degats",
+              required: "",
+            },
+            model: {
+              value: _vm.degats,
+              callback: function ($$v) {
+                _vm.degats = $$v
+              },
+              expression: "degats",
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticClass: "mr-4",
+              attrs: { disabled: !_vm.valid, color: "success", type: "submit" },
+              on: { click: _vm.validate },
+            },
+            [_vm._v("Validate")]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              staticClass: "mr-4",
+              attrs: { color: "error" },
+              on: { click: _vm.reset },
+            },
+            [_vm._v("Reset Form")]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "warning" }, on: { click: _vm.resetValidation } },
+            [_vm._v("Reset Validation")]
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
