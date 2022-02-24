@@ -14,9 +14,9 @@
                         <th class="text-left">Matériel</th>
                         <th class="text-left">Endroit</th>
                         <th class="text-left">Statut</th>
-                        <th class="text-left">Voir</th>
+                        <!-- <th class="text-left">Voir</th> -->
                         <th class="text-left">Modifier</th>
-                        <!-- <th class="text-left">Supprimer</th> -->
+                        <th class="text-left">pdf</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,38 +33,26 @@
                         <td>{{ item.statut.nom }}</td>
                         <td>
                             <div>
-                                <v-btn :href="'/inventaire/contrat/' + item.id" color="primary">
-                                    <!-- <script src="https://cdn.lordicon.com/lusqsztk.js"></script> -->
-                <v-icon>mdi-eye</v-icon>
-                                </v-btn>
-                            </div>
-                        </td>
-                        <td>
-                            <div>
                                 <v-btn :href="'/inventaire/contrat/' + item.id +'/edit'" color="success">
                                     <!-- <script src="https://cdn.lordicon.com/lusqsztk.js"></script> -->
                 <v-icon>mdi-clipboard-edit-outline</v-icon>
                                 </v-btn>
                             </div>
                         </td>
-                        <!-- <td>
-                            <div v-if="item.deleted_at == null">
-                                <v-form
-                                    :action="'/inventaire/materiel/' + item.id + '/forceDelete'"
-                                    method="POST"
+                      <td>
+                            <!-- <div v-if="item.deleted_at == null"> -->
+                                <v-btn
+                                    class="btn btn-primary"
+                                    :href="'/inventaire/contrat/' + item.id + '/pdf'"
                                 >
-                                    <input type="hidden" name="_token" :value="csrf" />
-                                    <input type="hidden" name="_method" value="delete" />
-                                    <v-btn type="submit" color="red" class="white--text">
-
-
-                                    </v-btn>
-                                </v-form>
+                                    Exporter en  PDF
+                                    <!-- <v-icon>Plus</v-icon> -->
+                                </v-btn>
                             </div>
-                            <div v-else>
+                            <!-- <div v-else>
                                 <p class="text-center">/</p>
-                            </div>
-                        </td> -->
+                            </div> -->
+                        </td>
                     </tr>
                 </tbody>
             </template>

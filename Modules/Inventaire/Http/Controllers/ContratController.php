@@ -1,6 +1,7 @@
 <?php
 
 namespace Modules\Inventaire\Http\Controllers;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -167,5 +168,24 @@ class ContratController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+//pdf
+    public function createPDF($id)
+    {
+        // retreive all records from db
+        $data = Contrat::with('materiel.place','materiel', 'preteur', 'emprunteur','team', 'statut')->find($id);
+        // share data to view
+            view()->share('inventaire::partials.contrats.pdf', compact('data'));
+        return   $pdf = FacadePdf::loadView('inventaire::partials.contrats.pdf', compact('data'))
+            ->setPaper('a4', 'landscape')
+            ->setWarnings(false)
+            // ->save(storage_path('app/public/qr/' . $data->token . '.pdf'))
+            ->stream();
+
+
+
+        // download PDF file with download method
+        // return $pdf->download('pdf_file.pdf');
     }
 }
