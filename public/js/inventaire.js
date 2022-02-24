@@ -297,6 +297,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     contrats: {
@@ -351,27 +353,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'Inventaire',
+  name: "Inventaire",
   data: function data() {
     return {
       drawer: false,
       route: [{
         id: 1,
-        name: 'Matériel',
-        icon: 'mdi-material-ui',
-        path: '/materiel'
+        name: "Matériel",
+        icon: "mdi-material-ui",
+        path: "/materiel"
       }, {
         id: 2,
-        name: 'Emprunt',
-        icon: 'mdi-hardware',
-        path: '/emprunt'
+        name: "Emprunt",
+        icon: "mdi-hardware",
+        path: "/emprunt"
       }, {
         id: 3,
-        name: 'Contrat',
-        icon: 'mdi-hardware',
-        path: '/contrat'
+        name: "Restitution",
+        icon: "mdi-hardware",
+        path: "/restitution"
+      }, {
+        id: 4,
+        name: "Contrat",
+        icon: "mdi-hardware",
+        path: "/contrat"
       }]
     };
   }
@@ -9793,14 +9799,25 @@ var render = function () {
                           : _vm._e(),
                       ]),
                       _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          " " +
-                            _vm._s(item.emprunteur.nom) +
-                            " " +
-                            _vm._s(item.emprunteur.prenom)
-                        ),
-                      ]),
+                      item.emprunteur
+                        ? _c("td", [
+                            _vm._v(
+                              "Emprunteur " +
+                                _vm._s(item.emprunteur.nom) +
+                                " " +
+                                _vm._s(item.emprunteur.prenom)
+                            ),
+                          ])
+                        : item.team
+                        ? _c("td", [
+                            _vm._v(
+                              " " +
+                                _vm._s(item.team.lastname) +
+                                " " +
+                                _vm._s(item.team.firstname)
+                            ),
+                          ])
+                        : _c("td", [_vm._v(" Le prêteur")]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.materiel.nom))]),
                       _vm._v(" "),
@@ -9919,7 +9936,7 @@ var render = function () {
                 [_c("v-icon", [_vm._v(_vm._s(n.icon))])],
                 1
               ),
-              _vm._v("\n        " + _vm._s(n.name)),
+              _vm._v("\n      " + _vm._s(n.name)),
             ],
             1
           )

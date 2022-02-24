@@ -133,6 +133,7 @@ export default {
     setEmprunt(value) {
       this.typeEmpruntSelect = value;
       this.materiel = null;
+      
     },
     checkIsValidToken(token) {
       return this.materiels.find((elem) => {
