@@ -204,6 +204,8 @@ export default {
 .camera {
   width: 50%;
   height: 100%;
+
+  margin: 0 auto;
 }
 .validation-success,
 .validation-failure,

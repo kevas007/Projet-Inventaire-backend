@@ -11,13 +11,18 @@
         v-for="n in route"
         :key="n.id"
         class="d-block text-center mx-auto mb-9 mdi mdi-24px"
-        :href="'/inventaire'+ n.path"
-            >
-            {{
-                n.name
-            }}</v-list-item>
-        </v-list>
-    </v-navigation-drawer>
+        :href="'/inventaire' + n.path"
+      >
+        {{ n.name }}</v-list-item
+      >
+    </v-list>
+    <template v-slot:append>
+      <v-form class="text-center mb-5" action="/logout" method="post">
+        <input type="hidden" name="_token" :value="csrf" />
+        <v-btn class="" type="submit">Logout</v-btn>
+      </v-form>
+    </template>
+  </v-navigation-drawer>
 </template>
 
 <script>
@@ -48,6 +53,9 @@ export default {
           path: "/contrat",
         },
       ],
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
     };
   },
 };
