@@ -340,6 +340,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Inventaire",
   data: function data() {
@@ -361,7 +366,8 @@ __webpack_require__.r(__webpack_exports__);
         id: 4,
         name: "Contrat",
         path: "/contrat"
-      }]
+      }],
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
     };
   }
 });
@@ -5873,7 +5879,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.camera[data-v-1e9c3991] {\n    width: 50%;\n    height: 100%;\n}\n.validation-success[data-v-1e9c3991],\n.validation-failure[data-v-1e9c3991],\n.validation-pending[data-v-1e9c3991] {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n\n    background-color: rgba(255, 255, 255, 0.8);\n    text-align: center;\n    font-weight: bold;\n    font-size: 1.4rem;\n    padding: 10px;\n\n    display: flex;\n    flex-flow: column nowrap;\n    justify-content: center;\n}\n.validation-success[data-v-1e9c3991] {\n    color: green;\n}\n.validation-failure[data-v-1e9c3991] {\n    color: red;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.camera[data-v-1e9c3991] {\n    width: 50%;\n    height: 100%;\n    margin: 0 auto;\n}\n.validation-success[data-v-1e9c3991],\n.validation-failure[data-v-1e9c3991],\n.validation-pending[data-v-1e9c3991] {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n\n    background-color: rgba(255, 255, 255, 0.8);\n    text-align: center;\n    font-weight: bold;\n    font-size: 1.4rem;\n    padding: 10px;\n\n    display: flex;\n    flex-flow: column nowrap;\n    justify-content: center;\n}\n.validation-success[data-v-1e9c3991] {\n    color: green;\n}\n.validation-failure[data-v-1e9c3991] {\n    color: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5897,7 +5903,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.qr[data-v-6d5bbd53] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n}\n.camera[data-v-6d5bbd53] {\n    width: 50%;\n    height: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.qr[data-v-6d5bbd53] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n}\n.camera[data-v-6d5bbd53] {\n    width: 50%;\n    height: 100%;\n    margin: 0 auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5945,7 +5951,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.camera[data-v-47c6c134] {\n  width: 50%;\n  height: 100%;\n}\n.validation-success[data-v-47c6c134],\n.validation-failure[data-v-47c6c134],\n.validation-pending[data-v-47c6c134] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n\n  background-color: rgba(255, 255, 255, 0.8);\n  text-align: center;\n  font-weight: bold;\n  font-size: 1.4rem;\n  padding: 10px;\n\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: center;\n}\n.validation-success[data-v-47c6c134] {\n  color: green;\n}\n.validation-failure[data-v-47c6c134] {\n  color: red;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.camera[data-v-47c6c134] {\n  width: 50%;\n  height: 100%;\n\n  margin: 0 auto;\n}\n.validation-success[data-v-47c6c134],\n.validation-failure[data-v-47c6c134],\n.validation-pending[data-v-47c6c134] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n\n  background-color: rgba(255, 255, 255, 0.8);\n  text-align: center;\n  font-weight: bold;\n  font-size: 1.4rem;\n  padding: 10px;\n\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: center;\n}\n.validation-success[data-v-47c6c134] {\n  color: green;\n}\n.validation-failure[data-v-47c6c134] {\n  color: red;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10545,6 +10551,34 @@ var render = function () {
     {
       staticClass: "pt-4",
       attrs: { permanent: "", app: "", color: "grey lighten-3" },
+      scopedSlots: _vm._u([
+        {
+          key: "append",
+          fn: function () {
+            return [
+              _c(
+                "v-form",
+                {
+                  staticClass: "text-center mb-5",
+                  attrs: { action: "/logout", method: "post" },
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.csrf },
+                  }),
+                  _vm._v(" "),
+                  _c("v-btn", { attrs: { type: "submit" } }, [
+                    _vm._v("Logout"),
+                  ]),
+                ],
+                1
+              ),
+            ]
+          },
+          proxy: true,
+        },
+      ]),
       model: {
         value: _vm.drawer,
         callback: function ($$v) {
@@ -10564,7 +10598,7 @@ var render = function () {
               staticClass: "d-block text-center mx-auto mb-9 mdi mdi-24px",
               attrs: { href: "/inventaire" + n.path },
             },
-            [_vm._v("\n          " + _vm._s(n.name))]
+            [_vm._v("\n      " + _vm._s(n.name))]
           )
         }),
         1
