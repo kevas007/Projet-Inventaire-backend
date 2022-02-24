@@ -22,7 +22,6 @@ class SeedFakeContratTableSeeder extends Seeder
         Model::unguard();
         $emprunteur_id = Emprunteur::inRandomOrder()->first()->id;
         $preteur_id = User::inRandomOrder()->where('lead_id', true)->first()->id;
-
         DB::table('contrats')->insert([
             [
                 'emprunteur_id'=>$emprunteur_id,

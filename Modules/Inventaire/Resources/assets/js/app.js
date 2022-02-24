@@ -13,6 +13,7 @@ Vue.component('inventaire-component', require('./components/Inventaire.vue').def
 Vue.component('index-component', require('./components/materiel/Index.vue').default);
 Vue.component('reservation-create', require('./components/reservation/Create.vue').default);
 Vue.component('emprunt-create', require('./components/emprunt/Create.vue').default);
+Vue.component('restitution-index', require('./components/restitution/Index.vue').default);
 Vue.component('create-component', require('./components/materiel/Create.vue').default);
 Vue.component('show-component', require('./components/materiel/Show.vue').default);
 Vue.component('search-component', require('./components/materiel/CodeQr.vue').default);
