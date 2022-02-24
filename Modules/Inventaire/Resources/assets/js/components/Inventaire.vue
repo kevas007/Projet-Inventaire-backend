@@ -32,25 +32,21 @@ export default {
         {
           id: 1,
           name: "Matériel",
-          icon: "mdi-material-ui",
           path: "/materiel",
         },
         {
           id: 2,
           name: "Emprunt",
-          icon: "mdi-hardware",
           path: "/emprunt",
         },
         {
           id: 3,
           name: "Restitution",
-          icon: "mdi-hardware",
           path: "/restitution",
         },
         {
           id: 4,
           name: "Contrat",
-          icon: "mdi-hardware",
           path: "/contrat",
         },
       ],
