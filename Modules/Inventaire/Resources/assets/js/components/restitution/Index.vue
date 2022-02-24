@@ -6,7 +6,7 @@
         method="post"
       >
         <input type="hidden" name="_token" :value="csrf" />
-
+    <!-- Permet d'afficher la caméra pour scanner le code QR Code -->
         <qrcode-stream
           :track="selected.value"
           @init="logErrors"
@@ -15,6 +15,7 @@
           :key="_uid"
           :camera="camera"
         >
+        <!-- Affiche un overlay avec un message précis selon que les conditions soient remplies ou non -->
           <div v-if="validationSuccess" class="validation-success">
             Matériel trouvé !
           </div>
@@ -47,12 +48,14 @@ export default {
   },
   components: { QrcodeStream },
   data() {
+    //   Les différentes option pour le code qr
     const options = [
       { text: "nothing (default)", value: undefined },
       { text: "outline", value: this.paintOutline },
       { text: "centered text", value: this.paintCenterText },
       { text: "bounding box", value: this.paintBoundingBox },
     ];
+    // Selectionne une option de base
     const selected = options[1];
     return {
       camera: "auto",
@@ -67,6 +70,7 @@ export default {
     };
   },
   methods: {
+    //   Vérifie si le token dans le code qr correspond à un matériel prété
     checkIsValidToken(token) {
       return this.materiels.find((elem) => {
         console.log(elem.token, token);
@@ -76,6 +80,7 @@ export default {
     onDragOver(draggingOver) {
       this.draggingOver = draggingOver;
     },
+    // Permet d'afficher une bordure verte autour du code qr durant le scan
     paintOutline(detectedCodes, ctx) {
       for (const detectedCode of detectedCodes) {
         const [firstPoint, ...otherPoints] = detectedCode.cornerPoints;
@@ -141,26 +146,26 @@ export default {
       this.isValid = undefined;
     },
 
+    // Action à exécuter lorsque le code qr a été scanné
     async onDecode(decodedString) {
+        // Récupère le token dans le code qr
       let arr = decodedString.split("/");
       let tokenToCheck = arr[arr.length - 1];
 
+    // Vérifie si le token est bon
       if (this.checkIsValidToken(tokenToCheck)) {
         this.materiel = this.checkIsValidToken(tokenToCheck);
         this.isValid = true;
-        // this.result = token;
       } else {
         this.isValid = false;
-
-        // this.result = token;
       }
       this.turnCameraOff();
 
-      // pretend it's taking really long
+      // Fais semblant de prendre du temps
       await this.timeout(3000);
       this.isValid = this.checkIsValidToken(tokenToCheck) != undefined;
 
-      // some more delay, so users have time to read the message
+      // Ajoute un petit delai pour que l'utilisateur puisse lire le message
       await this.timeout(2000);
 
       this.turnCameraOn();
@@ -181,6 +186,7 @@ export default {
     },
   },
   computed: {
+    //   Vérifie si un membre de la team a bien été selectionné
     checkSelectedTeamMember() {
       return (
         this.users.filter((elem) => elem.id == this.team_member_id).length > 0
