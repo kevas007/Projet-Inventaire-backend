@@ -11,15 +11,13 @@
         v-for="n in route"
         :key="n.id"
         class="d-block text-center mx-auto mb-9 mdi mdi-24px"
-        :href="'/inventaire' + n.path"
-      >
-        <v-list-item-icon>
-          <v-icon>{{ n.icon }}</v-icon>
-        </v-list-item-icon>
-        {{ n.name }}</v-list-item
-      >
-    </v-list>
-  </v-navigation-drawer>
+        :href="'/inventaire'+ n.path"
+            >
+            {{
+                n.name
+            }}</v-list-item>
+        </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script>

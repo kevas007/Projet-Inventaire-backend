@@ -29,9 +29,9 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     // Route::get('/', 'InventaireController@index');
 
     //dashboard
-    Route::get('/dashboard', function () {
-        return view('inventaire::dashboard');
-    })->middleware('auth');
+    // Route::get('/dashboard', function () {
+    //     return view('inventaire::dashboard');
+    // })->middleware('auth');
     //code Qr
     Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
 
@@ -67,9 +67,12 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/contrat/{id}/emprunteur', [ContratController::class, 'storeEmprunteur']);
 
 
-    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
     Route::get('/restitution', [RestitutionController::class, 'index']);
     Route::post('/restitution/{id}', [RestitutionController::class, 'update']);
+    
+    Route::get('/contrat/{id}/pdf', [ContratController::class, 'createPDF'])->middleware('auth');
+    Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
+    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
 });
 
 
