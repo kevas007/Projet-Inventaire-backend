@@ -41,7 +41,7 @@ class EmprunteurController extends Controller
      */
     public function store(Request $request, $id)
     {
-       
+
     }
 
     /**

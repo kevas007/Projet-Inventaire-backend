@@ -133,7 +133,7 @@ export default {
     props: {
         materiels: [Array],
         users: [Array],
-     
+
     },
     components: { QrcodeStream },
     data() {
@@ -248,7 +248,7 @@ export default {
                 // this.result = token;
             } else {
                 this.isValid = false;
-          
+
 
                 // this.result = token;
             }

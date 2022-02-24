@@ -27,7 +27,9 @@
                             </div>
 
                         </td>
-                        <td> {{ item.emprunteur.nom }} {{item.emprunteur.prenom}}</td>
+                        <td v-if="item.emprunteur">Emprunteur {{ item.emprunteur.nom }} {{item.emprunteur.prenom}}</td>
+                        <td v-else-if="item.team"> {{ item.team.lastname }} {{ item.team.firstname}}</td>
+                        <td v-else> Le prêteur</td>
                         <td>{{ item.materiel.nom }}</td>
                         <td>{{ item.materiel.place.nom }}</td>
                         <td>{{ item.statut.nom }}</td>

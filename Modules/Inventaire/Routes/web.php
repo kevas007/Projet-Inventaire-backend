@@ -66,7 +66,8 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/contrat/{id}/emprunteur', [ContratController::class, 'storeEmprunteur']);
 
 
-    Route::get('/contrat/{token}/', [ContratController::class, 'store']);
+    Route::get('/restitution', [ContratController::class, 'index']);
+    Route::get('/restitution/{id}', [ContratController::class, 'update']);
 
     Route::get('/contrat/{id}/pdf', [ContratController::class, 'createPDF'])->middleware('auth');
     Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
