@@ -28,13 +28,29 @@
 
     <p><b>Je soussigné(e), {{    $data->preteur->firstname . ' ' .    $data->preteur->lastname }}</b>, déclare avoir, ce jour, mis à disposition de
         l'emprunteur:</p>
-    <p>Nom : {{ $data->emprunteur->nom }}</p>
-    <p>Prenom : {{ $data->emprunteur->prenom}}</p>
-    <p>Au nom et pour le compte de la formation <b>{{ $data->emprunteur->formation}}</b> - à l'adresse
-        <b>{{ $data->emprunteur->adresse}}</b>, le matériel suivant:</p>
+@if ($data->emprunteur !=null)
+<p>Nom : {{ $data->emprunteur->nom }}</p>
+<p>Prenom : {{ $data->emprunteur->prenom}}</p>
+<p>Au nom et pour le compte de la formation <b>{{ $data->emprunteur->formation}}</b> - à l'adresse
+<b>{{ $data->emprunteur->adresse}}</b>, le matériel suivant:</p>
+@elseif ($data->team_id !=null)
+<p>Nom : {{ $data->team->nom }}</p>
+<p>Prenom : {{ $data->team->prenom}}</p>
+<p>Au nom et pour le compte de la formation <b>{{ $data->team->formation}}</b> - à l'adresse
+<b>{{ $data->materiel->place->nom}}</b>, le matériel suivant:</p>
+
+@else
+<p>Nom : {{ $data->team->nom }}</p>
+<p>Prenom : {{ $data->team->prenom}}</p>
+<p>Au nom et pour le compte de la formation <b>{{ $data->team->formation}}</b> - à l'adresse
+<b>{{ $data->materiel->place->nom}}</b>, le matériel suivant:</p>
+
+@endif
+
     <p>Nom du matériel: {{ $data->materiel->nom }}</p>
     <p>Type du matériel: {{ $data->materiel->type->nom }}</p>
     <h3>L'emprunteur: </h3>
+    @if ($data->emprunteur !=null)
     <p>Confirme, en tant qu’élève de la {{ $data->emprunteur->formation}}, la réception du matériel ci-dessus
         visé qui est et demeure la propriété de Molengeek.
         Reconnait et atteste sur l’honneur avoir pris connaissance et être d’accord avec les conditions
@@ -42,7 +58,23 @@
         S’engage à utiliser le matériel fourni avec soin, conformément à sa destination.
         S’engage en outre à signaler immédiatement tout dysfonctionnement, dégradation, perte ou vol.</p>
     <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le <b>
-
+        @elseif ($data->team_id !=null)
+        <p>Confirme, en tant que membre de la  {{ $data->team->firstname }}, la réception du matériel ci-dessus
+            visé qui est et demeure la propriété de Molengeek.
+            Reconnait et atteste sur l’honneur avoir pris connaissance et être d’accord avec les conditions
+            et termes relatifs à la mise à disposition du matériel informatique détaillés ci-dessous.
+            S’engage à utiliser le matériel fourni avec soin, conformément à sa destination.
+            S’engage en outre à signaler immédiatement tout dysfonctionnement, dégradation, perte ou vol.</p>
+        <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le <b>
+        @else
+        <p>Confirme, en tant que membre de la  {{ $data->team->firstName }}, la réception du matériel ci-dessus
+            visé qui est et demeure la propriété de Molengeek.
+            Reconnait et atteste sur l’honneur avoir pris connaissance et être d’accord avec les conditions
+            et termes relatifs à la mise à disposition du matériel informatique détaillés ci-dessous.
+            S’engage à utiliser le matériel fourni avec soin, conformément à sa destination.
+            S’engage en outre à signaler immédiatement tout dysfonctionnement, dégradation, perte ou vol.</p>
+        <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le <b>
+        @endif
     </b>
         au plus tard, et ce dans le même état que celui dans lequel le matériel se trouvait lors qu’il a été
         mis à sa disposition, compte tenu de son usure normale. En cas de départ définitif au cours de
