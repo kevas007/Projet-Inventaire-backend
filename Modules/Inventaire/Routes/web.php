@@ -28,9 +28,9 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     // Route::get('/', 'InventaireController@index');
 
     //dashboard
-    Route::get('/dashboard', function () {
-        return view('inventaire::dashboard');
-    })->middleware('auth');
+    // Route::get('/dashboard', function () {
+    //     return view('inventaire::dashboard');
+    // })->middleware('auth');
     //code Qr
     Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
 
