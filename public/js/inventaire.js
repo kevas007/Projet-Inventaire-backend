@@ -297,6 +297,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     contrats: {
@@ -9793,14 +9795,25 @@ var render = function () {
                           : _vm._e(),
                       ]),
                       _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          " " +
-                            _vm._s(item.emprunteur.nom) +
-                            " " +
-                            _vm._s(item.emprunteur.prenom)
-                        ),
-                      ]),
+                      item.emprunteur
+                        ? _c("td", [
+                            _vm._v(
+                              "Emprunteur " +
+                                _vm._s(item.emprunteur.nom) +
+                                " " +
+                                _vm._s(item.emprunteur.prenom)
+                            ),
+                          ])
+                        : item.team
+                        ? _c("td", [
+                            _vm._v(
+                              " " +
+                                _vm._s(item.team.lastname) +
+                                " " +
+                                _vm._s(item.team.firstname)
+                            ),
+                          ])
+                        : _c("td", [_vm._v(" Le prêteur")]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.materiel.nom))]),
                       _vm._v(" "),
