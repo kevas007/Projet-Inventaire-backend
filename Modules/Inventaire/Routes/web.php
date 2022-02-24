@@ -67,6 +67,8 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
 
 
     Route::get('/contrat/{token}/', [ContratController::class, 'store']);
+    Route::get('/restitution', [ContratController::class, 'index']);
+    Route::get('/restitution/{id}', [ContratController::class, 'update']);
 });
 
 
