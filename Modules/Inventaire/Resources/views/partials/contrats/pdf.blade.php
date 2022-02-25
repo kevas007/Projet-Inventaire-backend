@@ -57,7 +57,7 @@
         et termes relatifs à la mise à disposition du matériel informatique détaillés ci-dessous.
         S’engage à utiliser le matériel fourni avec soin, conformément à sa destination.
         S’engage en outre à signaler immédiatement tout dysfonctionnement, dégradation, perte ou vol.</p>
-    <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le {{$data->fin_contrat}}<b>
+    <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le {{\Carbon\Carbon::create($data->fin_contrat)->format('d/m/Y')}}<b>
         @elseif ($data->team_id !=null)
         <p>Confirme, en tant que membre de la  {{ $data->team->firstname }}, la réception du matériel ci-dessus
             visé qui est et demeure la propriété de Molengeek.
