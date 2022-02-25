@@ -15,15 +15,12 @@ class CreateContratsTable extends Migration
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
-            // null ! = emprunteur->Nom
             $table->foreignId('emprunteur_id')->nullable()->constrained();
 
-            // null ! = team->Nom
             $table->foreignId('team_id')->nullable()->constrained("users");
 
-            //null ! = preteur->Nom
             $table->foreignId('preteur_id')->constrained('users');
-
+            $table->datetime('fin_contrat')->nullable();
             $table->foreignId('statut_contrat_id')->constrained();
             $table->foreignId('materiel_id')->constrained();
             $table->timestamps();

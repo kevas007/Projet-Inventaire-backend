@@ -1932,6 +1932,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Create",
@@ -1942,6 +1943,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     QrcodeStream: vue_qrcode_reader__WEBPACK_IMPORTED_MODULE_1__.QrcodeStream
   },
   data: function data() {
+    //   Les différentes option pour le code qr
     var options = [{
       text: "nothing (default)",
       value: undefined
@@ -1954,7 +1956,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }, {
       text: "bounding box",
       value: this.paintBoundingBox
-    }];
+    }]; // Selectionne une option de base
+
     var selected = options[1];
     return {
       camera: "auto",
@@ -1967,6 +1970,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     };
   },
   methods: {
+    //   Vérifie si le token dans le code qr correspond à un matériel prété
     checkIsValidToken: function checkIsValidToken(token) {
       return this.materiels.find(function (elem) {
         console.log(elem.token, token);
@@ -1976,6 +1980,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     onDragOver: function onDragOver(draggingOver) {
       this.draggingOver = draggingOver;
     },
+    // Permet d'afficher une bordure verte autour du code qr durant le scan
     paintOutline: function paintOutline(detectedCodes, ctx) {
       var _iterator = _createForOfIteratorHelper(detectedCodes),
           _step;
@@ -2076,6 +2081,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     resetValidationState: function resetValidationState() {
       this.isValid = undefined;
     },
+    // Action à exécuter lorsque le code qr a été scanné
     onDecode: function onDecode(decodedString) {
       var _this = this;
 
@@ -2085,24 +2091,25 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                // Récupère le token dans le code qr
                 arr = decodedString.split("/");
-                tokenToCheck = arr[arr.length - 1];
+                tokenToCheck = arr[arr.length - 1]; // Vérifie si le token est bon
 
                 if (_this.checkIsValidToken(tokenToCheck)) {
                   _this.materiel = _this.checkIsValidToken(tokenToCheck);
-                  _this.isValid = true; // this.result = token;
+                  _this.isValid = true;
                 } else {
-                  _this.isValid = false; // this.result = token;
+                  _this.isValid = false;
                 }
 
-                _this.turnCameraOff(); // pretend it's taking really long
+                _this.turnCameraOff(); // Fais semblant de prendre du temps
 
 
                 _context.next = 6;
                 return _this.timeout(3000);
 
               case 6:
-                _this.isValid = _this.checkIsValidToken(tokenToCheck) != undefined; // some more delay, so users have time to read the message
+                _this.isValid = _this.checkIsValidToken(tokenToCheck) != undefined; // Ajoute un petit delai pour que l'utilisateur puisse lire le message
 
                 _context.next = 9;
                 return _this.timeout(2000);
@@ -2131,6 +2138,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }
   },
   computed: {
+    //   Vérifie si un membre de la team a bien été selectionné
     checkSelectedTeamMember: function checkSelectedTeamMember() {
       var _this2 = this;
 
@@ -10971,7 +10979,12 @@ var render = function () {
                             { attrs: { cols: "4" } },
                             [
                               _c("v-text-field", {
-                                attrs: { name: "duree", label: "duree" },
+                                attrs: {
+                                  name: "duree",
+                                  type: "number",
+                                  min: "1",
+                                  label: "duree",
+                                },
                               }),
                             ],
                             1
