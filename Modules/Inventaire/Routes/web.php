@@ -27,7 +27,7 @@ use Modules\Inventaire\Http\Controllers\ReservationController;
 use Modules\Inventaire\Http\Controllers\RestitutionController;
 
 Route::prefix('inventaire')->middleware('auth')->group(function () {
-    Route::get('/', [InventaireController::class, 'index']);
+    Route::get('/dashboard', [InventaireController::class, 'index']);
     //code Qr
     Route::get('/generate-qrcode', [MaterielController::class, 'validate'])->middleware('auth');
 
