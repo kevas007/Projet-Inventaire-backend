@@ -1,9 +1,7 @@
-@extends('inventaire::layouts.master')
+@extends('inventaire::layouts.main')
 
-@section('content')
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('inventaire.name') !!}
-    </p>
+@section('main')
+    <v-container class="text-center">
+        <h1>Welcome {{Auth::user()->firstname}}</h1>
+    </v-container>
 @endsection

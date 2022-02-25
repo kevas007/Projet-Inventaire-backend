@@ -90,7 +90,7 @@ class ContratController extends Controller
         $contrat = new Contrat();
         $contrat->materiel_id = $materiel->id;
         $contrat->statut_contrat_id = 2;
-        $contrat->duree = Carbon::now()->addDays($request->duree);
+        $contrat->fin_contrat = Carbon::now()->addDays($request->duree);
         $contrat->emprunteur_id = $request->emprunteur_id;
         $contrat->preteur_id = Auth::id();
         $contrat->save();
