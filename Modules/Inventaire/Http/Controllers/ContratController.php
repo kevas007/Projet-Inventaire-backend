@@ -2,7 +2,7 @@
 
 namespace Modules\Inventaire\Http\Controllers;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
-
+use Carbon\Carbon;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -73,6 +73,7 @@ class ContratController extends Controller
             'formation' => ['required', 'min:1', 'string'],
             'adresse' => ['required', 'min:1', 'string'],
             'cart_id' => ['required', 'image'],
+            'duree' => ['required', 'min:1'],
             'date_naissance' => ['required', 'date', 'before:today'],
         ]);
         $emprunteur = new Emprunteur();
@@ -89,6 +90,7 @@ class ContratController extends Controller
         $contrat = new Contrat();
         $contrat->materiel_id = $materiel->id;
         $contrat->statut_contrat_id = 2;
+        $contrat->duree = Carbon::now()->addDays($request->duree);
         $contrat->emprunteur_id = $request->emprunteur_id;
         $contrat->preteur_id = Auth::id();
         $contrat->save();

@@ -108,7 +108,7 @@
                         <v-text-field name="adresse" label="adresse"></v-text-field>
                     </v-col>
                     <v-col cols="4">
-                        <v-text-field name="duree" label="duree"></v-text-field>
+                        <v-text-field name="duree" type="number" min="1" label="duree"></v-text-field>
                     </v-col>
                     <v-col cols="12">
                         <p>Date de naissance</p>
@@ -304,6 +304,7 @@ export default {
 .camera {
     width: 50%;
     height: 100%;
+    margin: 0 auto;
 }
 .validation-success,
 .validation-failure,

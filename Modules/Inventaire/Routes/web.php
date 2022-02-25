@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Inventaire\Http\Controllers\EmprunteurController;
 use Modules\Inventaire\Http\Controllers\MaterielController;
 use Modules\Inventaire\Http\Controllers\ReservationController;
+use Modules\Inventaire\Http\Controllers\RestitutionController;
 
 Route::prefix('inventaire')->middleware('auth')->group(function () {
     // Route::get('/', 'InventaireController@index');
@@ -66,9 +67,9 @@ Route::prefix('inventaire')->middleware('auth')->group(function () {
     Route::post('/contrat/{id}/emprunteur', [ContratController::class, 'storeEmprunteur']);
 
 
-    Route::get('/restitution', [ContratController::class, 'index']);
-    Route::get('/restitution/{id}', [ContratController::class, 'update']);
-
+    Route::get('/restitution', [RestitutionController::class, 'index']);
+    Route::post('/restitution/{id}', [RestitutionController::class, 'update']);
+    
     Route::get('/contrat/{id}/pdf', [ContratController::class, 'createPDF'])->middleware('auth');
     Route::get('/emprunt/{id}/', [EmprunteurController::class, 'create']);
     Route::get('/contrat/{token}/', [ContratController::class, 'store']);

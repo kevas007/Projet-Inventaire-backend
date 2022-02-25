@@ -50,7 +50,7 @@
                                     Exporter en  PDF
                                     <!-- <v-icon>Plus</v-icon> -->
                                 </v-btn>
-                            </div>
+                            
                             <!-- <div v-else>
                                 <p class="text-center">/</p>
                             </div> -->
@@ -64,23 +64,21 @@
 
 <script>
 export default {
-    props: {
-        contrats: {
-            type: Array,
-            required: true,
-        },
+  props: {
+    contrats: {
+      type: Array,
+      required: true,
     },
-    mounted() {
-        console.log(this.contrats);
-
-    },
-    data() {
-        return {
-            csrf: document
-                .querySelector('meta[name="csrf-token"]')
-                .getAttribute("content"),
-
-        }
-    },
+  },
+  mounted() {
+    console.log(this.contrats);
+  },
+  data() {
+    return {
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+    };
+  },
 };
 </script>

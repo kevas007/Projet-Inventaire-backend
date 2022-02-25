@@ -4,6 +4,8 @@ namespace Modules\Inventaire\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Blade;
 
 class InventaireServiceProvider extends ServiceProvider
 {
@@ -32,6 +34,9 @@ class InventaireServiceProvider extends ServiceProvider
         // $kernel->pushMiddleware('Modules\Inventaire\Http\Middleware\Lead');
 
         $router->aliasMiddleware('Lead', \Modules\Inventaire\Http\Middleware\Lead::class);
+        Blade::if('lead', function () {
+            return Auth::user()->lead_id;
+        });
     }
 
     /**
@@ -55,7 +60,8 @@ class InventaireServiceProvider extends ServiceProvider
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
+            module_path($this->moduleName, 'Config/config.php'),
+            $this->moduleNameLower
         );
     }
 
