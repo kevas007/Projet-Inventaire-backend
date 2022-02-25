@@ -154,6 +154,9 @@ export default {
         shows: false,
         show: false,
     }),
+    mounted() {
+        console.log(this.user);
+    }
 
 }
 </script>
