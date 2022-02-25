@@ -179,7 +179,7 @@ class ContratController extends Controller
         // share data to view
             view()->share('inventaire::partials.contrats.pdf', compact('data'));
         return   $pdf = FacadePdf::loadView('inventaire::partials.contrats.pdf', compact('data'))
-            ->setPaper('a4', 'landscape')
+            ->setPaper('a4', 'portrait')
             ->setWarnings(false)
             ->stream();
     }

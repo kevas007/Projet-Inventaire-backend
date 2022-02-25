@@ -8,7 +8,7 @@
     <title>Contrat Prêt de matériel</title>
     <style>
         body{
-            width: 85%;
+            width: 90%;
             margin: 0 auto;
         }
         .titre{
@@ -18,8 +18,17 @@
         }
         .section-signature{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            width: 100%;
         }
+        .section-signature{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .spacer{
+            margin-right: 51.5%;
+        }
+
     </style>
 </head>
 
@@ -79,10 +88,11 @@
         l’année académique, le matériel devra être immédiatement restitué</p>
 
     <p>Fait à {{  $data->materiel->place->nom}}, le {{\Carbon\Carbon::now()->format('d/m/Y')}}</p>
-    <div class="section-signature">
-        <p>Signature du prêteur</p>
-        <p>Signature de l'emprunteur</p>
-    </div>
+    <span class="section-signature">
+        <span class="spacer">Signature du prêteur</span>
+        {{-- <span class="spacer"></span> --}}
+        <span>Signature de l'emprunteur</span>
+    </span>
 </body>
 
 </html>
