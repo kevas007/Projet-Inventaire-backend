@@ -22,7 +22,7 @@ class MaterielController extends Controller
     public function __construct()
     {
         $this->middleware('Lead')
-            ->except('index', 'show', 'pdf', 'qrcode', 'destroy', 'delete', 'restore', 'search');
+            ->except('index', 'show', 'pdf', 'qrcode', 'destroy', 'delete', 'restore', 'search','create', 'store');
     }
     /**
      * Display a listing of the resource.

@@ -55,13 +55,13 @@
                                 </v-form>
                             </div>
                             <div v-else>
-                                <p class="text-center">
+                                <div class="">
                                     <v-btn
-                                    class="ma-1 flex items-center "
+                                    class=" flex items-center  white--text"
                                         :href="'/inventaire/materiel/' + item.id + '/restaurer'"
                                         color="primary"
                                     >Restaurer</v-btn>
-                                </p>
+                                </div>
                             </div>
                         </td>
                         <td>
