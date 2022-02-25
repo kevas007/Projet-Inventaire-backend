@@ -1742,6 +1742,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
@@ -1758,6 +1763,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     statut: {
       type: Array,
+      required: true
+    },
+    user: {
+      type: Object,
       required: true
     }
   },
@@ -11435,7 +11444,7 @@ var render = function () {
                         ),
                       ]),
                       _vm._v(" "),
-                      this.materiel.deleted_at == null
+                      this.materiel.deleted_at == null && this.user.lead_id == 1
                         ? _c(
                             "div",
                             { staticClass: "ma-2" },

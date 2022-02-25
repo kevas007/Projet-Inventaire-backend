@@ -32,7 +32,12 @@
                                 item-text="nom"
                                 name="statut_id"
                                 :value="this.materiel.statut"
-                            ></v-select>
+                            >
+                         <!-- <template
+                        slot="selection"
+                        slot-scope="data"
+                    >{{ data.item.firstname }} {{ data.item.lastname }}</template> -->
+                            </v-select>
                             <v-btn type="submit">Changer</v-btn>
                         </v-form>
 
@@ -46,7 +51,7 @@
                                 this.materiel.place.nom
                             }}
                         </p>
-                        <div class="ma-2" v-if="this.materiel.deleted_at == null">
+                        <div class="ma-2" v-if="this.materiel.deleted_at == null && this.user.lead_id ==1">
                             <v-btn
                                 :href="'/inventaire/reserver/' + this.materiel.id"
                                 color="primary"
@@ -134,6 +139,10 @@ export default {
         },
         statut: {
             type: Array,
+            required: true,
+        },
+        user:{
+            type: Object,
             required: true,
         },
     },
