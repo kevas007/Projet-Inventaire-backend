@@ -36,13 +36,13 @@
 @elseif ($data->team_id !=null)
 <p>Nom : {{ $data->team->nom }}</p>
 <p>Prenom : {{ $data->team->prenom}}</p>
-<p>Au nom et pour le compte de la formation <b>{{ $data->team->formation}}</b> - à l'adresse
+<p>à l'adresse
 <b>{{ $data->materiel->place->nom}}</b>, le matériel suivant:</p>
 
 @else
-<p>Nom : {{ $data->team->nom }}</p>
-<p>Prenom : {{ $data->team->prenom}}</p>
-<p>Au nom et pour le compte de la formation <b>{{ $data->team->formation}}</b> - à l'adresse
+<p>Nom : {{ $data->preteur->nom }}</p>
+<p>Prenom : {{ $data->preteur->prenom}}</p>
+<p>à l'adresse
 <b>{{ $data->materiel->place->nom}}</b>, le matériel suivant:</p>
 
 @endif
@@ -67,7 +67,7 @@
             S’engage en outre à signaler immédiatement tout dysfonctionnement, dégradation, perte ou vol.</p>
         <p>S’oblige à restituer l’intégralité du matériel à l'économat de l'école pour le <b>
         @else
-        <p>Confirme, en tant que membre de la  {{ $data->team->firstName }}, la réception du matériel ci-dessus
+        <p>Confirme, en tant que membre de la  {{ $data->preteur->firstName }}, la réception du matériel ci-dessus
             visé qui est et demeure la propriété de Molengeek.
             Reconnait et atteste sur l’honneur avoir pris connaissance et être d’accord avec les conditions
             et termes relatifs à la mise à disposition du matériel informatique détaillés ci-dessous.

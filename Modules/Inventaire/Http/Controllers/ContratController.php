@@ -90,8 +90,8 @@ class ContratController extends Controller
         $contrat = new Contrat();
         $contrat->materiel_id = $materiel->id;
         $contrat->statut_contrat_id = 2;
-        $contrat->duree = Carbon::now()->addDays($request->duree);
-        $contrat->emprunteur_id = $request->emprunteur_id;
+        $contrat->fin_contrat = Carbon::now()->addDays($request->duree);
+        $contrat->emprunteur_id = $emprunteur->id;
         $contrat->preteur_id = Auth::id();
         $contrat->save();
 
@@ -175,6 +175,7 @@ class ContratController extends Controller
     {
         // retreive all records from db
         $data = Contrat::with('materiel.place','materiel', 'preteur', 'emprunteur','team', 'statut')->find($id);
+        // dd($date);
         // share data to view
             view()->share('inventaire::partials.contrats.pdf', compact('data'));
         return   $pdf = FacadePdf::loadView('inventaire::partials.contrats.pdf', compact('data'))
