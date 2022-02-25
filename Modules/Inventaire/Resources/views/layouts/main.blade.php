@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <v-app id="inspire" app>
-            <inventaire-component></inventaire-component>
+            <inventaire-component :user="{{ Auth::user() }}"></inventaire-component>
             <v-main app>
                 @if (Session::has('msg'))
                     <v-alert dismissible>{{ Session::get('msg') }}</v-alert>
