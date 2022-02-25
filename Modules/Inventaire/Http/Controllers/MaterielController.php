@@ -157,7 +157,7 @@ class MaterielController extends Controller
     {
         return view('inventaire::codeQr');
     }
-    // Generate PDF
+    //creation du pdf
     public function createPDF($id)
     {
         // retreive all records from db
@@ -167,27 +167,23 @@ class MaterielController extends Controller
         return   $pdf = FacadePdf::loadView('inventaire::partials.materiel.codeQr', compact('data'))
             ->setPaper('a4', 'landscape')
             ->setWarnings(false)
-            // ->save(storage_path('app/public/qr/' . $data->token . '.pdf'))
             ->stream();
-
-
-
-        // download PDF file with download method
-        // return $pdf->download('pdf_file.pdf');
     }
 
-
+//fonction pour retourner le code qr
     public function search(Request $request)
     {
         $materiels = Materiel::with("statut")->get();
         return view('inventaire::partials.materiel.search', compact('materiels'));
     }
-
+//fonction pour recuperer et afficher le code qr
     public function searchResult($token)
     {
         $materiels = Materiel::where('token', $token)->first();
         return redirect('/inventaire/materiel/' . $materiels->id);
     }
+
+    //fonction pour restaurer un materiel
     public function restore($id){
         $materiels = Materiel::withTrashed()->find($id)->restore();
         return redirect()->back();

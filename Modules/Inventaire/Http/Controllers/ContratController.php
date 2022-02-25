@@ -108,8 +108,6 @@ class ContratController extends Controller
     public function storeTeam(Request $request, $id)
     {
 
-
-
         $materiel = Materiel::find($id);
         $contrat = new Contrat();
         $contrat->materiel_id = $materiel->id;
@@ -172,7 +170,7 @@ class ContratController extends Controller
         //
     }
 
-//pdf
+//creation du pdf
     public function createPDF($id)
     {
         // retreive all records from db
@@ -182,12 +180,6 @@ class ContratController extends Controller
         return   $pdf = FacadePdf::loadView('inventaire::partials.contrats.pdf', compact('data'))
             ->setPaper('a4', 'landscape')
             ->setWarnings(false)
-            // ->save(storage_path('app/public/qr/' . $data->token . '.pdf'))
             ->stream();
-
-
-
-        // download PDF file with download method
-        // return $pdf->download('pdf_file.pdf');
     }
 }

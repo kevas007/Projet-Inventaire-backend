@@ -2,7 +2,7 @@
 
 @section('main')
     <h1>
-    QrCode
+        QrCode
     </h1>
-<search-component></search-component>
+    <search-component></search-component>
 @endsection
